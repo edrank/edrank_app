@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Edrank_app</string>
+    <string name="app_name" translatable="false">Edrank_app</string>
+    <string name="teacherName" translatable="false">Dr. Kavita Pabreja</string>
+    <string name="your_reviews_are">Your reviews are:</string>
 </resources>
