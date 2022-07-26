@@ -1,4 +1,4 @@
-package com.example.edrank_app
+package com.example.edrank_app.ui.parent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
