@@ -2,4 +2,6 @@
     <string name="app_name" translatable="false">Edrank_app</string>
     <string name="teacherName" translatable="false">Dr. Kavita Pabreja</string>
     <string name="your_reviews_are">Your reviews are:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

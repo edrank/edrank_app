@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_splash_screen.xml" value="0.11503623188405797" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_feedbackform.xml" value="0.18115942028985507" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_login.xml" value="0.18115942028985507" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/home_page.xml" value="0.18115942028985507" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/profile_page.xml" value="0.18" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/splash_screen.xml" value="0.18115942028985507" />
       </map>
     </option>
   </component>
