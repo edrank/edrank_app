@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#F8F9FB</color>
     <color name="textgray">#3C4852</color>
+    <color name="green">#5aca4b</color>
+    <color name="red">#e02828</color>
+    <color name="yellow">#fff42b</color>
+    <color name="teal">#39C16C</color>
 </resources>
