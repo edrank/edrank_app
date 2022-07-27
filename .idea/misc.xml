@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/drawable/seek_bar.xml" value="0.16332046332046332" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/drawable/seek_thumb.xml" value="0.16332046332046332" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_splash_screen.xml" value="0.11503623188405797" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_feedbackform.xml" value="0.18115942028985507" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_parent.xml" value="0.14651639344262296" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_student.xml" value="0.17" />
-        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_teacher.xml" value="0.22" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_teacher.xml" value="0.16" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_login.xml" value="0.18115942028985507" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_reviews.xml" value="0.1" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_scorecard.xml" value="0.1" />
