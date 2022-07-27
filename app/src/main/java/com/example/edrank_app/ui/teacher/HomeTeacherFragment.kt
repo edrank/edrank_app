@@ -1,11 +1,13 @@
 package com.example.edrank_app.ui.teacher
 
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
@@ -42,6 +44,11 @@ class HomeTeacherFragment : Fragment() {
     ): View? {
         binding = FragmentHomeTeacherBinding.inflate(inflater, container, false)
 
+        //seekbar handling
+        binding.seekBar.progress = 87
+        binding.seekbarValue.text = binding.seekBar.progress.toString()
+        binding.seekBar.isEnabled = false           //to make it non-clickable
+        setSeekbarColor()
 
         //for 3 button menu
         binding.reviews.setOnClickListener {
@@ -62,6 +69,19 @@ class HomeTeacherFragment : Fragment() {
         loadPieChartData()
 
         return binding.root
+    }
+
+    private fun setSeekbarColor() {
+        if (binding.seekBar.progress >= 65){
+            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green), PorterDuff.Mode.SRC_ATOP)
+        }
+        else if (binding.seekBar.progress in 35..64){
+            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.yellow), PorterDuff.Mode.SRC_ATOP)
+        }
+        else{
+            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red), PorterDuff.Mode.SRC_ATOP)
+
+        }
     }
 
     private fun setupPieChart() {

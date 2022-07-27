@@ -54,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="15dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginVertical="10dp"
                         android:padding="5dp"
                         android:text="@string/teacherName"
                         android:textColor="@color/textgray"
@@ -74,11 +74,36 @@
                         android:textSize="15sp" />
 
                     <SeekBar
+                        android:id="@+id/seekBar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="15dp"
-                        android:layout_marginBottom="10dp"
                         android:padding="5dp" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/seekbarValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Your progress"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="%"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>
@@ -289,6 +314,8 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
                     android:drawableTop="@drawable/ic_feedback"
+                    android:maxWidth="90dp"
+                    android:maxHeight="90dp"
                     android:padding="5dp"
                     android:text="Reviews"
                     android:textAllCaps="false"
@@ -302,6 +329,8 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
                     android:drawableTop="@drawable/ic_score"
+                    android:maxWidth="90dp"
+                    android:maxHeight="90dp"
                     android:padding="5dp"
                     android:text="Scorecard"
                     android:textAllCaps="false"
@@ -309,12 +338,14 @@
 
                 <Button
                     android:id="@+id/otherFeature"
-                    android:layout_width="wrap_content"
+                    android:layout_width="98dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
                     android:drawableTop="@drawable/ic_ai"
+                    android:maxWidth="90dp"
+                    android:maxHeight="90dp"
                     android:padding="5dp"
                     android:text="AI"
                     android:textAllCaps="false"
@@ -327,8 +358,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -347,11 +378,11 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
                         android:layout_marginHorizontal="10dp"
                         android:layout_marginVertical="10dp"
-                        android:text="THIS SEMESTER"
                         android:gravity="center"
+                        android:padding="5dp"
+                        android:text="THIS SEMESTER"
                         android:textColor="@color/textgray"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -360,7 +391,7 @@
                         android:id="@+id/pieChart"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:layout_marginBottom="10dp"/>
+                        android:layout_marginBottom="10dp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>

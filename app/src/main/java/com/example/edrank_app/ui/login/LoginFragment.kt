@@ -20,10 +20,17 @@ class LoginFragment : Fragment() {
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        binding.login.setOnClickListener {
+        binding.teacherLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeTeacherFragment)
         }
 
+        binding.studentLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_homeStudentFragment)
+        }
+
+        binding.parentLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_homeParentFragment)
+        }
 
         return binding.root
     }
