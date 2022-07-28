@@ -13,8 +13,8 @@
     <color name="red">#e02828</color>
     <color name="yellow">#fff42b</color>
     <color name="teal">#39C16C</color>
-
+<!--ffb600-->
     <color name="seek_bar_background">#ababab</color>
-    <color name="seek_bar_progress">#ffb600</color>
+    <color name="seek_bar_progress">#39C16C</color>
     <color name="seek_bar_secondary_progress">#3399CC</color>
 </resources>

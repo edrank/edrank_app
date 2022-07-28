@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -321,6 +322,7 @@
                     android:maxHeight="90dp"
                     android:padding="5dp"
                     android:text="Reviews"
+                    android:textSize="12sp"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray" />
 
@@ -334,6 +336,7 @@
                     android:drawableTop="@drawable/ic_score"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
+                    android:textSize="12sp"
                     android:padding="5dp"
                     android:text="Scorecard"
                     android:textAllCaps="false"
@@ -345,6 +348,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:backgroundTint="@color/gray"
                     android:drawableTop="@drawable/ic_ai"
                     android:maxWidth="90dp"
@@ -398,6 +402,32 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:text="EdRank Top colleges of India"
+                android:textColor="@color/textgray"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topCollegeRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges"/>
+            <include layout="@layout/item_top_colleges"/>
+            <include layout="@layout/item_top_colleges"/>
+            <include layout="@layout/item_top_colleges"/>
+            <include layout="@layout/item_top_colleges"/>
+
 
         </LinearLayout>
 

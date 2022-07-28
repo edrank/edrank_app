@@ -48,7 +48,7 @@ class HomeTeacherFragment : Fragment() {
         binding.seekBar.progress = 87
         binding.seekbarValue.text = binding.seekBar.progress.toString()
         binding.seekBar.isEnabled = false           //to make it non-clickable
-        setSeekbarColor()
+//        setSeekbarColor()
 
         //for 3 button menu
         binding.reviews.setOnClickListener {
@@ -71,18 +71,7 @@ class HomeTeacherFragment : Fragment() {
         return binding.root
     }
 
-    private fun setSeekbarColor() {
-        if (binding.seekBar.progress >= 65){
-            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green), PorterDuff.Mode.SRC_ATOP)
-        }
-        else if (binding.seekBar.progress in 35..64){
-            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.yellow), PorterDuff.Mode.SRC_ATOP)
-        }
-        else{
-            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red), PorterDuff.Mode.SRC_ATOP)
 
-        }
-    }
 
     private fun setupPieChart() {
         pieChart.isDrawHoleEnabled = true
@@ -130,5 +119,19 @@ class HomeTeacherFragment : Fragment() {
 //    override fun onDestroyView() {
 //        super.onDestroyView()
 //        _binding = null
+//    }
+
+
+//    private fun setSeekbarColor() {
+//        if (binding.seekBar.progress >= 65){
+//            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green), PorterDuff.Mode.SRC_ATOP)
+//        }
+//        else if (binding.seekBar.progress in 35..64){
+//            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.yellow), PorterDuff.Mode.SRC_ATOP)
+//        }
+//        else{
+//            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red), PorterDuff.Mode.SRC_ATOP)
+//
+//        }
 //    }
 }
