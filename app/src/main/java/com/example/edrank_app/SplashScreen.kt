@@ -1,9 +1,10 @@
-package com.example.edrank_app.ui
+package com.example.edrank_app
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.edrank_app.MainActivity
+import android.view.View.inflate
+import androidx.appcompat.resources.Compatibility.Api21Impl.inflate
 import com.example.edrank_app.databinding.SplashScreenBinding
 
 class SplashScreen : AppCompatActivity() {
