@@ -146,7 +146,7 @@
                 android:weightSum="3">
 
                 <Button
-                    android:id="@+id/reviews"
+                    android:id="@+id/teacherFeedback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="12dp"
@@ -162,14 +162,14 @@
                     android:textColor="@color/textgray" />
 
                 <Button
-                    android:id="@+id/scorecard"
+                    android:id="@+id/collegeFeedback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="12dp"
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_score"
+                    android:drawableTop="@drawable/ic_collegerev"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
@@ -178,14 +178,14 @@
                     android:textColor="@color/textgray" />
 
                 <Button
-                    android:id="@+id/otherFeature"
+                    android:id="@+id/prevFeedback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="12dp"
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_ai"
+                    android:drawableTop="@drawable/ic_thumbs_star"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
@@ -207,7 +207,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/book_buzz_rv"
+                android:id="@+id/topCollegeRv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
