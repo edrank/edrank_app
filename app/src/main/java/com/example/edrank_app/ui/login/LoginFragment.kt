@@ -9,6 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentHomeParentBinding
 import com.example.edrank_app.databinding.FragmentLoginBinding
+import android.content.Intent
+import com.example.edrank_app.ui.ForgotPasswordFragment
+
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -30,6 +33,10 @@ class LoginFragment : Fragment() {
 
         binding.parentLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeParentFragment)
+        }
+
+        binding.login.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
 
         return binding.root

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.teacher.ReviewsFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/gray"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Reviews fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/white"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/studentReviews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_reviews" />
+
+        <include layout="@layout/item_reviews"/>
+        <include layout="@layout/item_reviews"/>
+        <include layout="@layout/item_reviews"/>
+        <include layout="@layout/item_reviews"/>
+        <include layout="@layout/item_reviews"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -20,6 +20,13 @@ class StudentProfileFragment : Fragment() {
 
 
 
+        //password reset ui handling
+        binding.resetPassword.setOnClickListener{
+            binding.oldPassword.visibility = View.VISIBLE
+            binding.newPassword.visibility = View.VISIBLE
+            binding.savePassword.visibility = View.VISIBLE
+        }
+
 
         return binding.root
     }
