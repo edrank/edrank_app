@@ -60,7 +60,8 @@ class HomeTeacherFragment : Fragment() {
         }
 
         binding.otherFeature.setOnClickListener {
-            Toast.makeText(context,"This feature will be available in the next version",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_teacherProfileFragment)
+            //            Toast.makeText(context,"This feature will be available in the next version",Toast.LENGTH_LONG).show()
         }
 
         //code for pie chart

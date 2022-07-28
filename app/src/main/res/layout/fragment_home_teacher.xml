@@ -94,6 +94,7 @@
                             android:id="@+id/seekbarValue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:layout_marginBottom="10dp"
                             android:text="Your progress"
                             android:textSize="14sp"
@@ -102,6 +103,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:layout_marginBottom="10dp"
                             android:text="%"
                             android:textSize="14sp"
@@ -118,7 +120,6 @@
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="8dp">
-                <!--                android:elevation="10dp"-->
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -223,7 +224,7 @@
                             android:layout_weight="2"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:src="@drawable/ic_gold" />
+                            android:src="@drawable/ic_rank1" />
 
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -354,7 +355,7 @@
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="AI"
+                    android:text="My profile"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray" />
 
