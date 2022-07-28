@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/homeTeacherFragment"
+        android:name="com.example.edrank_app.ui.teacher.HomeTeacherFragment"
+        android:label="fragment_home_teacher"
+        tools:layout="@layout/fragment_home_teacher" >
+        <action
+            android:id="@+id/action_homeTeacherFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+        <action
+            android:id="@+id/action_homeTeacherFragment_to_teacherProfileFragment"
+            app:destination="@id/teacherProfileFragment" />
+        <action
+            android:id="@+id/action_homeTeacherFragment_to_scorecardFragment"
+            app:destination="@id/scorecardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.edrank_app.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeStudentFragment"
+            app:destination="@id/homeStudentFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeParentFragment"
+            app:destination="@id/homeParentFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeTeacherFragment"
+            app:destination="@id/homeTeacherFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeStudentFragment"
+        android:name="com.example.edrank_app.ui.student.HomeStudentFragment"
+        android:label="fragment_home_student"
+        tools:layout="@layout/fragment_home_student" >
+        <action
+            android:id="@+id/action_homeStudentFragment_to_studentProfileFragment"
+            app:destination="@id/studentProfileFragment" />
+        <action
+            android:id="@+id/action_homeStudentFragment_to_myFeedbackFragment"
+            app:destination="@id/myFeedbackFragment" />
+        <action
+            android:id="@+id/action_homeStudentFragment_to_feedbackformFragment"
+            app:destination="@id/feedbackformFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeParentFragment"
+        android:name="com.example.edrank_app.ui.parent.HomeParentFragment"
+        android:label="fragment_home_parent"
+        tools:layout="@layout/fragment_home_parent" >
+        <action
+            android:id="@+id/action_homeParentFragment_to_parentProfileFragment"
+            app:destination="@id/parentProfileFragment" />
+        <action
+            android:id="@+id/action_homeParentFragment_to_feedbackformFragment"
+            app:destination="@id/feedbackformFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.example.edrank_app.ui.teacher.ReviewsFragment"
+        android:label="fragment_reviews"
+        tools:layout="@layout/fragment_reviews" />
+    <fragment
+        android:id="@+id/myFeedbackFragment"
+        android:name="com.example.edrank_app.ui.student.MyFeedbackFragment"
+        android:label="fragment_my_feedback"
+        tools:layout="@layout/fragment_my_feedback" />
+    <fragment
+        android:id="@+id/feedbackformFragment"
+        android:name="com.example.edrank_app.ui.student.FeedbackFormFragment"
+        android:label="fragment_feedbackform"
+        tools:layout="@layout/fragment_feedbackform" />
+    <fragment
+        android:id="@+id/studentProfileFragment"
+        android:name="com.example.edrank_app.ui.student.StudentProfileFragment"
+        android:label="fragment_student_profile"
+        tools:layout="@layout/fragment_student_profile" />
+    <fragment
+        android:id="@+id/teacherProfileFragment"
+        android:name="com.example.edrank_app.ui.teacher.TeacherProfileFragment"
+        android:label="fragment_teacher_profile"
+        tools:layout="@layout/fragment_teacher_profile" />
+    <fragment
+        android:id="@+id/parentProfileFragment"
+        android:name="com.example.edrank_app.ui.parent.ParentProfileFragment"
+        android:label="fragment_parent_profile"
+        tools:layout="@layout/fragment_parent_profile" />
+    <fragment
+        android:id="@+id/scorecardFragment"
+        android:name="com.example.edrank_app.ui.teacher.ScorecardFragment"
+        android:label="fragment_scorecard"
+        tools:layout="@layout/fragment_scorecard" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.edrank_app.ui.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
+</navigation>
