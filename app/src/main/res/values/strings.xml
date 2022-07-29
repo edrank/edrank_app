@@ -4,4 +4,7 @@
     <string name="your_reviews_are">Your reviews are:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="txt_error_message" translatable="false">%1$S*</string>
+
+
 </resources>

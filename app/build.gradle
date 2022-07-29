@@ -39,6 +39,12 @@ android {
     }
 }
 
+kapt {
+    javacOptions {
+        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+    }
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'

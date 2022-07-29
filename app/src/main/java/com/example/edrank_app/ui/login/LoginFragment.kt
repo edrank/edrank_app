@@ -11,8 +11,9 @@ import com.example.edrank_app.databinding.FragmentHomeParentBinding
 import com.example.edrank_app.databinding.FragmentLoginBinding
 import android.content.Intent
 import com.example.edrank_app.ui.ForgotPasswordFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
@@ -22,6 +23,12 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.teacherLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeTeacherFragment)
@@ -38,8 +45,6 @@ class LoginFragment : Fragment() {
         binding.login.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
-
-        return binding.root
     }
 
     override fun onDestroyView() {
