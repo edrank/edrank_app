@@ -104,5 +104,15 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.edrank_app.ui.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_homeStudentFragment"
+            app:destination="@id/homeStudentFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_homeTeacherFragment"
+            app:destination="@id/homeTeacherFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_homeParentFragment"
+            app:destination="@id/homeParentFragment" />
+    </fragment>
 </navigation>
