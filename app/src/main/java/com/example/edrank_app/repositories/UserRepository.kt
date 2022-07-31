@@ -16,9 +16,9 @@ class UserRepository @Inject constructor(private val loginAPI: LoginAPI) {
     val userResponseLiveData: LiveData<NetworkResult<LoginResponse>>
         get() = _userResponseLiveData
 
-    suspend fun loginUser(loginRequest: LoginRequest) {
+    suspend fun loginUser(tenant : String, loginRequest: LoginRequest) {
         _userResponseLiveData.postValue(NetworkResult.Loading())
-        val response = loginAPI.login(loginRequest)
+        val response = loginAPI.login(tenant, loginRequest)
         handleResponse(response)
     }
 

@@ -19,9 +19,9 @@ class AuthViewModel @Inject constructor(private val userRepository: UserReposito
     val userResponseLiveData: LiveData<NetworkResult<LoginResponse>>
         get() = userRepository.userResponseLiveData
 
-    fun loginUser(loginRequest: LoginRequest){
+    fun loginUser(tenant : String, loginRequest: LoginRequest){
         viewModelScope.launch {
-            userRepository.loginUser(loginRequest)
+            userRepository.loginUser(tenant, loginRequest)
         }
     }
 
