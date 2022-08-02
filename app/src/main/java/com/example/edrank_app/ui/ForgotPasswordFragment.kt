@@ -108,8 +108,21 @@ class ForgotPasswordFragment : Fragment() {
             when (it) {
                 is NetworkResult.Success -> {
                     tokenManager.saveToken(it.data!!.data.access_token)
-                    Log.e("nfjkbj","saving token ${it.data!!.data.access_token.toString()}")
-                    findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeTeacherFragment)
+                    when (tenant) {
+                        "STUDENT" -> {
+                            findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeStudentFragment)
+                        }
+                        "TEACHER" -> {
+                            findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeTeacherFragment)
+                        }
+                        "PARENT" -> {
+                            findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeParentFragment)
+                        }
+                        else -> {
+                            Toast.makeText(context, "Something went wrong with the user type.", Toast
+                                .LENGTH_SHORT).show()
+                        }
+                    }
                 }
                 is NetworkResult.Error -> {
                     showValidationErrors(it.message.toString())

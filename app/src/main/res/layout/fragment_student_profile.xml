@@ -293,6 +293,16 @@
                     android:textSize="14sp"
                     android:visibility="gone"/>
 
+                <TextView
+                    android:id="@+id/txt_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textColor="#2196F3"
+                    android:textSize="12sp" />
+
                 <Button
                     android:id="@+id/savePassword"
                     android:layout_width="wrap_content"
@@ -308,7 +318,19 @@
                     android:visibility="gone"
                     android:textStyle="bold" />
 
+                <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/progress_bar"
+                    style="@style/SpinKitView.ThreeBounce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:SpinKit_Color="@color/black" />
+
+
                 <TextView
+                    android:id="@+id/logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"

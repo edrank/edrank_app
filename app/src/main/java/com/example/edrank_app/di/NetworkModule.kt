@@ -2,6 +2,7 @@ package com.example.edrank_app.di
 
 import com.example.edrank_app.api.AuthInterceptor
 import com.example.edrank_app.api.LoginAPI
+import com.example.edrank_app.api.UserAPI
 import com.example.edrank_app.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -32,10 +33,16 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesLoginAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient) : LoginAPI {
+    fun providesLoginAPI(retrofitBuilder: Retrofit.Builder) : LoginAPI {
+        return retrofitBuilder.build().create(LoginAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesUserAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): UserAPI {
         return retrofitBuilder
             .client(okHttpClient)
-            .build().create(LoginAPI::class.java)
+            .build().create(UserAPI::class.java)
     }
 
 }
