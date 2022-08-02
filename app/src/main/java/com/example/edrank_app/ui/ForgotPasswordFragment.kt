@@ -31,6 +31,7 @@ class ForgotPasswordFragment : Fragment() {
     private val authViewModel by activityViewModels<AuthViewModel>()
     @Inject
     lateinit var tokenManager: TokenManager
+    lateinit var tenant : String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +51,7 @@ class ForgotPasswordFragment : Fragment() {
             val validationResult = validateUserInput()
             if (validationResult.first) {
                 val loginRequest = getLoginRequest()
-                authViewModel.loginUser(loginRequest)
+                authViewModel.loginUser(tenant, loginRequest)
             } else {
                 showValidationErrors(validationResult.second)
             }
@@ -68,6 +69,7 @@ class ForgotPasswordFragment : Fragment() {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 Log.e("fjks", tenants[p2])
                 tokenManager.saveTenant(tenants[p2])
+                tenant = tenants[p2]
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -106,8 +108,21 @@ class ForgotPasswordFragment : Fragment() {
             when (it) {
                 is NetworkResult.Success -> {
                     tokenManager.saveToken(it.data!!.data.access_token)
-                    Log.e("nfjkbj","saving token ${it.data!!.data.access_token.toString()}")
-                    findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeTeacherFragment)
+                    when (tenant) {
+                        "STUDENT" -> {
+                            findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeStudentFragment)
+                        }
+                        "TEACHER" -> {
+                            findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeTeacherFragment)
+                        }
+                        "PARENT" -> {
+                            findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeParentFragment)
+                        }
+                        else -> {
+                            Toast.makeText(context, "Something went wrong with the user type.", Toast
+                                .LENGTH_SHORT).show()
+                        }
+                    }
                 }
                 is NetworkResult.Error -> {
                     showValidationErrors(it.message.toString())

@@ -2,27 +2,27 @@ package com.example.edrank_app.repositories
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.edrank_app.api.LoginAPI
-import com.example.edrank_app.models.LoginRequest
-import com.example.edrank_app.models.LoginResponse
+import com.example.edrank_app.api.UserAPI
+import com.example.edrank_app.models.ChangePasswordRequest
+import com.example.edrank_app.models.ChangePasswordResponse
 import com.example.edrank_app.utils.NetworkResult
 import org.json.JSONObject
 import retrofit2.Response
 import javax.inject.Inject
 
-class UserRepository @Inject constructor(private val loginAPI: LoginAPI) {
+class TeacherRepository @Inject constructor(private val userAPI: UserAPI) {
 
-    private val _userResponseLiveData = MutableLiveData<NetworkResult<LoginResponse>>()
-    val userResponseLiveData: LiveData<NetworkResult<LoginResponse>>
+    private val _userResponseLiveData = MutableLiveData<NetworkResult<ChangePasswordResponse>>()
+    val userResponseLiveData: LiveData<NetworkResult<ChangePasswordResponse>>
         get() = _userResponseLiveData
 
-    suspend fun loginUser(tenant: String, loginRequest: LoginRequest) {
+    suspend fun changePassword(changePasswordRequest: ChangePasswordRequest) {
         _userResponseLiveData.postValue(NetworkResult.Loading())
-        val response = loginAPI.login(tenant, loginRequest)
+        val response = userAPI.changePassword(changePasswordRequest)
         handleResponse(response)
     }
 
-    private fun handleResponse(response: Response<LoginResponse>) {
+    private fun handleResponse(response: Response<ChangePasswordResponse>) {
         if (response.isSuccessful && response.body() != null) {
             _userResponseLiveData.postValue(NetworkResult.Success(response.body()!!))
         } else if (response.errorBody() != null) {
