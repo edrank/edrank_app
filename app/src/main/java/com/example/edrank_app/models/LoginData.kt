@@ -1,6 +1,6 @@
 package com.example.edrank_app.models
 
-data class Data(
+data class LoginData(
     val access_token: String,
     val tenant_id: Int,
     val tenant_type: String,

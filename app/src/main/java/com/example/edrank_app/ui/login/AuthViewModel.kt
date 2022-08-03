@@ -7,21 +7,21 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.edrank_app.models.LoginRequest
 import com.example.edrank_app.models.LoginResponse
-import com.example.edrank_app.repositories.UserRepository
+import com.example.edrank_app.repositories.AuthRepository
 import com.example.edrank_app.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AuthViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
+class AuthViewModel @Inject constructor(private val authRepository: AuthRepository) : ViewModel() {
 
     val userResponseLiveData: LiveData<NetworkResult<LoginResponse>>
-        get() = userRepository.userResponseLiveData
+        get() = authRepository.userResponseLiveData
 
     fun loginUser(tenant : String, loginRequest: LoginRequest){
         viewModelScope.launch {
-            userRepository.loginUser(tenant, loginRequest)
+            authRepository.loginUser(tenant, loginRequest)
         }
     }
 
