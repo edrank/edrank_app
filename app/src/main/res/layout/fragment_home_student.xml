@@ -223,16 +223,18 @@
             <include layout="@layout/item_top_colleges"/>
             <include layout="@layout/item_top_colleges"/>
 
-
-<!--            <TextView-->
-<!--                android:id="@+id/viewMoreTopCollege"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="6dp"-->
-<!--                android:textSize="16sp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:textStyle="italic"-->
-<!--                android:text="View more"/>-->
+            <TextView
+                android:id="@+id/viewMoreTopCollege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="View more"
+                android:background="@color/green"
+                android:textColor="@color/textgray"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
             <TextView
                 android:layout_width="match_parent"

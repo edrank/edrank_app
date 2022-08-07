@@ -223,6 +223,7 @@
 <!--            <include layout="@layout/top_3_teacher_items"/>-->
 
             <TextView
+                android:id="@+id/viewMoreTopTeachers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -362,6 +363,20 @@
             <include layout="@layout/item_top_colleges"/>
             <include layout="@layout/item_top_colleges"/>
             <include layout="@layout/item_top_colleges"/>
+
+            <TextView
+                android:id="@+id/viewMoreTopCollege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="View more"
+                android:background="@color/green"
+                android:textColor="@color/textgray"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
 
 
         </LinearLayout>
