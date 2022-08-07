@@ -194,112 +194,45 @@
 
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/gray"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:id="@+id/rank1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Teacher 1"
-                            android:textColor="@color/textgray"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginVertical="2dp"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_rank1" />
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/gray"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:id="@+id/rank2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Teacher 2"
-                            android:textColor="@color/textgray"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginVertical="2dp"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_silver" />
-
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/gray"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:id="@+id/rank3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Teacher 3"
-                            android:textColor="@color/textgray"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="10dp"
-                            android:layout_marginVertical="2dp"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:src="@drawable/ic_bronze" />
-
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
                 </androidx.appcompat.widget.LinearLayoutCompat>
+
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:text="EdRank Top Teachers of your college"
+                android:textColor="@color/textgray"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topTeacherRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                tools:itemCount="3"
+                tools:listitem="@layout/top_3_teacher_items" />
+
+<!--            <include layout="@layout/top_3_teacher_items"/>-->
+<!--            <include layout="@layout/top_3_teacher_items"/>-->
+<!--            <include layout="@layout/top_3_teacher_items"/>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="View more"
+                android:background="@color/green"
+                android:textColor="@color/textgray"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -410,9 +343,10 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:padding="5dp"
+                android:gravity="center"
                 android:text="EdRank Top colleges of India"
                 android:textColor="@color/textgray"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
