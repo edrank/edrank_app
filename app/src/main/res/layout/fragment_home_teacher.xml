@@ -14,16 +14,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="vertical">
-
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@drawable/banner2" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bannerchanged" />
 
         </LinearLayout>
 
@@ -40,15 +39,14 @@
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
-                app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="8dp">
-                <!--                android:elevation="10dp"-->
 
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:background="@drawable/ic_artboard_2"
                     android:orientation="vertical">
 
                     <TextView
@@ -59,7 +57,7 @@
                         android:layout_marginVertical="10dp"
                         android:padding="5dp"
                         android:text="@string/teacherName"
-                        android:textColor="@color/textgray"
+                        android:textColor="#02515A"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
@@ -72,7 +70,7 @@
                         android:layout_marginBottom="10dp"
                         android:paddingHorizontal="5dp"
                         android:text="Maharaja Surajmal Institute"
-                        android:textColor="@color/textgray"
+                        android:textColor="#03535C"
                         android:textSize="15sp" />
 
                     <SeekBar
@@ -206,7 +204,7 @@
                 android:padding="5dp"
                 android:gravity="center"
                 android:text="EdRank Top Teachers of your college"
-                android:textColor="@color/textgray"
+                android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
