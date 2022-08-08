@@ -61,7 +61,7 @@ dependencies {
 //graph
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
-    def hilt_version="2.38.1"
+    def hilt_version = "2.38.1"
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
@@ -88,4 +88,10 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+
+//celebration visual
+    implementation 'nl.dionsegijn:konfetti:1.2.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72'
+
 }
