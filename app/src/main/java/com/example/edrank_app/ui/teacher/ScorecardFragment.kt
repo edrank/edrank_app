@@ -30,16 +30,16 @@ class ScorecardFragment : Fragment() {
             binding.celebrateView.build()
                 .addColors(Color.RED, Color.BLUE, Color.YELLOW, Color.GREEN)
                 .setDirection(0.0, 359.0)
-                .setSpeed(1f, 4f)
+                .setSpeed(10f, 20f)
                 .setFadeOutEnabled(true)
-                .setTimeToLive(2000L)
+                .setTimeToLive(1000L)
                 .addShapes(
                     nl.dionsegijn.konfetti.models.Shape.CIRCLE,
                     nl.dionsegijn.konfetti.models.Shape.RECT
                 )
                 .addSizes(Size(12, 5F))
                 .setPosition(-50f, binding.celebrateView.getWidth() + 50f, -50f, -50f)
-                .streamFor(300, 5000L)
+                .streamFor(300, 2500L)
         })
 
 

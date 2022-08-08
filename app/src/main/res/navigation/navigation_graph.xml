@@ -11,14 +11,14 @@
         android:label="fragment_home_teacher"
         tools:layout="@layout/fragment_home_teacher" >
         <action
-            android:id="@+id/action_homeTeacherFragment_to_reviewsFragment"
-            app:destination="@id/reviewsFragment" />
-        <action
             android:id="@+id/action_homeTeacherFragment_to_teacherProfileFragment"
             app:destination="@id/teacherProfileFragment" />
         <action
             android:id="@+id/action_homeTeacherFragment_to_scorecardFragment"
             app:destination="@id/scorecardFragment" />
+        <action
+            android:id="@+id/action_homeTeacherFragment_to_teacherReviewsFragment"
+            app:destination="@id/teacherReviewsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -115,4 +115,20 @@
             android:id="@+id/action_forgotPasswordFragment_to_homeParentFragment"
             app:destination="@id/homeParentFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/teacherReviewsFragment"
+        android:name="com.example.edrank_app.ui.teacher.TeacherReviewsFragment"
+        android:label="TeacherReviewsFragment" >
+        <action
+            android:id="@+id/action_teacherReviewsFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+        <action
+            android:id="@+id/action_teacherReviewsFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="com.example.edrank_app.ui.teacher.QuestionsFragment"
+        android:label="fragment_questions"
+        tools:layout="@layout/fragment_questions" />
 </navigation>

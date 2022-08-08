@@ -14,15 +14,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@drawable/banner2" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bannerchanged" />
 
         </LinearLayout>
 
@@ -41,12 +41,12 @@
                 android:gravity="center_horizontal"
                 app:cardBackgroundColor="@color/gray"
                 app:cardCornerRadius="8dp">
-                <!--                android:elevation="10dp"-->
 
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/ic_artboard_2"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -57,8 +57,8 @@
                         android:layout_marginHorizontal="15dp"
                         android:layout_marginTop="10dp"
                         android:padding="5dp"
-                        android:text="Samridhi"
-                        android:textColor="@color/textgray"
+                        android:text="Samridhi Kotnala"
+                        android:textColor="#02515A"
                         android:textSize="17sp"
                         android:textStyle="bold" />
 
@@ -71,7 +71,7 @@
                         android:layout_marginBottom="10dp"
                         android:paddingHorizontal="5dp"
                         android:text="Maharaja Surajmal Institute"
-                        android:textColor="@color/textgray"
+                        android:textColor="#02515A"
                         android:textSize="15sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -158,9 +158,9 @@
                     android:maxHeight="90dp"
                     android:padding="5dp"
                     android:text="Teacher"
-                    android:textSize="12sp"
                     android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    android:textColor="@color/textgray"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/collegeFeedback"
@@ -173,11 +173,11 @@
                     android:drawableTop="@drawable/ic_collegerev"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
-                    android:textSize="12sp"
                     android:padding="5dp"
                     android:text="Institute"
                     android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    android:textColor="@color/textgray"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/prevFeedback"
@@ -191,10 +191,10 @@
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:textSize="12sp"
                     android:text="My profile"
                     android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    android:textColor="@color/textgray"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -217,21 +217,26 @@
                 tools:itemCount="5"
                 tools:listitem="@layout/item_top_colleges" />
 
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
 
             <TextView
                 android:id="@+id/viewMoreTopCollege"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:text="View more"
+                android:layout_marginTop="10dp"
                 android:background="@color/green"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="View more"
                 android:textColor="@color/textgray"
                 android:textSize="14sp"
                 android:textStyle="italic" />
@@ -246,6 +251,15 @@
                 android:textColor="@color/textgray"
                 android:textSize="17sp"
                 android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_scoreboard" />
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -268,13 +282,22 @@
                     android:text="Dr. Kavita Pabreja"
                     android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/collegeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="2dp"
+                    android:text="Maharaja Surajmal Institute"
+                    android:textSize="14sp" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
                 android:weightSum="2">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -299,6 +322,15 @@
                         android:text="Dr. Neeetu Anand"
                         android:textSize="14sp" />
 
+                    <TextView
+                        android:id="@+id/collegeName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="2dp"
+                        android:text="Maharaja Surajmal Institute"
+                        android:textSize="14sp" />
+
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -321,6 +353,15 @@
                         android:layout_gravity="center"
                         android:padding="4dp"
                         android:text="Dr. etc etc etc"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/collegeName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="2dp"
+                        android:text="Maharaja Surajmal Institute"
                         android:textSize="14sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>

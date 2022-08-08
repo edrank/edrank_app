@@ -194,6 +194,16 @@
 
             <include layout="@layout/item_top_colleges" />
 
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>

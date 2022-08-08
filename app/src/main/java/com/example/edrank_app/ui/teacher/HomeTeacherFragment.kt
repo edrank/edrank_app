@@ -34,15 +34,15 @@ import com.github.mikephil.charting.data.PieEntry
 
 
 class HomeTeacherFragment : Fragment() {
-    lateinit var binding : FragmentHomeTeacherBinding
-//    private val binding get() = _binding!!
+    private var _binding : FragmentHomeTeacherBinding? = null
+    private val binding get() = _binding!!
     lateinit var pieChart: PieChart
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeTeacherBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeTeacherBinding.inflate(inflater, container, false)
 
         //seekbar handling
         binding.seekBar.progress = 87
@@ -52,7 +52,7 @@ class HomeTeacherFragment : Fragment() {
 
         //for 3 button menu
         binding.reviews.setOnClickListener {
-            findNavController().navigate(R.id.action_homeTeacherFragment_to_reviewsFragment)
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_teacherReviewsFragment)
         }
 
         binding.scorecard.setOnClickListener {
@@ -117,10 +117,10 @@ class HomeTeacherFragment : Fragment() {
     }
 
 
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 
 //    private fun setSeekbarColor() {
