@@ -9,7 +9,7 @@ class TeacherProfileData (
     val department : String,
     val course_id : Int,
     val designation : String,
-    val score : Int,
+    val score : String,
     val password : String,
     val is_active : Boolean = true,
     val created_at : String,

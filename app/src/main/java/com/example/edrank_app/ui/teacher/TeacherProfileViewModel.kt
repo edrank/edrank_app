@@ -2,7 +2,6 @@ package com.example.edrank_app.ui.teacher
 
 import android.text.TextUtils
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.edrank_app.models.ChangePasswordRequest
@@ -31,8 +30,8 @@ class TeacherProfileViewModel @Inject constructor(private val userRepository: Us
         }
     }
 
-    fun getTeacherProfile(){
-        viewModelScope.launch{
+    fun getTeacherProfile() {
+        viewModelScope.launch {
             userRepository.teacherMyProfile()
         }
     }
