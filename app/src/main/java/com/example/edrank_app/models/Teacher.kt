@@ -4,5 +4,6 @@ data class Teacher(
     val id: Int,
     val name: String,
     val rank: Int,
-    val score: Double
+    val score: Double,
+    val collegeName: String
 )

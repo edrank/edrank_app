@@ -1,37 +1,42 @@
 package com.example.edrank_app.ui.teacher
 
 import android.graphics.Color
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentHomeTeacherBinding
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.charts.PieChart
+import com.example.edrank_app.models.TopTeachersRequest
+import com.example.edrank_app.ui.adapter.TopTeachersAdapter
+import com.example.edrank_app.utils.NetworkResult
+import com.example.edrank_app.utils.TokenManager
 import com.github.mikephil.charting.animation.Easing
-
-import com.github.mikephil.charting.formatter.PercentFormatter
-
+import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
-
 import com.github.mikephil.charting.data.PieDataSet
-
-import com.github.mikephil.charting.utils.ColorTemplate
-
 import com.github.mikephil.charting.data.PieEntry
+import com.github.mikephil.charting.formatter.PercentFormatter
+import com.github.mikephil.charting.utils.ColorTemplate
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeTeacherFragment : Fragment() {
-    private var _binding : FragmentHomeTeacherBinding? = null
+    private var _binding: FragmentHomeTeacherBinding? = null
     private val binding get() = _binding!!
     lateinit var pieChart: PieChart
+    private lateinit var teachersAdapter : TopTeachersAdapter
+    private val viewModel by activityViewModels<TeacherProfileViewModel>()
+    private val tokenManager: TokenManager? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,11 +44,34 @@ class HomeTeacherFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeTeacherBinding.inflate(inflater, container, false)
 
+        teachersAdapter = TopTeachersAdapter()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+//        topTeachersRequest.cid = tokenManager!!.getCid()!!
+
+        viewModel.topNTeachers(TopTeachersRequest(1,"","COLLEGE","",3))
+        binding.topTeacherRv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        binding.topTeacherRv.adapter = teachersAdapter
+        bindObservers()
+
+        handleUi()
+
+        //code for pie chart
+        pieChart = binding.pieChart
+        setupPieChart()
+        loadPieChartData()
+    }
+
+    private fun handleUi() {
+
         //seekbar handling
         binding.seekBar.progress = 87
         binding.seekbarValue.text = binding.seekBar.progress.toString()
         binding.seekBar.isEnabled = false           //to make it non-clickable
-//        setSeekbarColor()
 
         //for 3 button menu
         binding.reviews.setOnClickListener {
@@ -58,15 +86,25 @@ class HomeTeacherFragment : Fragment() {
             findNavController().navigate(R.id.action_homeTeacherFragment_to_teacherProfileFragment)
             //            Toast.makeText(context,"This feature will be available in the next version",Toast.LENGTH_LONG).show()
         }
-
-        //code for pie chart
-        pieChart = binding.pieChart
-        setupPieChart()
-        loadPieChartData()
-
-        return binding.root
     }
 
+    private fun bindObservers() {
+        viewModel.topNTeachers.observe(viewLifecycleOwner, Observer {
+//            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                    teachersAdapter.submitList(it.data?.data?.teachers)
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(requireContext(), it.data?.message.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                }
+                is NetworkResult.Loading -> {
+//                    binding.progressBar.isVisible = true
+                }
+            }
+        })
+    }
 
 
     private fun setupPieChart() {
@@ -117,7 +155,7 @@ class HomeTeacherFragment : Fragment() {
         _binding = null
     }
 
-
+}
 //    private fun setSeekbarColor() {
 //        if (binding.seekBar.progress >= 65){
 //            binding.seekBar.progressDrawable.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green), PorterDuff.Mode.SRC_ATOP)
@@ -130,4 +168,3 @@ class HomeTeacherFragment : Fragment() {
 //
 //        }
 //    }
-}

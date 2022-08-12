@@ -1,6 +1,7 @@
 package com.example.edrank_app.utils
 
 import android.content.Context
+import com.example.edrank_app.utils.Constants.CID
 import com.example.edrank_app.utils.Constants.PREFS_TOKEN_FILE
 import com.example.edrank_app.utils.Constants.TENANT_TYPE
 import com.example.edrank_app.utils.Constants.USER_TOKEN
@@ -29,5 +30,15 @@ class TokenManager @Inject constructor(@ApplicationContext context: Context) {
 
     fun getTenant(): String? {
         return prefs.getString(TENANT_TYPE, null)
+    }
+
+    fun saveCid(cid: String) {
+        val editor = prefs.edit()
+        editor.putString(CID, cid)
+        editor.apply()
+    }
+
+    fun getCid(): String? {
+        return prefs.getString(CID, null)
     }
 }

@@ -1,9 +1,7 @@
 package com.example.edrank_app.repositories
 import androidx.lifecycle.MutableLiveData
 import com.example.edrank_app.api.UserAPI
-import com.example.edrank_app.models.ChangePasswordRequest
-import com.example.edrank_app.models.ChangePasswordResponse
-import com.example.edrank_app.models.TeacherProfileResponse
+import com.example.edrank_app.models.*
 import com.example.edrank_app.utils.NetworkResult
 import org.json.JSONObject
 import retrofit2.Response
@@ -15,6 +13,9 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
 
     private val _teacherMyProfile = MutableLiveData<NetworkResult<TeacherProfileResponse>>()
     val teacherMyProfile get() = _teacherMyProfile
+
+    private val _topNTeachers = MutableLiveData<NetworkResult<TopTeachersResponse>>()
+    val topNTeachers get() = _topNTeachers
 
     suspend fun changePassword(changePasswordRequest: ChangePasswordRequest) {
         _userResponseLiveData.postValue(NetworkResult.Loading())
@@ -32,6 +33,19 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
             _teacherMyProfile.postValue(NetworkResult.Error(errorObj.getString("message")))
         } else {
             _teacherMyProfile.postValue(NetworkResult.Error("Something Went Wrong"))
+        }
+    }
+
+    suspend fun topNTeachers(topTeachersRequest: TopTeachersRequest) {
+        _topNTeachers.postValue(NetworkResult.Loading())
+        val response = userAPI.topTeachers(topTeachersRequest)
+        if (response.isSuccessful && response.body() != null) {
+            _topNTeachers.postValue(NetworkResult.Success(response.body()!!))
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _topNTeachers.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
+            _topNTeachers.postValue(NetworkResult.Error("Something Went Wrong"))
         }
     }
 

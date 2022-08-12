@@ -211,19 +211,13 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <!--            <androidx.recyclerview.widget.RecyclerView-->
-            <!--                android:id="@+id/topTeacherRv"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_marginTop="5dp"-->
-            <!--                tools:itemCount="3"-->
-            <!--                tools:listitem="@layout/top_3_teacher_items" />-->
-
-            <include layout="@layout/top_3_teacher_items" />
-
-            <include layout="@layout/top_3_teacher_items" />
-
-            <include layout="@layout/top_3_teacher_items" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/topTeacherRv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="5dp"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/top_3_teacher_items" />
 
             <TextView
                 android:id="@+id/viewMoreTopTeachers"
