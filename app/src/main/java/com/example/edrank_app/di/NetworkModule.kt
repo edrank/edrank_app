@@ -54,4 +54,12 @@ class NetworkModule {
             .build().create(TeacherAPI::class.java)
     }
 
+//    @Singleton
+//    @Provides
+//    fun providesMyProfile(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): UserAPI {
+//        return retrofitBuilder
+//            .client(okHttpClient)
+//            .build().create(UserAPI::class.java)
+//    }
+
 }

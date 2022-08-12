@@ -24,6 +24,12 @@ class StudentProfileViewModel @Inject constructor(private val userRepository: Us
         }
     }
 
+    fun getTeacherProfile(){
+        viewModelScope.launch{
+            userRepository.teacherMyProfile
+        }
+    }
+
     fun validateData(
         oldPassword: String, newPassword: String
     ): Pair<Boolean, String> {

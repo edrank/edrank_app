@@ -6,7 +6,8 @@
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_splash_screen.xml" value="0.11503623188405797" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_forgot_password.xml" value="0.33" />
-        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_student.xml" value="0.25" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_parent.xml" value="0.1" />
+        <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_student.xml" value="0.16342756183745583" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_home_teacher.xml" value="0.25" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_login.xml" value="0.19384057971014493" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/fragment_questions.xml" value="0.19384057971014493" />

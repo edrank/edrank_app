@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentHomeStudentBinding
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.lifecycle.HiltViewModel
 
+
+@AndroidEntryPoint
 class HomeStudentFragment : Fragment() {
     private var _binding: FragmentHomeStudentBinding? = null
     private val binding get() = _binding!!
