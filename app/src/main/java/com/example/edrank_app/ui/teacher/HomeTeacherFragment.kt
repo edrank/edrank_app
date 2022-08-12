@@ -25,14 +25,9 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.utils.ColorTemplate
 
 import com.github.mikephil.charting.data.PieEntry
+import dagger.hilt.android.AndroidEntryPoint
 
-
-
-
-
-
-
-
+@AndroidEntryPoint
 class HomeTeacherFragment : Fragment() {
     private var _binding : FragmentHomeTeacherBinding? = null
     private val binding get() = _binding!!
