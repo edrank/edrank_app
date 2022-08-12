@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
@@ -45,8 +45,8 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:background="@drawable/ic_artboard_2"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <TextView
@@ -77,19 +77,19 @@
                         android:id="@+id/seekBar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="75dp"
                         android:layout_marginStart="25dp"
-                        android:padding="5dp"
+                        android:layout_marginEnd="75dp"
                         android:gravity="start"
+                        android:padding="5dp"
                         android:progressDrawable="@drawable/seek_bar"
-                        android:thumb="@drawable/seek_thumb"/>
+                        android:thumb="@drawable/seek_thumb" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_marginEnd="45dp"
-                        android:gravity="start">
+                        android:gravity="start"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/seekbarValue"
@@ -135,29 +135,28 @@
                         android:background="@color/gray"
                         android:gravity="center"
                         android:orientation="horizontal"
+                        android:padding="10dp"
                         android:weightSum="3">
 
                         <TextView
+                            android:id="@+id/collegeRankHomePage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:padding="5dp"
-                            android:text="College Rank"
+                            android:text="Maharaja Surajmal Institute of Technology"
                             android:textColor="@color/textgray"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
                             android:layout_weight="2"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="#12"
                             android:textColor="@color/textgray"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
 
@@ -170,29 +169,28 @@
                         android:background="@color/gray"
                         android:gravity="center"
                         android:orientation="horizontal"
+                        android:padding="5dp"
                         android:weightSum="3">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="Your Rank"
                             android:textColor="@color/textgray"
-                            android:textSize="14sp" />
+                            android:textSize="12sp" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
                             android:layout_weight="2"
                             android:gravity="center"
                             android:padding="5dp"
                             android:text="#3"
                             android:textColor="@color/textgray"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
 
@@ -206,35 +204,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:padding="5dp"
                 android:gravity="center"
+                android:padding="5dp"
                 android:text="EdRank Top Teachers of your college"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/topTeacherRv"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                tools:itemCount="3"-->
-<!--                tools:listitem="@layout/top_3_teacher_items" />-->
+            <!--            <androidx.recyclerview.widget.RecyclerView-->
+            <!--                android:id="@+id/topTeacherRv"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                tools:itemCount="3"-->
+            <!--                tools:listitem="@layout/top_3_teacher_items" />-->
 
-            <include layout="@layout/top_3_teacher_items"/>
-            <include layout="@layout/top_3_teacher_items"/>
-            <include layout="@layout/top_3_teacher_items"/>
+            <include layout="@layout/top_3_teacher_items" />
+
+            <include layout="@layout/top_3_teacher_items" />
+
+            <include layout="@layout/top_3_teacher_items" />
 
             <TextView
                 android:id="@+id/viewMoreTopTeachers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="View more"
                 android:background="@color/green"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="View more"
                 android:textColor="@color/textgray"
                 android:textSize="14sp"
                 android:textStyle="italic" />
@@ -261,9 +261,9 @@
                     android:maxHeight="90dp"
                     android:padding="5dp"
                     android:text="Reviews"
-                    android:textSize="12sp"
                     android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    android:textColor="@color/textgray"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/scorecard"
@@ -275,11 +275,11 @@
                     android:drawableTop="@drawable/ic_score"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
-                    android:textSize="12sp"
                     android:padding="5dp"
                     android:text="Scorecard"
                     android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    android:textColor="@color/textgray"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/otherFeature"
@@ -287,7 +287,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
                     android:layout_weight="1"
-                    android:textSize="12sp"
                     android:backgroundTint="@color/gray"
                     android:drawableTop="@drawable/ic_ai"
                     android:maxWidth="90dp"
@@ -295,7 +294,8 @@
                     android:padding="5dp"
                     android:text="My profile"
                     android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    android:textColor="@color/textgray"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -347,8 +347,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:padding="5dp"
                 android:gravity="center"
+                android:padding="5dp"
                 android:text="EdRank Top colleges of India"
                 android:textColor="#000000"
                 android:textSize="15sp"
@@ -362,26 +362,29 @@
                 tools:itemCount="5"
                 tools:listitem="@layout/item_top_colleges" />
 
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
-            <include layout="@layout/item_top_colleges"/>
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
 
             <TextView
                 android:id="@+id/viewMoreTopCollege"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:text="View more"
                 android:layout_marginTop="10dp"
                 android:background="@color/green"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="View more"
                 android:textColor="@color/textgray"
                 android:textSize="14sp"
                 android:textStyle="italic" />
-
 
 
         </LinearLayout>
