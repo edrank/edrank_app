@@ -4,9 +4,7 @@ import android.text.TextUtils
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.edrank_app.models.ChangePasswordRequest
-import com.example.edrank_app.models.ChangePasswordResponse
-import com.example.edrank_app.models.TeacherProfileResponse
+import com.example.edrank_app.models.*
 import com.example.edrank_app.repositories.UserRepository
 import com.example.edrank_app.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,6 +21,15 @@ class TeacherProfileViewModel @Inject constructor(private val userRepository: Us
 
     val teacherMyProfile: LiveData<NetworkResult<TeacherProfileResponse>>
         get() = userRepository.teacherMyProfile
+
+    val topNTeachers: LiveData<NetworkResult<TopTeachersResponse>>
+        get() = userRepository.topNTeachers
+
+    fun topNTeachers(topTeachersRequest: TopTeachersRequest) {
+        viewModelScope.launch {
+            userRepository.topNTeachers(topTeachersRequest)
+        }
+    }
 
     fun changePassword(changePasswordRequest: ChangePasswordRequest) {
         viewModelScope.launch {

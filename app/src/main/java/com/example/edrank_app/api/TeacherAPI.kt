@@ -9,7 +9,6 @@ import retrofit2.http.POST
 
 interface TeacherAPI {
 
-    @POST("/api/v1/top-3-teachers")
-    suspend fun topTeachers(@Body topTeachersRequest: TopTeachersRequest) : Response<TopTeachersResponse>
+
 
 }

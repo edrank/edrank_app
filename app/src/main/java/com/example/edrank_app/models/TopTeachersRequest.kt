@@ -1,8 +1,9 @@
 package com.example.edrank_app.models
 
 data class TopTeachersRequest(
-    val cid: Int,
-    val city: String,
-    val request_type: String,
-    val state: String
+    var cid: Int,
+    var city: String,
+    var request_type: String,
+    var state: String,
+    var n: Int
 )

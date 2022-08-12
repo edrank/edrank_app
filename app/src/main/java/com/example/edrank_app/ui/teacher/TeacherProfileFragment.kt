@@ -27,8 +27,8 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
-import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class TeacherProfileFragment : Fragment() {
@@ -36,7 +36,8 @@ class TeacherProfileFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var pieChart: PieChart
     private val viewModel by activityViewModels<TeacherProfileViewModel>()
-    private val tokenManager: TokenManager? = null
+    @Inject
+    lateinit var tokenManager: TokenManager
     private var profileData: TeacherProfileResponse? = null
 
     override fun onCreateView(
@@ -116,12 +117,13 @@ class TeacherProfileFragment : Fragment() {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    Log.e(TAG, it.data?.data?.profile?.name.toString())
+                    Log.e(TAG, it.data?.data?.profile?.cid.toString())
                     binding.teacherName.text = it.data?.data?.profile?.name
                     binding.department.text = it.data?.data?.profile?.department
                     binding.designation.text = it.data?.data?.profile?.designation
                     binding.score.text = it.data?.data?.profile?.score
-
+                    val cid = it.data?.data?.profile?.cid.toString()
+                    tokenManager.saveCid(cid)
                 }
                 is NetworkResult.Error -> {
                     showValidationErrors(it.message.toString())
