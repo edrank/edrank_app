@@ -47,13 +47,14 @@
                 android:layout_below="@+id/heading"
                 android:layout_margin="12dp"
                 android:elevation="12dp"
-                android:padding="4dp"
+                android:padding="8dp"
                 app:cardCornerRadius="8dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_scorecard3banner"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -88,7 +89,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/threeRanks"
-                        android:layout_marginBottom="40dp"
                         android:orientation="horizontal"
                         android:weightSum="2">
 
@@ -156,60 +156,66 @@
                 android:padding="4dp"
                 app:cardCornerRadius="8dp">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/celeBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Kavita Kapoor Mam"
-                        android:textAllCaps="true"
-                        android:textColor="#F5000000" />
-
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/topCollegeRv"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/celeBtn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/imageCardView"
-                android:layout_margin="4dp"
-                tools:itemCount="10"
-                tools:listitem="@layout/item_top_colleges" />
+                android:orientation="vertical"
+                android:padding="15dp">
 
-            <include layout="@layout/item_top_colleges" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <include layout="@layout/item_top_colleges" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kavita Kapoor Mam"
+                    android:textAllCaps="true"
+                    android:textColor="#F5000000" />
 
-            <include layout="@layout/item_top_colleges" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topCollegeRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageCardView"
+        android:layout_margin="4dp"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+    <include layout="@layout/item_top_colleges" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
 
 
-</RelativeLayout>
+    </RelativeLayout>
 
 
 

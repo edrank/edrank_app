@@ -9,8 +9,8 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="1dp"
         android:layout_marginHorizontal="20dp"
+        android:padding="1dp"
         card_view:cardCornerRadius="5dp"
         card_view:cardElevation="2dp"
         card_view:cardUseCompatPadding="true">
@@ -18,7 +18,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
+            android:background="#E0F1EF"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="3">
@@ -31,7 +31,7 @@
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="Teacher 1"
-                android:textColor="@color/textgray"
+                android:textColor="#355C58"
                 android:textSize="14sp" />
 
             <ImageView
