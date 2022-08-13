@@ -7,5 +7,6 @@ object Constants {
     const val USER_TOKEN = "USER_TOKEN"
     const val TENANT_TYPE = "TENANT_TYPE"
     const val CID = "CID"
+//    const val CID = "CID"
 
 }
