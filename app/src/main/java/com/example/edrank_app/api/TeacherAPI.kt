@@ -1,14 +1,11 @@
 package com.example.edrank_app.api
 
-import com.example.edrank_app.models.TopTeachersRequest
-import com.example.edrank_app.models.TopTeachersResponse
+import com.example.edrank_app.models.TeacherFeedbackResponse
 import retrofit2.Response
-import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.POST
 
 interface TeacherAPI {
 
-
-
+    @GET("/api/v1/get-my-text-feedbacks")
+    suspend fun teacherMyFeedbacks(): Response<TeacherFeedbackResponse>
 }
