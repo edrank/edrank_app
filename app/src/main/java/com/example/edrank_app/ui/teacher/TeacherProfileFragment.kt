@@ -121,7 +121,7 @@ class TeacherProfileFragment : Fragment() {
                     binding.teacherName.text = it.data?.data?.profile?.name
                     binding.department.text = it.data?.data?.profile?.department
                     binding.designation.text = it.data?.data?.profile?.designation
-                    binding.score.text = it.data?.data?.profile?.score
+//                    binding.score.text = it.data?.data?.profile?.score
                     val cid = it.data?.data?.profile?.cid.toString()
                     tokenManager.saveCid(cid)
                 }
