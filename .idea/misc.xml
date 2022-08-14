@@ -6,14 +6,20 @@
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/activity_splash_screen.xml" value="0.11503623188405797" />
         <entry key="..\:/My Projects/Edrank_app/app/src/main/res/layout/profile_page.xml" value="0.18" />
+        <entry key="..\:/edrank_app/app/src/main/res/drawable/form_border_style.xml" value="0.2703125" />
         <entry key="..\:/edrank_app/app/src/main/res/drawable/ic_feedback_banner_2.xml" value="0.4" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_college_feedback_form.xml" value="0.4" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_feedbackform.xml" value="0.25416666666666665" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_parent.xml" value="0.4" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_student.xml" value="0.2" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_teacher.xml" value="0.4" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_login.xml" value="0.18342391304347827" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_my_feedback.xml" value="0.25416666666666665" />
-        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_reviews.xml" value="0.72" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_reviews.xml" value="0.28339140534262486" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_scorecard.xml" value="0.264" />
-        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_teacher_profile.xml" value="0.18568840579710144" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_teacher_profile.xml" value="0.4" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_reviews.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_scoreboard.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/top_3_teacher_items.xml" value="0.25416666666666665" />

@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_homeStudentFragment_to_feedbackformFragment"
             app:destination="@id/feedbackformFragment" />
+        <action
+            android:id="@+id/action_homeStudentFragment_to_collegeFeedbackForm"
+            app:destination="@id/collegeFeedbackForm" />
     </fragment>
     <fragment
         android:id="@+id/homeParentFragment"
@@ -131,4 +134,9 @@
         android:name="com.example.edrank_app.ui.teacher.QuestionsFragment"
         android:label="fragment_questions"
         tools:layout="@layout/fragment_questions" />
+    <fragment
+        android:id="@+id/collegeFeedbackForm"
+        android:name="com.example.edrank_app.collegeFeedbackForm"
+        android:label="fragment_college_feedback_form"
+        tools:layout="@layout/fragment_college_feedback_form" />
 </navigation>
