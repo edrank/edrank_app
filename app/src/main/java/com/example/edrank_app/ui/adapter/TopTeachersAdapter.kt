@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.databinding.Top3TeacherItemsBinding
-import com.example.edrank_app.models.Teacher
+import com.example.edrank_app.models.TopTeacher
 import com.example.edrank_app.utils.Constants.TAG
 
 class TopTeachersAdapter() :
-    ListAdapter<Teacher, TopTeachersAdapter.TopTeacherViewHolder>(ComparatorDiffUtil()) {
+    ListAdapter<TopTeacher, TopTeachersAdapter.TopTeacherViewHolder>(ComparatorDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopTeacherViewHolder {
         val binding =
@@ -29,7 +29,7 @@ class TopTeachersAdapter() :
     inner class TopTeacherViewHolder(private val binding: Top3TeacherItemsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(response: Teacher) {
+        fun bind(response: TopTeacher) {
             Log.e(TAG, response.toString())
             binding.teacherName.text = response.name
             binding.rank.text = response.rank.toString()
@@ -38,12 +38,12 @@ class TopTeachersAdapter() :
 
     }
 
-    class ComparatorDiffUtil : DiffUtil.ItemCallback<Teacher>() {
-        override fun areItemsTheSame(oldItem: Teacher, newItem: Teacher): Boolean {
+    class ComparatorDiffUtil : DiffUtil.ItemCallback<TopTeacher>() {
+        override fun areItemsTheSame(oldItem: TopTeacher, newItem: TopTeacher): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Teacher, newItem: Teacher): Boolean {
+        override fun areContentsTheSame(oldItem: TopTeacher, newItem: TopTeacher): Boolean {
             return oldItem == newItem
         }
     }

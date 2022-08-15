@@ -1,6 +1,5 @@
 package com.example.edrank_app.ui.student
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,21 +11,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
-import com.example.edrank_app.databinding.FragmentHomeParentBinding
 import com.example.edrank_app.databinding.FragmentStudentProfileBinding
-import com.example.edrank_app.databinding.FragmentTeacherProfileBinding
 import com.example.edrank_app.models.ChangePasswordRequest
-import com.example.edrank_app.ui.teacher.TeacherProfileViewModel
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
-import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.formatter.PercentFormatter
-import com.github.mikephil.charting.utils.ColorTemplate
 
 class StudentProfileFragment : Fragment() {
     private var _binding: FragmentStudentProfileBinding? = null

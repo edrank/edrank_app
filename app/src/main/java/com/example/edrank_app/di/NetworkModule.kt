@@ -1,9 +1,6 @@
 package com.example.edrank_app.di
 
-import com.example.edrank_app.api.AuthInterceptor
-import com.example.edrank_app.api.LoginAPI
-import com.example.edrank_app.api.TeacherAPI
-import com.example.edrank_app.api.UserAPI
+import com.example.edrank_app.api.*
 import com.example.edrank_app.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -48,18 +45,26 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesTopTeachers(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): TeacherAPI {
+    fun providesTeacherAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): TeacherAPI {
         return retrofitBuilder
             .client(okHttpClient)
             .build().create(TeacherAPI::class.java)
     }
 
-//    @Singleton
-//    @Provides
-//    fun providesMyProfile(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): UserAPI {
-//        return retrofitBuilder
-//            .client(okHttpClient)
-//            .build().create(UserAPI::class.java)
-//    }
+    @Singleton
+    @Provides
+    fun providesFeedbackAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): FeedbacksAPI {
+        return retrofitBuilder
+            .client(okHttpClient)
+            .build().create(FeedbacksAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesParentAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): ParentAPI {
+        return retrofitBuilder
+            .client(okHttpClient)
+            .build().create(ParentAPI::class.java)
+    }
 
 }

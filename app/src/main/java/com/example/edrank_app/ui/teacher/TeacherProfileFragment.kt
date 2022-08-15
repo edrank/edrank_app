@@ -16,6 +16,7 @@ import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentTeacherProfileBinding
 import com.example.edrank_app.models.ChangePasswordRequest
 import com.example.edrank_app.models.TeacherProfileResponse
+import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.utils.Constants.TAG
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
@@ -35,7 +36,7 @@ class TeacherProfileFragment : Fragment() {
     private var _binding: FragmentTeacherProfileBinding? = null
     private val binding get() = _binding!!
     lateinit var pieChart: PieChart
-    private val viewModel by activityViewModels<TeacherProfileViewModel>()
+    private val viewModel by activityViewModels<UserViewModel>()
     @Inject
     lateinit var tokenManager: TokenManager
     private var profileData: TeacherProfileResponse? = null
