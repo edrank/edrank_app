@@ -28,6 +28,9 @@ class HomeStudentFragment : Fragment() {
         binding.collegeFeedback.setOnClickListener {
             findNavController().navigate(R.id.action_homeStudentFragment_to_collegeFeedbackForm)
         }
+        binding.grievanceCellBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_homeStudentFragment_to_grievanceCell)
+        }
 
 
         return binding.root
