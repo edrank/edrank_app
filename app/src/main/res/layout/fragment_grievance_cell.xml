@@ -1,234 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    android:orientation="vertical"
     tools:context=".grievanceCell">
 
-    <androidx.cardview.widget.CardView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:background="@color/white"
-        android:padding="10dp">
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/form_border_style"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/white"
             android:padding="10dp">
 
-            <TextView
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:text="GRIEVANCE CELL"
-                android:textColor="#D7000000"
-                android:textSize="17sp" />
+                android:layout_height="match_parent"
+                android:background="@drawable/form_border_style"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp"
+                    android:text="GRIEVANCE CELL"
+                    android:textColor="#D7000000"
+                    android:textSize="17sp" />
 
-    </androidx.cardview.widget.CardView>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.cardview.widget.CardView>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:orientation="vertical">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingBottom="10dp"
-            android:text="Complaint About :"
-            android:textColor="#000"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:background="@color/white"
-            android:paddingStart="10dp"
-            android:text="College / Institution"
-            android:textSize="16sp" />
-
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:background="@color/white"
-            android:paddingStart="10dp"
-            android:text="Teacher"
-            android:textSize="16sp" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingBottom="10dp"
-            android:text="What Issue you want to report?"
-            android:textColor="#000"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@drawable/form_border_style"
-            android:spinnerMode="dropdown" />
-
-
-    </LinearLayout>
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="8dp">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="20dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:paddingStart="20dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="20dp"
                 android:paddingBottom="10dp"
-                android:text="Is internship opportunity provided to you from college? And did significant number of companies visited?"
+                android:text="Complaint About :"
                 android:textColor="#000"
-                android:textSize="17sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <worker8.com.github.radiogroupplus.RadioGroupPlus
-                android:id="@+id/radio_group"
+            <RadioButton
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:text="College / Institution"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:text="Teacher"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="10dp"
+                android:text="What Issue you want to report?"
+                android:textColor="#000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/form_border_style"
+                android:spinnerMode="dropdown" />
+
+            <!--        Harrassment/Ragging/Misbehaviour/Fraud/.../Other-->
+
+
+        </LinearLayout>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:hint="If 'Other' then what?"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="10dp"
+                android:text="Did you report this issue to Class Coordinator ?"
+                android:textColor="#000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:paddingStart="10dp"
+                    android:text="Yes"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:paddingStart="10dp"
+                    android:text="No"
+                    android:textSize="14sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:hint="If 'Yes' then what action was taken?"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="10dp"
+                android:text="Attach any Proof (if any)"
+                android:textColor="#000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_from_camera" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_add_photo" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_baseline_attach_file_24" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="NOTICE : You should not report any misinformation here, anyone found guilty will face serious consequences."
+            android:textColor="#D80808"
+            android:textSize="15sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="8dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="10dp">
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Subject of your Application (max : 50 words)"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Yes internship was provided by college with good number of companies."
-                        android:textSize="15sp" />
-
-                    <RadioButton
-                        android:id="@+id/radio_button1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:hint="Text"
+                    android:textSize="14sp" />
 
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Yes internship was provided by college but not enough companies."
-                        android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="8dp">
 
-                    <RadioButton
-                        android:id="@+id/radio_button2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp">
 
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="Explain Issue (max : 300 words)"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="Internship was provided but very less companies visited."
-                        android:textSize="15sp" />
-
-
-                    <RadioButton
-                        android:id="@+id/radio_button3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:hint="Text"
+                    android:minHeight="200dp"
+                    android:textSize="14sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="5dp"
-                        android:text="No internship was not provided."
-                        android:textSize="15sp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
+        </androidx.cardview.widget.CardView>
 
-                    <RadioButton
-                        android:id="@+id/radio_button4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-            </worker8.com.github.radiogroupplus.RadioGroupPlus>
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.cardview.widget.CardView>
-
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>
