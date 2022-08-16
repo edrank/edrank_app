@@ -53,14 +53,6 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun providesFeedbackAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): FeedbacksAPI {
-        return retrofitBuilder
-            .client(okHttpClient)
-            .build().create(FeedbacksAPI::class.java)
-    }
-
-    @Singleton
-    @Provides
     fun providesParentAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): ParentAPI {
         return retrofitBuilder
             .client(okHttpClient)
