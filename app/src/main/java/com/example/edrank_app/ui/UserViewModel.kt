@@ -1,4 +1,4 @@
-package com.example.edrank_app.ui.teacher
+package com.example.edrank_app.ui
 
 import android.text.TextUtils
 import androidx.lifecycle.LiveData
@@ -13,21 +13,48 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class TeacherProfileViewModel @Inject constructor(private val userRepository: UserRepository) :
+class UserViewModel @Inject constructor(private val userRepository: UserRepository) :
     ViewModel() {
 
     val userResponseLiveData: LiveData<NetworkResult<ChangePasswordResponse>>
         get() = userRepository.userResponseLiveData
 
+    val courseData: LiveData<NetworkResult<CourseResponse>>
+        get() = userRepository.getCourse
+
     val teacherMyProfile: LiveData<NetworkResult<TeacherProfileResponse>>
         get() = userRepository.teacherMyProfile
+
+    val collegeRank: LiveData<NetworkResult<CollegeRankResponse>>
+        get() = userRepository.collegeRank
 
     val topNTeachers: LiveData<NetworkResult<TopTeachersResponse>>
         get() = userRepository.topNTeachers
 
-    fun topNTeachers(topTeachersRequest: TopTeachersRequest) {
+    val topNColleges: LiveData<NetworkResult<TopCollegesResponse>>
+        get() = userRepository.topNColleges
+
+    fun getCollegeRank(collegeRankRequest: CollegeRankRequest) {
         viewModelScope.launch {
-            userRepository.topNTeachers(topTeachersRequest)
+            userRepository.getCollegeRank(collegeRankRequest)
+        }
+    }
+
+    fun getCourse(cId: String) {
+        viewModelScope.launch {
+            userRepository.getCourse(cId)
+        }
+    }
+
+    fun getTopNTeachers(topTeachersRequest: TopTeachersRequest) {
+        viewModelScope.launch {
+            userRepository.getTopNTeachers(topTeachersRequest)
+        }
+    }
+
+    fun getTopNColleges(topCollegesRequest: TopCollegesRequest) {
+        viewModelScope.launch {
+            userRepository.getTopNColleges(topCollegesRequest)
         }
     }
 

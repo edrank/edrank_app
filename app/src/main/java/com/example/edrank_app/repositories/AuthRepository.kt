@@ -25,6 +25,8 @@ class AuthRepository @Inject constructor(private val loginAPI: LoginAPI) {
     private fun handleResponse(response: Response<LoginResponse>) {
         if (response.isSuccessful && response.body() != null) {
             _userResponseLiveData.postValue(NetworkResult.Success(response.body()!!))
+//            var user = response.body()!!.data.user
+//            User(user.cid, user.email, user.id, user.is_active, user.name)
         } else if (response.errorBody() != null) {
             val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
             _userResponseLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))

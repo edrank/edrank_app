@@ -1,6 +1,6 @@
 package com.example.edrank_app.models
 
 data class TeacherFeedbackResponse(
-    val `data`: Data,
+    val `data`: TeacherFeedbackData,
     val message: String
 )

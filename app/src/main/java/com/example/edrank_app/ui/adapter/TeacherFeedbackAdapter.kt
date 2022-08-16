@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.ItemReviewsBinding
-import com.example.edrank_app.models.Feedback
+import com.example.edrank_app.models.TeacherFeedback
 import com.example.edrank_app.utils.Constants
 
 class TeacherFeedbackAdapter() :
-    ListAdapter<Feedback, TeacherFeedbackAdapter.TeacherFeedbackViewHolder>(ComparatorDiffUtil()) {
+    ListAdapter<TeacherFeedback, TeacherFeedbackAdapter.TeacherFeedbackViewHolder>(ComparatorDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeacherFeedbackViewHolder {
         val binding =
@@ -31,7 +31,7 @@ class TeacherFeedbackAdapter() :
     inner class TeacherFeedbackViewHolder(private val binding: ItemReviewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(response: Feedback) {
+        fun bind(response: TeacherFeedback) {
             Log.e(Constants.TAG, response.toString())
             binding.feedbackText.text = response.text_feedback
             findReviewType(response.sa_score)
@@ -57,12 +57,12 @@ class TeacherFeedbackAdapter() :
     }
 
 
-    class ComparatorDiffUtil : DiffUtil.ItemCallback<Feedback>() {
-        override fun areItemsTheSame(oldItem: Feedback, newItem: Feedback): Boolean {
+    class ComparatorDiffUtil : DiffUtil.ItemCallback<TeacherFeedback>() {
+        override fun areItemsTheSame(oldItem: TeacherFeedback, newItem: TeacherFeedback): Boolean {
             return oldItem.text_feedback == newItem.text_feedback
         }
 
-        override fun areContentsTheSame(oldItem: Feedback, newItem: Feedback): Boolean {
+        override fun areContentsTheSame(oldItem: TeacherFeedback, newItem: TeacherFeedback): Boolean {
             return oldItem == newItem
         }
     }

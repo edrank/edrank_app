@@ -2,6 +2,8 @@ package com.example.edrank_app.utils
 
 import android.content.Context
 import com.example.edrank_app.utils.Constants.CID
+import com.example.edrank_app.utils.Constants.C_ABV
+import com.example.edrank_app.utils.Constants.C_NAME
 import com.example.edrank_app.utils.Constants.PREFS_TOKEN_FILE
 import com.example.edrank_app.utils.Constants.TENANT_TYPE
 import com.example.edrank_app.utils.Constants.USER_TOKEN
@@ -40,5 +42,25 @@ class TokenManager @Inject constructor(@ApplicationContext context: Context) {
 
     fun getCid(): String? {
         return prefs.getString(CID, null)
+    }
+
+    fun saveCollegeName(cName: String) {
+        val editor = prefs.edit()
+        editor.putString(C_NAME, cName)
+        editor.apply()
+    }
+
+    fun getCollegeName(): String? {
+        return prefs.getString(C_NAME, null)
+    }
+
+    fun saveCollegeAbv(cAbv: String) {
+        val editor = prefs.edit()
+        editor.putString(C_ABV, cAbv)
+        editor.apply()
+    }
+
+    fun getCollegeAbv(): String? {
+        return prefs.getString(C_ABV, null)
     }
 }
