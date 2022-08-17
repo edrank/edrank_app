@@ -15,11 +15,31 @@
         android:background="@color/white"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="Reviews given to you by students"
+            android:textStyle="bold"
+            android:textColor="@color/textgray"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/reviewSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            app:backgroundTint="@color/black"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/studentReviews"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             tools:itemCount="5"
             tools:listitem="@layout/item_reviews" />
 

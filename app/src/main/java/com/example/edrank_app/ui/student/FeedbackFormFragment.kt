@@ -17,9 +17,6 @@ class FeedbackFormFragment : Fragment() {
     ): View? {
         _binding = FragmentFeedbackformBinding.inflate(inflater, container, false)
 
-
-
-
         return binding.root
     }
 

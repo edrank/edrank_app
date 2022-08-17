@@ -5,10 +5,12 @@
     <item
         android:id="@+id/reviews"
         android:enabled="true"
-        android:title="Reviews" />
+        android:title="Reviews"
+        android:icon="@drawable/ic_reviews" />
 
     <item
         android:id="@+id/questions"
-        android:title="Questions" />
+        android:title="Questions"
+        android:icon="@drawable/ic_graphs"/>
 
 </menu>
