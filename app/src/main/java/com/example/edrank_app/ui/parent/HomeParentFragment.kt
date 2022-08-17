@@ -53,7 +53,7 @@ class HomeParentFragment : Fragment() {
                 is NetworkResult.Error -> {
                     Toast.makeText(
                         requireContext(),
-                        "Can't load rank. Error: " + it.data?.message.toString(),
+                        "Can't load children. Error: " + it.data?.message.toString(),
                         Toast.LENGTH_SHORT
                     )
                         .show()

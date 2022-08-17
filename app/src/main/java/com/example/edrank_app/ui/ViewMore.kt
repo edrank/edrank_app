@@ -1,6 +1,7 @@
 package com.example.edrank_app
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,18 +53,19 @@ class ViewMore : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var cid = tokenManager.getCollegeId()
+        Log.e("bfehsjgjhvbjhgeb", type!!)
 
         if(type == "COLLEGE"){
+            viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", -1))
             binding.viewMoreCollegeRv.layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             binding.viewMoreCollegeRv.adapter = collegesAdapter
-            viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", 20))
         }
         else if(type == "TEACHER"){
+            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", -1))
             binding.viewMoreTeacherRv.layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             binding.viewMoreTeacherRv.adapter = teachersAdapter
-            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", 20))
         }
 
         else{
