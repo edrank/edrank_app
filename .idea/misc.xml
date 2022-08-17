@@ -14,15 +14,16 @@
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_college_feedback_form.xml" value="0.264" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_feedbackform.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_grievance_cell.xml" value="0.138811771238201" />
-        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_parent.xml" value="0.4" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_grievance_cell.xml" value="0.264" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_parent.xml" value="0.30905636478784043" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_student.xml" value="0.264" />
-        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_teacher.xml" value="0.3731060606060606" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_home_teacher.xml" value="0.4" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_login.xml" value="0.18342391304347827" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_my_feedback.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_reviews.xml" value="0.28339140534262486" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_scorecard.xml" value="0.264" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_teacher_profile.xml" value="0.4" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/item_children_details.xml" value="0.536" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_reviews.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_scoreboard.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/top_3_teacher_items.xml" value="0.25416666666666665" />

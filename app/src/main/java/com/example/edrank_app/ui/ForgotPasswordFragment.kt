@@ -28,9 +28,10 @@ class ForgotPasswordFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val authViewModel by activityViewModels<AuthViewModel>()
+
     @Inject
     lateinit var tokenManager: TokenManager
-    lateinit var tenant : String
+    lateinit var tenant: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -91,14 +92,15 @@ class ForgotPasswordFragment : Fragment() {
     }
 
     private fun showValidationErrors(error: String) {
-        binding.txtError.text = String.format(resources.getString(R.string.txt_error_message, error))
+        binding.txtError.text =
+            String.format(resources.getString(R.string.txt_error_message, error))
     }
 
     private fun validateUserInput(): Pair<Boolean, String> {
         val emailAddress = binding.txtEmail.text.toString()
         val password = binding.txtPassword.text.toString()
 
-        return authViewModel.validateCredentials(emailAddress , password, true)
+        return authViewModel.validateCredentials(emailAddress, password, true)
     }
 
     private fun bindObservers() {
@@ -107,34 +109,41 @@ class ForgotPasswordFragment : Fragment() {
             when (it) {
                 is NetworkResult.Success -> {
                     tokenManager.saveToken(it.data!!.data.access_token)
-                    tokenManager.saveCollegeId(it.data!!.data.user.cid)
-                    tokenManager.saveUserName(it.data!!.data.user.name)
-                    tokenManager.saveCourseId(it.data!!.data.user.course_id.toString())
 
-                    Log.e("jfjshi", it.data!!.data.user.cid)
+//                    Log.e("jfjshi", it.data!!.data.user.cid)
 
                     when (tenant) {
                         "STUDENT" -> {
                             findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeStudentFragment)
 
+                            tokenManager.saveCollegeId(it.data!!.data.user.cid)
+                            tokenManager.saveUserName(it.data!!.data.user.name)
+                            tokenManager.saveCourseId(it.data!!.data.user.course_id.toString())
+
                         }
                         "TEACHER" -> {
                             findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeTeacherFragment)
+
+                            tokenManager.saveCollegeId(it.data!!.data.user.cid)
+                            tokenManager.saveUserName(it.data!!.data.user.name)
+                            tokenManager.saveCourseId(it.data!!.data.user.course_id.toString())
 
                         }
                         "PARENT" -> {
                             findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeParentFragment)
                         }
                         else -> {
-                            Toast.makeText(context, "Something went wrong with the user type.", Toast
-                                .LENGTH_SHORT).show()
+                            Toast.makeText(
+                                context, "Something went wrong with the user type.", Toast
+                                    .LENGTH_SHORT
+                            ).show()
                         }
                     }
                 }
                 is NetworkResult.Error -> {
                     showValidationErrors(it.message.toString())
                 }
-                is NetworkResult.Loading ->{
+                is NetworkResult.Loading -> {
                     binding.progressBar.isVisible = true
                 }
             }

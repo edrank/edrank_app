@@ -1,19 +1,21 @@
 package com.example.edrank_app.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.edrank_app.databinding.Top3TeacherItemsBinding
+import com.example.edrank_app.databinding.ItemChildrenDetailsBinding
 import com.example.edrank_app.models.Children
+import com.example.edrank_app.utils.Constants
 
 class ChildrenAdapter() : ListAdapter<Children, ChildrenAdapter.ChildrenViewHolder>(
     ChildrenAdapter.ComparatorDiffUtil()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildrenViewHolder {
         val binding =
-            Top3TeacherItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemChildrenDetailsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ChildrenViewHolder(binding)
     }
 
@@ -24,12 +26,13 @@ class ChildrenAdapter() : ListAdapter<Children, ChildrenAdapter.ChildrenViewHold
         }
     }
 
-    inner class ChildrenViewHolder(private val binding: Top3TeacherItemsBinding) :
+    inner class ChildrenViewHolder(private val binding: ItemChildrenDetailsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(response: Children) {
-//            Log.e(Constants.TAG, response.toString())
-//            binding.teacherName.text = response.name
+            Log.e(Constants.TAG, response.toString())
+            binding.childName.text = response.name
+            binding.collegeName.text = response.cid.toString()
 
         }
 
