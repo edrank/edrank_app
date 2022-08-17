@@ -13,7 +13,9 @@ import com.example.edrank_app.models.TeacherFeedback
 import com.example.edrank_app.utils.Constants
 
 class TeacherFeedbackAdapter() :
-    ListAdapter<TeacherFeedback, TeacherFeedbackAdapter.TeacherFeedbackViewHolder>(ComparatorDiffUtil()) {
+    ListAdapter<TeacherFeedback, TeacherFeedbackAdapter.TeacherFeedbackViewHolder>(
+        ComparatorDiffUtil()
+    ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeacherFeedbackViewHolder {
         val binding =
@@ -62,7 +64,10 @@ class TeacherFeedbackAdapter() :
             return oldItem.text_feedback == newItem.text_feedback
         }
 
-        override fun areContentsTheSame(oldItem: TeacherFeedback, newItem: TeacherFeedback): Boolean {
+        override fun areContentsTheSame(
+            oldItem: TeacherFeedback,
+            newItem: TeacherFeedback
+        ): Boolean {
             return oldItem == newItem
         }
     }

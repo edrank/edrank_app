@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.databinding.FragmentHomeParentBinding
 import com.example.edrank_app.ui.adapter.ChildrenAdapter
 import com.example.edrank_app.utils.NetworkResult
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeParentFragment : Fragment() {
     private var _binding: FragmentHomeParentBinding? = null
     private val binding get() = _binding!!
@@ -33,11 +35,10 @@ class HomeParentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.topCollegeParentsRv.layoutManager =
-            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
-        binding.topCollegeParentsRv.adapter = childrenAdapter
-
         viewModel.getChildrenOfParent()
+        binding.childrenRv.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        binding.childrenRv.adapter = childrenAdapter
 
         bindObservers()
     }
@@ -47,7 +48,7 @@ class HomeParentFragment : Fragment() {
 //            binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    childrenAdapter.submitList(it.data?.data?.children)
+                    childrenAdapter.submitList(it.data?.data?.students)
                 }
                 is NetworkResult.Error -> {
                     Toast.makeText(
