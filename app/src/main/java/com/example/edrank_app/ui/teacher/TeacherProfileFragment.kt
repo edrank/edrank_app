@@ -15,7 +15,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentTeacherProfileBinding
 import com.example.edrank_app.models.ChangePasswordRequest
-import com.example.edrank_app.models.MyProfileResponse
 import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.utils.Constants.TAG
 import com.example.edrank_app.utils.NetworkResult
@@ -108,13 +107,13 @@ class TeacherProfileFragment : Fragment() {
     }
 
     private fun setInitialData() {
-        viewModel.getTeacherProfile()
+        viewModel.getMyProfile()
         binding.progressBar.isVisible = true
         loadProfile()
     }
 
     private fun loadProfile() {
-        viewModel.teacherMyProfile.observe(viewLifecycleOwner, Observer {
+        viewModel.myProfile.observe(viewLifecycleOwner, Observer {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {

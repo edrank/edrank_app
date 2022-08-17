@@ -19,13 +19,13 @@
             android:layout_marginHorizontal="25dp"
             android:layout_marginVertical="20dp"
             android:gravity="center_horizontal"
-            app:cardBackgroundColor="@color/gray"
             app:cardCornerRadius="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="@drawable/ic_myprofiilebanner"
                 android:padding="4dp">
 
                 <androidx.cardview.widget.CardView
@@ -60,10 +60,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="6dp"
-                        android:layout_marginBottom="2dp"
-                        android:text="Samridhi"
-                        android:textSize="14sp"
+                        android:padding="5dp"
+                        android:text="Student"
+                        android:textAllCaps="true"
+                        android:textColor="#025950"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -71,8 +72,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="6dp"
                         android:text="07414902019"
+                        android:textColor="#025950"
                         android:textSize="14sp" />
 
                     <TextView
@@ -80,9 +81,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="6dp"
-                        android:layout_marginBottom="2dp"
+                        android:padding="5dp"
                         android:text="BCA - M"
+                        android:textColor="#025950"
                         android:textSize="14sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -151,12 +152,12 @@
                         android:layout_weight="1"
                         android:paddingStart="8dp"
                         android:paddingVertical="5dp"
-                        android:text="Semester and section"
+                        android:text="Date of Birth"
                         android:textColor="@color/textgray"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/semester"
+                        android:id="@+id/dob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"

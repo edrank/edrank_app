@@ -39,11 +39,11 @@ class HomeTeacherFragment : Fragment() {
     private var _binding: FragmentHomeTeacherBinding? = null
     private val binding get() = _binding!!
     lateinit var pieChart: PieChart
-    private lateinit var teachersAdapter : TopTeachersAdapter
-    private lateinit var collegesAdapter : TopCollegesAdapter
+    private lateinit var teachersAdapter: TopTeachersAdapter
+    private lateinit var collegesAdapter: TopCollegesAdapter
     private val viewModel by activityViewModels<UserViewModel>()
     private lateinit var tokenManager: TokenManager
-    lateinit var cid:String
+    lateinit var cid: String
 
 
     override fun onCreateView(
@@ -66,15 +66,17 @@ class HomeTeacherFragment : Fragment() {
 
 //        topTeachersRequest.cid = tokenManager!!.getCid()!!
 
-        viewModel.getTopNTeachers(TopTeachersRequest(cid.toInt(),"","COLLEGE","",3))
-        binding.topTeacherRv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        viewModel.getTopNTeachers(TopTeachersRequest(cid.toInt(), "", "COLLEGE", "", 3))
+        binding.topTeacherRv.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.topTeacherRv.adapter = teachersAdapter
 
-        viewModel.getTopNColleges(TopCollegesRequest("","NATIONAL","",5))
-        binding.topCollegeRv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", 5))
+        binding.topCollegeRv.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.topCollegeRv.adapter = collegesAdapter
 
-        viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(),"","",""))
+        viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(), "", "", ""))
 
         bindObservers()
 
@@ -128,7 +130,11 @@ class HomeTeacherFragment : Fragment() {
                     Log.e("rank", it.data?.data?.rank.toString())
                 }
                 is NetworkResult.Error -> {
-                    Toast.makeText(requireContext(), "Can't load rank. Error: " + it.data?.message.toString(), Toast.LENGTH_SHORT)
+                    Toast.makeText(
+                        requireContext(),
+                        "Can't load rank. Error: " + it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    )
                         .show()
                 }
                 is NetworkResult.Loading -> {
@@ -144,7 +150,11 @@ class HomeTeacherFragment : Fragment() {
                     teachersAdapter.submitList(it.data?.data?.teachers)
                 }
                 is NetworkResult.Error -> {
-                    Toast.makeText(requireContext(), it.data?.message.toString(), Toast.LENGTH_SHORT)
+                    Toast.makeText(
+                        requireContext(),
+                        it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    )
                         .show()
                 }
                 is NetworkResult.Loading -> {
@@ -160,7 +170,11 @@ class HomeTeacherFragment : Fragment() {
                     collegesAdapter.submitList(it.data?.data?.colleges)
                 }
                 is NetworkResult.Error -> {
-                    Toast.makeText(requireContext(), it.data?.message.toString(), Toast.LENGTH_SHORT)
+                    Toast.makeText(
+                        requireContext(),
+                        it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    )
                         .show()
                 }
                 is NetworkResult.Loading -> {

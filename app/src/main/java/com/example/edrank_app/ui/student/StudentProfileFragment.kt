@@ -1,18 +1,19 @@
 package com.example.edrank_app.ui.student
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentStudentProfileBinding
 import com.example.edrank_app.models.ChangePasswordRequest
+import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
 import com.github.mikephil.charting.charts.PieChart
@@ -22,6 +23,7 @@ class StudentProfileFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var pieChart: PieChart
     private val viewModel by activityViewModels<StudentProfileViewModel>()
+    private val userViewModel by activityViewModels<UserViewModel>()
     private lateinit var tokenManager: TokenManager
 
     override fun onCreateView(
@@ -37,6 +39,7 @@ class StudentProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        userViewModel.getMyProfile()
         binding.savePassword.setOnClickListener {
             val validationResult = validateUserInput()
             if (validationResult.first) {
@@ -107,6 +110,31 @@ class StudentProfileFragment : Fragment() {
                 }
             }
         })
+
+        userViewModel.myProfile.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                    binding.studentName.text = it.data?.data?.profile?.name
+                    binding.enrollmentNo.text = it.data?.data?.profile?.enrollment
+                    binding.batch.text = it.data?.data?.profile?.batch
+                    binding.dob.text = it.data?.data?.profile?.dob
+                    binding.contactNo.text = it.data?.data?.profile?.phone
+                    binding.email.text = it.data?.data?.profile?.email
+                    binding.course.text = tokenManager.getCourse()
+
+
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(context, "Something went wrong.", Toast.LENGTH_SHORT).show()
+                    showValidationErrors(it.message.toString())
+                }
+                is NetworkResult.Loading -> {
+                    binding.progressBar.isVisible = true
+                }
+            }
+        })
+
     }
 
     override fun onDestroyView() {

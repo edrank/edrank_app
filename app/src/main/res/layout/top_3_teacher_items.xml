@@ -18,21 +18,22 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E0F1EF"
+            android:background="#EEF8FD"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="4">
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/rank"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="8dp"
                 android:text="#1"
-                android:textColor="#355C58"
-                android:textSize="14sp" />
+                android:textStyle="bold"
+                android:background="#BADDED"
+                android:textColor="#E1036C9C"
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/teacherName"
@@ -40,20 +41,32 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="5dp"
+                android:padding="8dp"
                 android:text="Teacher 1"
-                android:textColor="#355C58"
-                android:textSize="14sp" />
+                android:textColor="#E1036C9C"
+                android:textStyle="bold"
+                android:textSize="15sp" />
 
-            <ImageView
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:layout_marginVertical="2dp"-->
+<!--                android:layout_weight="1.5"-->
+<!--                android:gravity="center"-->
+<!--                android:padding="5dp"-->
+<!--                android:src="@drawable/ic_rank1" />-->
+
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="2dp"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:padding="5dp"
-                android:src="@drawable/ic_rank1" />
+                android:padding="8dp"
+                android:text="99.1"
+                android:textColor="#E1036C9C"
+                android:textSize="14sp" />
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>

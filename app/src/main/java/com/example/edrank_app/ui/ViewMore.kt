@@ -62,7 +62,7 @@ class ViewMore : Fragment() {
             binding.viewMoreCollegeRv.adapter = collegesAdapter
         }
         else if(type == "TEACHER"){
-            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", -1))
+            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", 3))
             binding.viewMoreTeacherRv.layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             binding.viewMoreTeacherRv.adapter = teachersAdapter

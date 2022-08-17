@@ -1,4 +1,5 @@
 package com.example.edrank_app.repositories
+
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.edrank_app.api.UserAPI
@@ -15,8 +16,8 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
     private val _getCourse = MutableLiveData<NetworkResult<CourseResponse>>()
     val getCourse get() = _getCourse
 
-    private val _teacherMyProfile = MutableLiveData<NetworkResult<MyProfileResponse>>()
-    val teacherMyProfile get() = _teacherMyProfile
+    private val _myProfile = MutableLiveData<NetworkResult<MyProfileResponse>>()
+    val myProfile get() = _myProfile
 
     private val _topNTeachers = MutableLiveData<NetworkResult<TopTeachersResponse>>()
     val topNTeachers get() = _topNTeachers
@@ -34,7 +35,7 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
         handleResponse(response)
     }
 
-    suspend fun getCourse(cId: String){
+    suspend fun getCourse(cId: String) {
         _getCourse.postValue(NetworkResult.Loading())
         val response = userAPI.getCourse(cId)
         if (response.isSuccessful && response.body() != null) {
@@ -48,16 +49,16 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
 
     }
 
-    suspend fun teacherMyProfile() {
-        _teacherMyProfile.postValue(NetworkResult.Loading())
-        val response = userAPI.teacherMyProfile()
+    suspend fun myProfile() {
+        _myProfile.postValue(NetworkResult.Loading())
+        val response = userAPI.myProfile()
         if (response.isSuccessful && response.body() != null) {
-            _teacherMyProfile.postValue(NetworkResult.Success(response.body()!!))
+            _myProfile.postValue(NetworkResult.Success(response.body()!!))
         } else if (response.errorBody() != null) {
             val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
-            _teacherMyProfile.postValue(NetworkResult.Error(errorObj.getString("message")))
+            _myProfile.postValue(NetworkResult.Error(errorObj.getString("message")))
         } else {
-            _teacherMyProfile.postValue(NetworkResult.Error("Something Went Wrong"))
+            _myProfile.postValue(NetworkResult.Error("Something Went Wrong"))
         }
     }
 
@@ -66,7 +67,7 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
         val response = userAPI.collegeRank(collegeRankRequest)
         if (response.isSuccessful && response.body() != null) {
             _collegeRank.postValue(NetworkResult.Success(response.body()!!))
-            Log.e("college rank", response.body()!!.data.rank.toString() )
+            Log.e("college rank", response.body()!!.data.rank.toString())
 
         } else if (response.errorBody() != null) {
             val errorObj = JSONObject(response.errorBody()!!.charStream().readText())

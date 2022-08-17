@@ -22,8 +22,8 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
     val courseData: LiveData<NetworkResult<CourseResponse>>
         get() = userRepository.getCourse
 
-    val teacherMyProfile: LiveData<NetworkResult<MyProfileResponse>>
-        get() = userRepository.teacherMyProfile
+    val myProfile: LiveData<NetworkResult<MyProfileResponse>>
+        get() = userRepository.myProfile
 
     val collegeRank: LiveData<NetworkResult<CollegeRankResponse>>
         get() = userRepository.collegeRank
@@ -64,9 +64,9 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
         }
     }
 
-    fun getTeacherProfile() {
+    fun getMyProfile() {
         viewModelScope.launch {
-            userRepository.teacherMyProfile()
+            userRepository.myProfile()
         }
     }
 

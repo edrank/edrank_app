@@ -13,7 +13,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StudentProfileViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
+class StudentProfileViewModel @Inject constructor(private val userRepository: UserRepository) :
+    ViewModel() {
 
     val userResponseLiveData: LiveData<NetworkResult<ChangePasswordResponse>>
         get() = userRepository.userResponseLiveData
@@ -21,12 +22,6 @@ class StudentProfileViewModel @Inject constructor(private val userRepository: Us
     fun changePassword(changePasswordRequest: ChangePasswordRequest) {
         viewModelScope.launch {
             userRepository.changePassword(changePasswordRequest)
-        }
-    }
-
-    fun getTeacherProfile(){
-        viewModelScope.launch{
-            userRepository.teacherMyProfile
         }
     }
 
