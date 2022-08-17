@@ -106,6 +106,13 @@ class HomeTeacherFragment : Fragment() {
             findNavController().navigate(R.id.action_homeTeacherFragment_to_teacherProfileFragment)
             //            Toast.makeText(context,"This feature will be available in the next version",Toast.LENGTH_LONG).show()
         }
+        binding.viewMoreTopTeachers.setOnClickListener {
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore)
+        }
+
+        binding.viewMoreTopCollege.setOnClickListener {
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore)
+        }
     }
 
     private fun bindObservers() {

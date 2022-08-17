@@ -156,66 +156,133 @@
                 android:padding="4dp"
                 app:cardCornerRadius="8dp">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/celeBtn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="15dp">
-
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/celeBtn"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:background="#E0F1EF"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                <TextView
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Kavita Pabreja"
+                            android:textColor="@color/textgray"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Maharaja Surajmal Institute "
+                            android:textColor="@color/textgray"
+                            android:textSize="14sp"
+                            android:textStyle="italic" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="AIR : #314" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="State : #40" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="College : #11" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/airBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kavita Kapoor Mam"
-                    android:textAllCaps="true"
-                    android:textColor="#F5000000" />
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="AIR"
+                    android:textSize="14sp" />
+
+
+                <Button
+                    android:id="@+id/stateBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="State"
+                    android:textSize="14sp" />
+
+
+                <Button
+                    android:id="@+id/collBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:text="College"
+                    android:textSize="14sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topCollegeRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/imageCardView"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
+
+            <include layout="@layout/item_top_colleges" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/topCollegeRv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageCardView"
-        android:layout_margin="4dp"
-        tools:itemCount="10"
-        tools:listitem="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-    <include layout="@layout/item_top_colleges" />
-
-</androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
 
 
-    </RelativeLayout>
+</RelativeLayout>
 
 
 

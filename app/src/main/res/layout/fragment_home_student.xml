@@ -241,7 +241,7 @@
                 android:id="@+id/topCollegeRv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="4dp"
+                android:layout_marginTop="6dp"
                 tools:itemCount="5"
                 tools:listitem="@layout/item_top_colleges" />
 
@@ -261,14 +261,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@color/green"
+                android:layout_marginTop="7dp"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="View more"
-                android:textColor="@color/textgray"
+                android:textAllCaps="true"
+                android:textColor="#106714"
                 android:textSize="14sp"
-                android:textStyle="italic" />
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -280,15 +280,6 @@
                 android:textColor="@color/textgray"
                 android:textSize="17sp"
                 android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/top"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_scoreboard" />
-
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"

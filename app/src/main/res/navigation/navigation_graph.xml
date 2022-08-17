@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeTeacherFragment_to_teacherReviewsFragment"
             app:destination="@id/teacherReviewsFragment" />
+        <action
+            android:id="@+id/action_homeTeacherFragment_to_viewMore"
+            app:destination="@id/viewMore" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -52,6 +55,9 @@
         <action
             android:id="@+id/action_homeStudentFragment_to_grievanceCell"
             app:destination="@id/grievanceCell" />
+        <action
+            android:id="@+id/action_homeStudentFragment_to_viewMore"
+            app:destination="@id/viewMore" />
     </fragment>
     <fragment
         android:id="@+id/homeParentFragment"
@@ -64,6 +70,9 @@
         <action
             android:id="@+id/action_homeParentFragment_to_collegeFeedbackForm"
             app:destination="@id/collegeFeedbackForm" />
+        <action
+            android:id="@+id/action_homeParentFragment_to_viewMore"
+            app:destination="@id/viewMore" />
     </fragment>
     <fragment
         android:id="@+id/reviewsFragment"
@@ -120,4 +129,9 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.edrank_app.ui.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment" />
+    <fragment
+        android:id="@+id/viewMore"
+        android:name="com.example.edrank_app.ViewMore"
+        android:label="fragment_view_more"
+        tools:layout="@layout/fragment_view_more" />
 </navigation>
