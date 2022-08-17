@@ -1,5 +1,6 @@
 package com.example.edrank_app.ui.teacher
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,6 +35,7 @@ class TeacherReviewsFragment : Fragment() {
             true
         );
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            @SuppressLint("ResourceAsColor")
             override fun onPageSelected(position: Int) {
                 when (position) {
                     0 -> {
@@ -49,6 +51,7 @@ class TeacherReviewsFragment : Fragment() {
 
         binding.bottomNav.setOnItemSelectedListener(object :
             ChipNavigationBar.OnItemSelectedListener {
+            @SuppressLint("ResourceAsColor")
             override fun onItemSelected(id: Int) {
                 when (id) {
                     R.id.reviews -> {
