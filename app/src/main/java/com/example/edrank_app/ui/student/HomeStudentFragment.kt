@@ -1,6 +1,7 @@
 package com.example.edrank_app.ui.student
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,11 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentHomeStudentBinding
+import com.example.edrank_app.models.CollegeRankRequest
 import com.example.edrank_app.models.TopCollegesRequest
 import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.ui.adapter.TopCollegesAdapter
 import com.example.edrank_app.ui.adapter.TopTeachersAdapter
 import com.example.edrank_app.utils.NetworkResult
+import com.example.edrank_app.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -28,7 +31,9 @@ class HomeStudentFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var teachersAdapter : TopTeachersAdapter
     private lateinit var collegesAdapter : TopCollegesAdapter
+    private lateinit var tokenManager: TokenManager
     private val viewModel by activityViewModels<UserViewModel>()
+    lateinit var cid:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +42,9 @@ class HomeStudentFragment : Fragment() {
         _binding = FragmentHomeStudentBinding.inflate(inflater, container, false)
 
         collegesAdapter = TopCollegesAdapter()
+        tokenManager = TokenManager(requireContext())
+        cid = tokenManager.getCollegeId().toString()
+
         return binding.root
     }
 
@@ -46,6 +54,13 @@ class HomeStudentFragment : Fragment() {
         viewModel.getTopNColleges(TopCollegesRequest("","NATIONAL","",5))
         binding.topCollegeRv.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.topCollegeRv.adapter = collegesAdapter
+
+        binding.studentName.text = tokenManager.getUserName()
+
+        viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(),"","",""))
+
+//        binding.instituteName.text = tokenManager.getCollegeName()
+
         bindObservers()
 
         binding.prevFeedback.setOnClickListener {
@@ -66,7 +81,8 @@ class HomeStudentFragment : Fragment() {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    binding.collegeRank.text = it.data?.data?.rank.toString()
+                    binding.collegeRankTv.text = it.data?.data?.rank.toString()
+                    Log.e("college rank", it.data?.data?.rank.toString() )
                 }
                 is NetworkResult.Error -> {
                     Toast.makeText(requireContext(), "Can't load rank. Error: " + it.data?.message.toString(), Toast.LENGTH_SHORT)

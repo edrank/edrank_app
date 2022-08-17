@@ -22,7 +22,7 @@ class StudentProfileFragment : Fragment() {
     private val binding get() = _binding!!
     lateinit var pieChart: PieChart
     private val viewModel by activityViewModels<StudentProfileViewModel>()
-    private val tokenManager: TokenManager? = null
+    private lateinit var tokenManager: TokenManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +30,7 @@ class StudentProfileFragment : Fragment() {
     ): View? {
         _binding = FragmentStudentProfileBinding.inflate(inflater, container, false)
 
+        tokenManager = TokenManager(requireContext())
         return binding.root
     }
 
@@ -47,8 +48,8 @@ class StudentProfileFragment : Fragment() {
         }
 
         binding.logout.setOnClickListener {
-            tokenManager!!.saveToken("")
             findNavController().navigate(R.id.loginFragment)
+            tokenManager!!.saveToken("")
         }
 
         bindObservers()

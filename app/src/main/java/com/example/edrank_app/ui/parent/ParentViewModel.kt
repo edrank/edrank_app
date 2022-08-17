@@ -6,8 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.example.edrank_app.models.ChildrenOfParentResponse
 import com.example.edrank_app.repositories.ParentRepository
 import com.example.edrank_app.utils.NetworkResult
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
+@HiltViewModel
 
 class ParentViewModel @Inject constructor(private val parentRepository: ParentRepository) :
     ViewModel() {

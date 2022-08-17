@@ -107,6 +107,12 @@ class ForgotPasswordFragment : Fragment() {
             when (it) {
                 is NetworkResult.Success -> {
                     tokenManager.saveToken(it.data!!.data.access_token)
+                    tokenManager.saveCollegeId(it.data!!.data.user.cid)
+                    tokenManager.saveUserName(it.data!!.data.user.name)
+                    tokenManager.saveCourseId(it.data!!.data.user.course_id.toString())
+
+                    Log.e("jfjshi", it.data!!.data.user.cid)
+
                     when (tenant) {
                         "STUDENT" -> {
                             findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeStudentFragment)
@@ -114,6 +120,7 @@ class ForgotPasswordFragment : Fragment() {
                         }
                         "TEACHER" -> {
                             findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeTeacherFragment)
+
                         }
                         "PARENT" -> {
                             findNavController().navigate(R.id.action_forgotPasswordFragment_to_homeParentFragment)

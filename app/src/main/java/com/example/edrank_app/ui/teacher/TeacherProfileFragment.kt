@@ -15,7 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentTeacherProfileBinding
 import com.example.edrank_app.models.ChangePasswordRequest
-import com.example.edrank_app.models.TeacherProfileResponse
+import com.example.edrank_app.models.MyProfileResponse
 import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.utils.Constants.TAG
 import com.example.edrank_app.utils.NetworkResult
@@ -39,13 +39,13 @@ class TeacherProfileFragment : Fragment() {
     private val viewModel by activityViewModels<UserViewModel>()
     @Inject
     lateinit var tokenManager: TokenManager
-    private var profileData: TeacherProfileResponse? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentTeacherProfileBinding.inflate(inflater, container, false)
+        tokenManager = TokenManager(requireContext())
 
         return binding.root
     }
@@ -66,8 +66,8 @@ class TeacherProfileFragment : Fragment() {
         }
 
         binding.logout.setOnClickListener {
-            tokenManager!!.saveToken("")
             findNavController().navigate(R.id.loginFragment)
+            tokenManager!!.saveToken("")
         }
 
         bindObservers()
@@ -123,8 +123,6 @@ class TeacherProfileFragment : Fragment() {
                     binding.department.text = it.data?.data?.profile?.department
                     binding.designation.text = it.data?.data?.profile?.designation
 //                    binding.score.text = it.data?.data?.profile?.score
-                    val cid = it.data?.data?.profile?.cid.toString()
-                    tokenManager.saveCid(cid)
                 }
                 is NetworkResult.Error -> {
                     showValidationErrors(it.message.toString())
