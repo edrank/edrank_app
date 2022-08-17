@@ -1,4 +1,4 @@
-package com.example.edrank_app
+package com.example.edrank_app.ui.grievance
 
 import android.os.Bundle
 import android.view.LayoutInflater

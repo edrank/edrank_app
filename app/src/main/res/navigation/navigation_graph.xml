@@ -144,7 +144,7 @@
         tools:layout="@layout/fragment_college_feedback_form" />
     <fragment
         android:id="@+id/grievanceCell"
-        android:name="com.example.edrank_app.grievanceCell"
+        android:name="com.example.edrank_app.ui.grievance.grievanceCell"
         android:label="fragment_grievance_cell"
         tools:layout="@layout/fragment_grievance_cell" />
 </navigation>
