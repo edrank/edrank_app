@@ -139,7 +139,7 @@
                         android:weightSum="3">
 
                         <TextView
-                            android:id="@+id/collegeRankHomePage"
+                            android:id="@+id/collegeName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -184,6 +184,7 @@
                             android:textSize="12sp" />
 
                         <TextView
+                            android:id="@+id/userRank"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
@@ -361,22 +362,12 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/topCollegeRecycler"
+                android:id="@+id/topCollegeRv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 tools:itemCount="5"
                 tools:listitem="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
 
             <TextView
                 android:id="@+id/viewMoreTopCollege"

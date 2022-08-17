@@ -13,7 +13,7 @@ interface UserAPI {
     suspend fun changePassword(@Body changePasswordRequest: ChangePasswordRequest) : Response<ChangePasswordResponse>
 
     @GET("/api/v1/my-profile")
-    suspend fun teacherMyProfile() : Response<TeacherProfileResponse>
+    suspend fun teacherMyProfile() : Response<MyProfileResponse>
 
     @GET("/api/v1/get-course/{cId}")
     suspend fun getCourse(@Path("cId") cId: String,) : Response<CourseResponse>

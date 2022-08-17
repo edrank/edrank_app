@@ -1,4 +1,5 @@
 package com.example.edrank_app.repositories
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.edrank_app.api.UserAPI
 import com.example.edrank_app.models.*
@@ -14,7 +15,7 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
     private val _getCourse = MutableLiveData<NetworkResult<CourseResponse>>()
     val getCourse get() = _getCourse
 
-    private val _teacherMyProfile = MutableLiveData<NetworkResult<TeacherProfileResponse>>()
+    private val _teacherMyProfile = MutableLiveData<NetworkResult<MyProfileResponse>>()
     val teacherMyProfile get() = _teacherMyProfile
 
     private val _topNTeachers = MutableLiveData<NetworkResult<TopTeachersResponse>>()
@@ -65,6 +66,8 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
         val response = userAPI.collegeRank(collegeRankRequest)
         if (response.isSuccessful && response.body() != null) {
             _collegeRank.postValue(NetworkResult.Success(response.body()!!))
+            Log.e("college rank", response.body()!!.data.rank.toString() )
+
         } else if (response.errorBody() != null) {
             val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
             _collegeRank.postValue(NetworkResult.Error(errorObj.getString("message")))

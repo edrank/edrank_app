@@ -22,7 +22,7 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
     val courseData: LiveData<NetworkResult<CourseResponse>>
         get() = userRepository.getCourse
 
-    val teacherMyProfile: LiveData<NetworkResult<TeacherProfileResponse>>
+    val teacherMyProfile: LiveData<NetworkResult<MyProfileResponse>>
         get() = userRepository.teacherMyProfile
 
     val collegeRank: LiveData<NetworkResult<CollegeRankResponse>>
