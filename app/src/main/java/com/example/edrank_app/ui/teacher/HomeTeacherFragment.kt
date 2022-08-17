@@ -107,11 +107,15 @@ class HomeTeacherFragment : Fragment() {
             //            Toast.makeText(context,"This feature will be available in the next version",Toast.LENGTH_LONG).show()
         }
         binding.viewMoreTopTeachers.setOnClickListener {
-            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore)
+            val bundle = Bundle()
+            bundle.putString("type", "TEACHER")
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore, bundle)
         }
 
         binding.viewMoreTopCollege.setOnClickListener {
-            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore)
+            val bundle = Bundle()
+            bundle.putString("type", "COLLEGE")
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore, bundle)
         }
     }
 

@@ -24,6 +24,7 @@ class ViewMore : Fragment() {
 
     private var _binding: FragmentViewMoreBinding? = null
     private val binding get() = _binding!!
+    private var type: String? = null
     private lateinit var teachersAdapter: TopTeachersAdapter
     private lateinit var collegesAdapter: TopCollegesAdapter
     private val viewModel by activityViewModels<UserViewModel>()
@@ -35,6 +36,7 @@ class ViewMore : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentViewMoreBinding.inflate(inflater, container, false)
+        type = arguments?.getString("type")
 
         collegesAdapter = TopCollegesAdapter()
         teachersAdapter = TopTeachersAdapter()
@@ -51,17 +53,22 @@ class ViewMore : Fragment() {
 
         var cid = tokenManager.getCollegeId()
 
-        viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", 20))
-        viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", 20))
+        if(type == "COLLEGE"){
+            binding.viewMoreCollegeRv.layoutManager =
+                LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+            binding.viewMoreCollegeRv.adapter = collegesAdapter
+            viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", 20))
+        }
+        else if(type == "TEACHER"){
+            binding.viewMoreTeacherRv.layoutManager =
+                LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+            binding.viewMoreTeacherRv.adapter = teachersAdapter
+            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", 20))
+        }
 
-
-        binding.viewMoreCollegeRv.layoutManager =
-            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-        binding.viewMoreCollegeRv.adapter = collegesAdapter
-
-        binding.viewMoreTeacherRv.layoutManager =
-            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
-        binding.viewMoreTeacherRv.adapter = teachersAdapter
+        else{
+            Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show()
+        }
 
         bindObservers()
 

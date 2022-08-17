@@ -74,6 +74,13 @@ class HomeStudentFragment : Fragment() {
             findNavController().navigate(R.id.action_homeStudentFragment_to_grievanceCell)
         }
 
+        binding.viewMoreTopCollege.setOnClickListener{
+            val bundle = Bundle()
+            bundle.putString("type", "COLLEGE")
+            findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore, bundle)
+        }
+
+
     }
 
     private fun bindObservers() {
