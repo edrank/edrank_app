@@ -47,12 +47,6 @@
             android:id="@+id/action_homeStudentFragment_to_studentProfileFragment"
             app:destination="@id/studentProfileFragment" />
         <action
-            android:id="@+id/action_homeStudentFragment_to_myFeedbackFragment"
-            app:destination="@id/myFeedbackFragment" />
-        <action
-            android:id="@+id/action_homeStudentFragment_to_feedbackformFragment"
-            app:destination="@id/feedbackformFragment" />
-        <action
             android:id="@+id/action_homeStudentFragment_to_collegeFeedbackForm"
             app:destination="@id/collegeFeedbackForm" />
         <action
@@ -68,24 +62,14 @@
             android:id="@+id/action_homeParentFragment_to_parentProfileFragment"
             app:destination="@id/parentProfileFragment" />
         <action
-            android:id="@+id/action_homeParentFragment_to_feedbackformFragment"
-            app:destination="@id/feedbackformFragment" />
+            android:id="@+id/action_homeParentFragment_to_collegeFeedbackForm"
+            app:destination="@id/collegeFeedbackForm" />
     </fragment>
     <fragment
         android:id="@+id/reviewsFragment"
         android:name="com.example.edrank_app.ui.teacher.ReviewsFragment"
         android:label="fragment_reviews"
         tools:layout="@layout/fragment_reviews" />
-    <fragment
-        android:id="@+id/myFeedbackFragment"
-        android:name="com.example.edrank_app.ui.student.MyFeedbackFragment"
-        android:label="fragment_my_feedback"
-        tools:layout="@layout/fragment_my_feedback" />
-    <fragment
-        android:id="@+id/feedbackformFragment"
-        android:name="com.example.edrank_app.ui.student.FeedbackFormFragment"
-        android:label="fragment_feedbackform"
-        tools:layout="@layout/fragment_feedbackform" />
     <fragment
         android:id="@+id/studentProfileFragment"
         android:name="com.example.edrank_app.ui.student.StudentProfileFragment"
@@ -106,21 +90,6 @@
         android:name="com.example.edrank_app.ui.teacher.ScorecardFragment"
         android:label="fragment_scorecard"
         tools:layout="@layout/fragment_scorecard" />
-    <fragment
-        android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.edrank_app.ui.ForgotPasswordFragment"
-        android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" >
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_homeStudentFragment"
-            app:destination="@id/homeStudentFragment" />
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_homeTeacherFragment"
-            app:destination="@id/homeTeacherFragment" />
-        <action
-            android:id="@+id/action_forgotPasswordFragment_to_homeParentFragment"
-            app:destination="@id/homeParentFragment" />
-    </fragment>
     <fragment
         android:id="@+id/teacherReviewsFragment"
         android:name="com.example.edrank_app.ui.teacher.TeacherReviewsFragment"
@@ -147,4 +116,8 @@
         android:name="com.example.edrank_app.ui.grievance.grievanceCell"
         android:label="fragment_grievance_cell"
         tools:layout="@layout/fragment_grievance_cell" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.edrank_app.ui.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment" />
 </navigation>

@@ -11,7 +11,7 @@ import com.example.edrank_app.models.Children
 import com.example.edrank_app.utils.Constants
 
 class ChildrenAdapter() : ListAdapter<Children, ChildrenAdapter.ChildrenViewHolder>(
-    ChildrenAdapter.ComparatorDiffUtil()
+    ComparatorDiffUtil()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildrenViewHolder {
         val binding =

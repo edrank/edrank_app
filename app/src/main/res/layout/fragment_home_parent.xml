@@ -32,20 +32,14 @@
             android:background="@color/white"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/childrenRv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/topCollegeParentsRv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="4dp"
-                    tools:itemCount="5"
-                    tools:listitem="@layout/item_children_details" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_children_details" />
 
 
             <TextView
