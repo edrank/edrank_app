@@ -117,7 +117,7 @@
         tools:layout="@layout/fragment_questions" />
     <fragment
         android:id="@+id/collegeFeedbackForm"
-        android:name="com.example.edrank_app.collegeFeedbackForm"
+        android:name="com.example.edrank_app.ui.feedback.collegeFeedbackForm"
         android:label="fragment_college_feedback_form"
         tools:layout="@layout/fragment_college_feedback_form" />
     <fragment

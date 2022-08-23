@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="@color/gray"
         android:orientation="vertical"
-        tools:context=".collegeFeedbackForm">
+        tools:context=".ui.feedback.collegeFeedbackForm">
 
         <TextView
             android:layout_width="match_parent"
