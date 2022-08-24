@@ -15,7 +15,7 @@
         <entry key="..\:/edrank_app/app/src/main/res/drawable/ic_grievance_banner.xml" value="0.2703125" />
         <entry key="..\:/edrank_app/app/src/main/res/drawable/ic_reviews.xml" value="0.3828125" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/activity_main.xml" value="0.152" />
-        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_college_feedback_form.xml" value="0.264" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_college_feedback_form.xml" value="0.2" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_feedbackform.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_grievance_cell.xml" value="0.138811771238201" />
@@ -30,6 +30,8 @@
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_teacher_profile.xml" value="0.4" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_teacher_reviews.xml" value="0.36666666666666664" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/fragment_view_more.xml" value="0.4" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/item_feedback_qsuestions.xml" value="0.25416666666666665" />
+        <entry key="..\:/edrank_app/app/src/main/res/layout/item_feedback_questions.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_reviews.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_scoreboard.xml" value="0.25416666666666665" />
         <entry key="..\:/edrank_app/app/src/main/res/layout/item_top_colleges.xml" value="0.20520833333333333" />
