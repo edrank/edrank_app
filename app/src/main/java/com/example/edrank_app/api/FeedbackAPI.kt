@@ -1,5 +1,6 @@
 package com.example.edrank_app.api
 
+import com.example.edrank_app.models.FeedbackQuestionsRequest
 import com.example.edrank_app.models.FeedbackQuestionsResponse
 import com.example.edrank_app.models.TeachersForFeedbackRequest
 import com.example.edrank_app.models.TeachersForFeedbackResponse
@@ -10,10 +11,10 @@ import retrofit2.http.Path
 
 interface FeedbackAPI {
 
-    @POST("/feedback-questions/{type}")
-    suspend fun getFeedbackQuestions(@Path("cId") cId: String): Response<FeedbackQuestionsResponse>
+    @POST("api/v1/feedback-questions/{type}")
+    suspend fun getFeedbackQuestions(@Path("type") type: String, @Body feedbackQuestionsRequest: FeedbackQuestionsRequest): Response<FeedbackQuestionsResponse>
 
-    @POST("/get-feedback-teachers/")
+    @POST("api/v1/get-feedback-teachers/")
     suspend fun getTeachersForFeedback(@Body teachersForFeedbackRequest: TeachersForFeedbackRequest): Response<TeachersForFeedbackResponse>
 
 

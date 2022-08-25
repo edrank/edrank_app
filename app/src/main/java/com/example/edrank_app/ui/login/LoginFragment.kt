@@ -70,7 +70,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun gettingSpinnerData() {
-        val tenants: Array<String> = arrayOf("STUDENT", "PARENT", "TEACHER", "COLLEGE_ADMIN")
+        val tenants: Array<String> = arrayOf("STUDENT", "PARENT", "TEACHER")
         val arrayAdapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, tenants)
         binding.tenantSpinner.adapter = arrayAdapter
