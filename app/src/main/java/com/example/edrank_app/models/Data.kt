@@ -1,3 +1,6 @@
 package com.example.edrank_app.models
 
-class Data
+
+data class Data(
+    val rank: Int
+)

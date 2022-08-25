@@ -1,4 +1,4 @@
-package com.example.edrank_app.ui.parent
+ package com.example.edrank_app.ui.parent
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentHomeParentBinding
+import com.example.edrank_app.models.TopCollegesRequest
+import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.ui.adapter.ChildrenAdapter
+import com.example.edrank_app.ui.adapter.TopCollegesAdapter
 import com.example.edrank_app.ui.feedback.FeedbackViewModel
-import com.example.edrank_app.ui.feedback.FeedbackViewModel_Factory
 import com.example.edrank_app.utils.NetworkResult
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +26,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeParentFragment : Fragment() {
     private var _binding: FragmentHomeParentBinding? = null
     private val binding get() = _binding!!
+    private lateinit var collegesAdapter: TopCollegesAdapter
     private val viewModel by activityViewModels<ParentViewModel>()
+    private val topCollegesModel by activityViewModels<UserViewModel>()
     private val feedbackViewModel by activityViewModels<FeedbackViewModel>()
     private lateinit var childrenAdapter: ChildrenAdapter
 
@@ -34,6 +38,8 @@ class HomeParentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeParentBinding.inflate(inflater, container, false)
+
+        collegesAdapter = TopCollegesAdapter()
         childrenAdapter = ChildrenAdapter()
         return binding.root
     }
@@ -46,12 +52,21 @@ class HomeParentFragment : Fragment() {
             LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
         binding.childrenRv.adapter = childrenAdapter
 
-        binding.collegeFeedback.setOnClickListener {
+        topCollegesModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", 5))
+        binding.topCollegeParentRv.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        binding.topCollegeParentRv.adapter = collegesAdapter
+
+        binding.viewMoreTopCollege.setOnClickListener {
             val bundle = Bundle()
-            bundle.putString("type", "PARENT")
-            findNavController().navigate(R.id.action_homeParentFragment_to_collegeFeedbackForm, bundle)
+            bundle.putString("type", "COLLEGE")
+            findNavController().navigate(R.id.viewMore, bundle)
         }
 
+        binding.myProfile.setOnClickListener {
+            findNavController().navigate(R.id.studentProfileFragment)
+
+        }
         bindObservers()
     }
 
@@ -72,6 +87,26 @@ class HomeParentFragment : Fragment() {
                 }
                 is NetworkResult.Loading -> {
 //                    binding.progressBar.isVisible = true
+                }
+            }
+        })
+
+        topCollegesModel.topNColleges.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                    collegesAdapter.submitList(it.data?.data?.colleges)
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(
+                        requireContext(),
+                        it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+                is NetworkResult.Loading -> {
+                    binding.progressBar.isVisible = true
                 }
             }
         })

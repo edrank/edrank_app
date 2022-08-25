@@ -1,30 +1,27 @@
 package com.example.edrank_app.ui.login
 
+import android.content.res.Configuration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.edrank_app.R
-import com.example.edrank_app.databinding.FragmentHomeParentBinding
-import com.example.edrank_app.databinding.FragmentLoginBinding
-import android.content.Intent
-import android.text.Html
-import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import com.example.edrank_app.databinding.FragmentForgotPasswordBinding
+import androidx.navigation.fragment.findNavController
+import com.example.edrank_app.R
+import com.example.edrank_app.databinding.FragmentLoginBinding
 import com.example.edrank_app.models.LoginRequest
-import com.example.edrank_app.ui.ForgotPasswordFragment
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -32,6 +29,7 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val authViewModel by activityViewModels<AuthViewModel>()
+    var languageToLoad = "en"
 
     @Inject
     lateinit var tokenManager: TokenManager
@@ -63,9 +61,19 @@ class LoginFragment : Fragment() {
         }
 
         binding.btnForgotPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
+            findNavController().navigate(com.example.edrank_app.R.id.action_loginFragment_to_forgotPasswordFragment)
         }
 
+        binding.hindiTranslateBtn.setOnClickListener {
+            val locale = Locale("hi")
+            Locale.setDefault(locale)
+            val config = Configuration()
+            config.locale = locale
+            context?.getResources()
+                ?.updateConfiguration(config, requireContext().getResources().getDisplayMetrics())
+
+
+        }
         bindObservers()
     }
 
@@ -139,7 +147,7 @@ class LoginFragment : Fragment() {
                             findNavController().navigate(R.id.action_loginFragment_to_homeParentFragment)
                         }
                         else -> {
-                            Log.e("Login", "Something went wrong with the user type." )
+                            Log.e("Login", "Something went wrong with the user type.")
                         }
                     }
                 }

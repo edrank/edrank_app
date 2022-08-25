@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.edrank_app.MainActivity">
+    <item
+        android:title="Language"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/eng"
+                android:title="English" />
+            <item
+                android:id="@+id/hn"
+                android:title="Hindi" />
+            <item
+                android:id="@+id/te"
+                android:title="Telugu" />
+            <item
+                android:id="@+id/ta"
+                android:title="Tamil" />
+            <item
+                android:id="@+id/ka"
+                android:title="Kannada" />
+            <item
+                android:id="@+id/ml"
+                android:title="Malayalam" />
+            <item
+                android:id="@+id/mr"
+                android:title="Marathi" />
+        </menu>
+    </item>
+</menu>

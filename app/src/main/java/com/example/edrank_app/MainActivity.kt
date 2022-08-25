@@ -1,11 +1,13 @@
 package com.example.edrank_app
 
 import android.R
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.edrank_app.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -21,13 +23,17 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+
+
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.getItemId() === R.id.home) {
-            super.onBackPressed()
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        if (item.getItemId() === R.id.home) {
+//            super.onBackPressed()
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
+
 
 }
