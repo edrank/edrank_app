@@ -32,7 +32,7 @@
                 android:textStyle="bold" />
 
             <worker8.com.github.radiogroupplus.RadioGroupPlus
-                android:id="@+id/radio_group"
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"

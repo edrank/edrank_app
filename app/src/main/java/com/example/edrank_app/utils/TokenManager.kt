@@ -7,6 +7,7 @@ import com.example.edrank_app.utils.Constants.COURSE_ID
 import com.example.edrank_app.utils.Constants.C_ABV
 import com.example.edrank_app.utils.Constants.C_NAME
 import com.example.edrank_app.utils.Constants.PREFS_TOKEN_FILE
+import com.example.edrank_app.utils.Constants.TEACHER_ID
 import com.example.edrank_app.utils.Constants.TENANT_TYPE
 import com.example.edrank_app.utils.Constants.USER_TOKEN
 import com.example.edrank_app.utils.Constants.U_NAME
@@ -85,6 +86,16 @@ class TokenManager @Inject constructor(@ApplicationContext context: Context) {
 
     fun getCourse(): String? {
         return prefs.getString(C_NAME, null)
+    }
+
+    fun saveTeacherId(teacherId: Int) {
+        val editor = prefs.edit()
+        editor.putInt(TEACHER_ID, teacherId)
+        editor.apply()
+    }
+
+    fun getTeacherId(): Int? {
+        return prefs.getInt(TEACHER_ID, 1)
     }
 
     fun saveCourseAbv(cAbv: String) {

@@ -2,10 +2,7 @@ package com.example.edrank_app.repositories
 
 import androidx.lifecycle.MutableLiveData
 import com.example.edrank_app.api.FeedbackAPI
-import com.example.edrank_app.models.FeedbackQuestionsRequest
-import com.example.edrank_app.models.FeedbackQuestionsResponse
-import com.example.edrank_app.models.TeachersForFeedbackRequest
-import com.example.edrank_app.models.TeachersForFeedbackResponse
+import com.example.edrank_app.models.*
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
 import org.json.JSONObject
@@ -19,6 +16,10 @@ class FeedbackRepository @Inject constructor(private val feedbackAPI: FeedbackAP
     private val _getFeedbackQuestionsLiveData =
         MutableLiveData<NetworkResult<FeedbackQuestionsResponse>>()
     val getFeedbackQuestionsLiveData get() = _getFeedbackQuestionsLiveData
+
+    private val _postFeedbackLiveData =
+        MutableLiveData<NetworkResult<PostFeedbackResponse>>()
+    val postFeedbackLiveData get() = _postFeedbackLiveData
 
     suspend fun getTeachersForFeedback(teachersForFeedbackRequest: TeachersForFeedbackRequest) {
         _getTeachersForFeedback.postValue(NetworkResult.Loading())
@@ -43,6 +44,19 @@ class FeedbackRepository @Inject constructor(private val feedbackAPI: FeedbackAP
             _getFeedbackQuestionsLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
         } else {
             _getFeedbackQuestionsLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
+        }
+    }
+
+    suspend fun postFeedback(type: String, postFeedbackRequest: PostFeedbackRequest) {
+        _postFeedbackLiveData.postValue(NetworkResult.Loading())
+        val response = feedbackAPI.submitFeedback(type, postFeedbackRequest)
+        if (response.isSuccessful && response.body() != null) {
+            _postFeedbackLiveData.postValue(NetworkResult.Success(response.body()!!))
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _postFeedbackLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
+            _postFeedbackLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
         }
     }
 
