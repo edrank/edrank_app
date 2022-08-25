@@ -13,19 +13,30 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.databinding.FragmentCollegeFeedbackFormBinding
+import com.example.edrank_app.models.FeedbackQuestionsRequest
 import com.example.edrank_app.models.Teacher
 import com.example.edrank_app.models.TeachersForFeedbackRequest
+import com.example.edrank_app.ui.adapter.FeedbackQuestionsAdapter
+import com.example.edrank_app.ui.adapter.TopCollegesAdapter
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class collegeFeedbackForm : Fragment() {
+@AndroidEntryPoint
+class CollegeFeedbackForm : Fragment() {
     private var _binding: FragmentCollegeFeedbackFormBinding? = null
     private val binding get() = _binding!!
 
     private val feedbackViewModel by activityViewModels<FeedbackViewModel>()
+    private lateinit var questionsAdapter: FeedbackQuestionsAdapter
 
     lateinit var teachersNameList: Array<String>
+
+    @Inject
     lateinit var tokenManager: TokenManager
 
     override fun onCreateView(
@@ -35,8 +46,7 @@ class collegeFeedbackForm : Fragment() {
         _binding = FragmentCollegeFeedbackFormBinding.inflate(inflater, container, false)
 
         tokenManager = TokenManager(requireContext())
-
-
+        questionsAdapter = FeedbackQuestionsAdapter()
 
         return binding.root
     }
@@ -49,6 +59,16 @@ class collegeFeedbackForm : Fragment() {
                 tokenManager.getCourseId()!!.toInt()
             )
         )
+
+        feedbackViewModel.getQuestions(
+            "ST",
+            FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
+        )
+
+        binding.questionsRv.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+        binding.questionsRv.adapter = questionsAdapter
+
         bindObservers()
     }
 
@@ -72,6 +92,26 @@ class collegeFeedbackForm : Fragment() {
                 }
             }
         })
+
+        feedbackViewModel.feedbackQuestions.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                    questionsAdapter.submitList(it.data?.data?.questions)
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(
+                        requireContext(),
+                        "Can't load questions. Error: " + it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                is NetworkResult.Loading -> {
+                    binding.progressBar.isVisible = true
+                }
+            }
+        })
+
     }
 
     private fun getNames(teachersList: List<Teacher>): Array<String> {
