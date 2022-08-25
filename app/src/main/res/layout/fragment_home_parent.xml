@@ -63,7 +63,7 @@
                 android:weightSum="3">
 
                 <Button
-                    android:id="@+id/reviews"
+                    android:id="@+id/collegeFeedback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="12dp"
@@ -74,23 +74,7 @@
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="Teacher"
-                    android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
-
-                <Button
-                    android:id="@+id/scorecard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_score"
-                    android:maxWidth="90dp"
-                    android:maxHeight="90dp"
-                    android:padding="5dp"
-                    android:text="Institute"
+                    android:text="College"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray" />
 
@@ -102,11 +86,27 @@
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
+                    android:drawableTop="@drawable/ic_score"
+                    android:maxWidth="90dp"
+                    android:maxHeight="90dp"
+                    android:padding="5dp"
+                    android:text="Other.."
+                    android:textAllCaps="false"
+                    android:textColor="@color/textgray" />
+
+                <Button
+                    android:id="@+id/myProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/gray"
                     android:drawableTop="@drawable/ic_ai"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="Feedbacks"
+                    android:text="My profile"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray" />
 

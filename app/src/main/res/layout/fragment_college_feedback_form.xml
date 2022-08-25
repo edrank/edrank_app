@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/formTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -25,6 +26,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/selectTeacherTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"

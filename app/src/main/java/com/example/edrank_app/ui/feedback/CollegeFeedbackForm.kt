@@ -33,8 +33,9 @@ class CollegeFeedbackForm : Fragment() {
 
     private val feedbackViewModel by activityViewModels<FeedbackViewModel>()
     private lateinit var questionsAdapter: FeedbackQuestionsAdapter
-
+    private var type: String? = null
     lateinit var teachersNameList: Array<String>
+
 
     @Inject
     lateinit var tokenManager: TokenManager
@@ -54,16 +55,46 @@ class CollegeFeedbackForm : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        feedbackViewModel.getTeachers(
-            TeachersForFeedbackRequest(
-                tokenManager.getCourseId()!!.toInt()
-            )
-        )
+        type = arguments?.getString("type")
+        if(type == "COLLEGE"){
+            binding.selectTeacher.isVisible = false
+            binding.selectTeacherTv.isVisible = false
+            binding.progressBar.isVisible = false
+            binding.formTitle.text = "COLLEGE FEEDBACK FORM"
 
-        feedbackViewModel.getQuestions(
-            "ST",
-            FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
-        )
+            feedbackViewModel.getQuestions(
+                "SC",
+                FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
+            )
+        }
+
+        else if(type == "TEACHER"){
+            binding.formTitle.text = "TEACHER FEEDBACK FORM"
+
+            feedbackViewModel.getTeachers(
+                TeachersForFeedbackRequest(
+                    tokenManager.getCourseId()!!.toInt()
+                )
+            )
+
+            feedbackViewModel.getQuestions(
+                "ST",
+                FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
+            )
+        }
+
+        else if(type == "PARENT")
+        {
+            binding.selectTeacher.isVisible = false
+            binding.selectTeacherTv.isVisible = false
+            binding.progressBar.isVisible = false
+            binding.formTitle.text = "COLLEGE FEEDBACK FORM"
+
+            feedbackViewModel.getQuestions(
+                "PC",
+                FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
+            )
+        }
 
         binding.questionsRv.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
@@ -102,7 +133,7 @@ class CollegeFeedbackForm : Fragment() {
                 is NetworkResult.Error -> {
                     Toast.makeText(
                         requireContext(),
-                        "Can't load questions. Error: " + it.data?.message.toString(),
+                        "Can't load questions. Error: " + it.data?.error.toString(),
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -111,7 +142,6 @@ class CollegeFeedbackForm : Fragment() {
                 }
             }
         })
-
     }
 
     private fun getNames(teachersList: List<Teacher>): Array<String> {
@@ -121,13 +151,12 @@ class CollegeFeedbackForm : Fragment() {
     private fun gettingSpinnerData(teacherList: Array<String>) {
 
         val arrayAdapter =
-            ArrayAdapter(requireContext(), R.layout.simple_spinner_dropdown_item, teacherList)
+            ArrayAdapter(requireContext(), com.example.edrank_app.R.layout.support_simple_spinner_dropdown_item, teacherList)
         binding.selectTeacher.adapter = arrayAdapter
         binding.selectTeacher.onItemSelectedListener = object : AdapterView.OnItemSelectedListener,
             AdapterView.OnItemClickListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                Log.e("fjks", teacherList[p2].toString())
-
+                Log.e("fjks", teacherList[p2])
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
