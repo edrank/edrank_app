@@ -25,6 +25,9 @@ import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import android.widget.RadioButton
+import com.example.edrank_app.utils.Constants.TAG
+
 
 @AndroidEntryPoint
 class CollegeFeedbackForm : Fragment() {
@@ -49,6 +52,8 @@ class CollegeFeedbackForm : Fragment() {
         tokenManager = TokenManager(requireContext())
         questionsAdapter = FeedbackQuestionsAdapter()
 
+
+
         return binding.root
     }
 
@@ -56,7 +61,7 @@ class CollegeFeedbackForm : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         type = arguments?.getString("type")
-        if(type == "COLLEGE"){
+        if (type == "COLLEGE") {
             binding.selectTeacher.isVisible = false
             binding.selectTeacherTv.isVisible = false
             binding.progressBar.isVisible = false
@@ -66,9 +71,7 @@ class CollegeFeedbackForm : Fragment() {
                 "SC",
                 FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
             )
-        }
-
-        else if(type == "TEACHER"){
+        } else if (type == "TEACHER") {
             binding.formTitle.text = "TEACHER FEEDBACK FORM"
 
             feedbackViewModel.getTeachers(
@@ -81,10 +84,7 @@ class CollegeFeedbackForm : Fragment() {
                 "ST",
                 FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
             )
-        }
-
-        else if(type == "PARENT")
-        {
+        } else if (type == "PARENT") {
             binding.selectTeacher.isVisible = false
             binding.selectTeacherTv.isVisible = false
             binding.progressBar.isVisible = false
@@ -100,7 +100,26 @@ class CollegeFeedbackForm : Fragment() {
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.questionsRv.adapter = questionsAdapter
 
+        binding.submitBtn.setOnClickListener {
+            submitFeedback()
+        }
         bindObservers()
+    }
+
+    private fun submitFeedback() {
+
+        feedbackViewModel.postFeedbackLiveData.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                }
+                is NetworkResult.Error -> {
+                }
+                is NetworkResult.Loading -> {
+                }
+            }
+        })
+
     }
 
     private fun bindObservers() {
@@ -146,27 +165,46 @@ class CollegeFeedbackForm : Fragment() {
 
     private fun getNames(teachersList: List<Teacher>): Array<String> {
         return teachersList.map { it.name }.toTypedArray()
+//        return teachersList.flatMap { it.map { {it.name} {it.id} } }
+
     }
 
     private fun gettingSpinnerData(teacherList: Array<String>) {
 
         val arrayAdapter =
-            ArrayAdapter(requireContext(), com.example.edrank_app.R.layout.support_simple_spinner_dropdown_item, teacherList)
+            ArrayAdapter(
+                requireContext(),
+                com.example.edrank_app.R.layout.support_simple_spinner_dropdown_item,
+                teacherList,
+
+            )
         binding.selectTeacher.adapter = arrayAdapter
-        binding.selectTeacher.onItemSelectedListener = object : AdapterView.OnItemSelectedListener,
-            AdapterView.OnItemClickListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                Log.e("fjks", teacherList[p2])
-            }
+        binding.selectTeacher.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener,
+                AdapterView.OnItemClickListener {
+                override fun onItemSelected(
+                    p0: AdapterView<*>?,
+                    p1: View?,
+                    p2: Int,
+                    p3: Long
+                ) {
+//                    tokenManager.saveTeacherId(teacherList[p2])
+                    Log.e("fjks", teacherList[p2])
+                }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                Log.e("fkj", "Select something")
-            }
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+                    Log.e("fkj", "Select something")
+                }
 
-            override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                TODO("Not yet implemented")
+                override fun onItemClick(
+                    p0: AdapterView<*>?,
+                    p1: View?,
+                    p2: Int,
+                    p3: Long
+                ) {
+                    TODO("Not yet implemented")
+                }
             }
-        }
     }
 
     override fun onDestroyView() {
