@@ -10,7 +10,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Teachers" />
+        android:gravity="center"
+        android:text="EdRank Leaderboard"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/progress_bar"

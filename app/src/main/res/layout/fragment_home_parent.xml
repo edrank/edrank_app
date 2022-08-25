@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,6 +26,68 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingHorizontal="25dp"
+            android:text="Hello there, you are"
+            android:textStyle="italic" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            app:cardBackgroundColor="@color/gray"
+            app:cardCornerRadius="8dp">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_artboard_2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/studentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="Samridhi Kotnala"
+                    android:textColor="#02515A"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/instituteName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/teacherName"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:text="(Tap to check Profile)"
+                    android:textColor="#02515A"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="25dp"
+            android:layout_marginTop="12dp"
+            android:text="Parent / Gaurdian of"
+            android:textStyle="italic"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,76 +104,32 @@
                 tools:itemCount="5"
                 tools:listitem="@layout/item_children_details" />
 
-
-            <TextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:padding="5dp"
-                android:text="Provide your valuable feedbacks"
-                android:textColor="@color/textgray"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="20dp"
+                android:orientation="vertical"
+                app:cardCornerRadius="8dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:weightSum="3">
 
-                <Button
-                    android:id="@+id/collegeFeedback"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_feedback"
-                    android:maxWidth="90dp"
-                    android:maxHeight="90dp"
-                    android:padding="5dp"
-                    android:text="College"
-                    android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                <LinearLayout
+                    android:id="@+id/grievanceCellBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFD9C0"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/otherFeature"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_score"
-                    android:maxWidth="90dp"
-                    android:maxHeight="90dp"
-                    android:padding="5dp"
-                    android:text="Other.."
-                    android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_grievance_banner" />
 
-                <Button
-                    android:id="@+id/myProfile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="12dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_ai"
-                    android:maxWidth="90dp"
-                    android:maxHeight="90dp"
-                    android:padding="5dp"
-                    android:text="My profile"
-                    android:textAllCaps="false"
-                    android:textColor="@color/textgray" />
+                </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -123,21 +142,37 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress_bar"
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/black" />
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/book_buzz_rv"
+                android:id="@+id/topCollegeParentRv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                tools:itemCount="5"
                 tools:listitem="@layout/item_top_colleges" />
 
             <TextView
                 android:id="@+id/viewMoreTopCollege"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:padding="5dp"
                 android:text="View more"
-                android:textSize="12sp" />
+                android:textAllCaps="true"
+                android:textColor="#106714"
+                android:textSize="14sp"
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -160,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_ai" />
+                    android:src="@drawable/ic_medal" />
 
                 <TextView
                     android:id="@+id/rank1"
@@ -171,11 +206,21 @@
                     android:text="Dr. Kavita Pabreja"
                     android:textSize="14sp" />
 
+                <TextView
+                    android:id="@+id/collegeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="2dp"
+                    android:text="Maharaja Surajmal Institute"
+                    android:textSize="14sp" />
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -190,7 +235,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_ai" />
+                        android:src="@drawable/ic_medal" />
 
                     <TextView
                         android:id="@+id/rank2"
@@ -198,7 +243,16 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:padding="4dp"
-                        android:text="Dr. Kavita Pabreja"
+                        android:text="Dr. Neeetu Anand"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/collegeName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="2dp"
+                        android:text="Maharaja Surajmal Institute"
                         android:textSize="14sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -214,7 +268,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_ai" />
+                        android:src="@drawable/ic_medal" />
 
                     <TextView
                         android:id="@+id/rank3"
@@ -222,12 +276,22 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:padding="4dp"
-                        android:text="Dr. Kavita Pabreja"
+                        android:text="Dr. etc etc etc"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/collegeName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="2dp"
+                        android:text="Maharaja Surajmal Institute"
                         android:textSize="14sp" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         </LinearLayout>
     </LinearLayout>
