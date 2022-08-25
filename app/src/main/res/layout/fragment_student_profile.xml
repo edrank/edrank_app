@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:padding="5dp"
-                        android:text="Student"
+                        android:text="Rishi Dholkheria"
                         android:textAllCaps="true"
                         android:textColor="#025950"
                         android:textSize="18sp"
@@ -117,7 +117,7 @@
                         android:layout_weight="1"
                         android:paddingStart="8dp"
                         android:paddingVertical="5dp"
-                        android:text="Batch"
+                        android:text="@string/batch"
                         android:textColor="@color/textgray"
                         android:textSize="14sp" />
 
@@ -152,7 +152,7 @@
                         android:layout_weight="1"
                         android:paddingStart="8dp"
                         android:paddingVertical="5dp"
-                        android:text="Date of Birth"
+                        android:text="@string/date_of_birth"
                         android:textColor="@color/textgray"
                         android:textSize="14sp" />
 
@@ -186,7 +186,7 @@
                         android:layout_weight="1"
                         android:paddingVertical="5dp"
                         android:paddingStart="8dp"
-                        android:text="Contact number"
+                        android:text="@string/contact_number"
                         android:textColor="@color/textgray"
                         android:textSize="14sp" />
 
@@ -220,7 +220,7 @@
                         android:layout_weight="1"
                         android:paddingVertical="5dp"
                         android:paddingStart="8dp"
-                        android:text="Email"
+                        android:text="@string/email"
                         android:textColor="@color/textgray"
                         android:textSize="14sp" />
 
@@ -264,7 +264,7 @@
                     android:drawableStart="@drawable/ic_reset"
                     android:drawablePadding="15dp"
                     android:padding="5dp"
-                    android:text="Reset password"
+                    android:text="@string/reset_password"
                     android:textColor="@color/textgray"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -339,7 +339,7 @@
                     android:drawableStart="@drawable/ic_logout"
                     android:drawablePadding="15dp"
                     android:padding="5dp"
-                    android:text="Logout"
+                    android:text="@string/logout"
                     android:textColor="@color/textgray"
                     android:textSize="14sp"
                     android:textStyle="bold" />

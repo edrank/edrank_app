@@ -2,4 +2,24 @@
 <resources>
     <string name="app_name">Edrank_app</string>
     <string name="your_reviews_are">आपकी समीक्षाएं हैं</string>
+    <string name="welcome">आपका स्वागत है!</string>
+    <string name="your_college_rank">आपका कॉलेज रैंक </string>
+    <string name="provide_your_valuable_feedbacks">अपनी बहुमूल्य प्रतिक्रिया दें</string>
+    <string name="teacher">शिक्षक</string>
+    <string name="institute">संस्था</string>
+    <string name="my_profile">मेरी प्रोफाइल</string>
+    <string name="edrank_top_colleges_of_india">एडरैंक के भारत के शीर्ष कॉलेज</string>
+    <string name="edrank_top_teachers_of_india">एडरैंक के भारत के शीर्ष शिक्षक</string>
+    <string name="college_feedback_form">कॉलेज फीडबैक फॉर्म</string>
+    <string name="submit_feedback">प्रतिपुष्टि दें</string>
+    <string name="select_teacher_for_feedback">फीडबैक के लिए शिक्षक का चयन करें</string>
+    <string name="batch">बैच
+</string>
+    <string name="date_of_birth">जन्म की तारीख</string>
+    <string name="contact_number">संपर्क संख्या</string>
+    <string name="email">ईमेल</string>
+    <string name="reset_password">पासवर्ड रीसेट</string>
+    <string name="logout">बाहर</string>
+
+
 </resources>

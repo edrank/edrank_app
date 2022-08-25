@@ -63,6 +63,10 @@ class HomeParentFragment : Fragment() {
             findNavController().navigate(R.id.viewMore, bundle)
         }
 
+        binding.myProfile.setOnClickListener {
+            findNavController().navigate(R.id.studentProfileFragment)
+
+        }
         bindObservers()
     }
 

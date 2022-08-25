@@ -45,6 +45,7 @@
 
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/myProfile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/ic_artboard_2"

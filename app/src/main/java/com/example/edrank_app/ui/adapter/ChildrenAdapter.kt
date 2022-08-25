@@ -32,7 +32,7 @@ class ChildrenAdapter() : ListAdapter<Children, ChildrenAdapter.ChildrenViewHold
         fun bind(response: Children) {
             Log.e(Constants.TAG, response.toString())
             binding.childName.text = response.name
-            binding.collegeName.text = response.cid.toString()
+//            binding.collegeName.text = response.cid.toString()
 
         }
 

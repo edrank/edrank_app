@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Welcome!"
+            android:text="@string/welcome"
             android:textColor="@color/black"
             android:textSize="30sp" />
 
@@ -140,6 +140,20 @@
             android:indeterminate="true"
             android:visibility="gone"
             app:SpinKit_Color="@color/black" />
+
+
+        <Button
+            android:id="@+id/hindiTranslateBtn"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/black"
+            android:text="हिंदी में लॉग इन करें"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
 
     </LinearLayout>
 

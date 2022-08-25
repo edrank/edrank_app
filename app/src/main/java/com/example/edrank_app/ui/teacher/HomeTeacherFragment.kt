@@ -131,12 +131,12 @@ class HomeTeacherFragment : Fragment() {
                     Log.e("rank", it.data?.data?.rank.toString())
                 }
                 is NetworkResult.Error -> {
-                    Toast.makeText(
-                        requireContext(),
-                        "Can't load rank. Error: " + it.data?.message.toString(),
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
+//                    Toast.makeText(
+//                        requireContext(),
+//                        "Can't load rank. Error: " + it.data?.message.toString(),
+//                        Toast.LENGTH_SHORT
+//                    )
+//                        .show()
                 }
                 is NetworkResult.Loading -> {
                     binding.progressBar.isVisible = true
