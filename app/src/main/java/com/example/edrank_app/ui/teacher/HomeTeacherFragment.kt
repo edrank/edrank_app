@@ -119,6 +119,7 @@ class HomeTeacherFragment : Fragment() {
             bundle.putString("type", "COLLEGE")
             findNavController().navigate(R.id.action_homeTeacherFragment_to_viewMore, bundle)
         }
+
     }
 
     private fun bindObservers() {

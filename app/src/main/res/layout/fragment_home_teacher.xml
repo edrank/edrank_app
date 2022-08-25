@@ -283,7 +283,7 @@
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="Scorecard"
+                    android:text="Leaderboard"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray"
                     android:textSize="12sp" />

@@ -1,4 +1,4 @@
-package com.example.edrank_app.ui.parent
+ package com.example.edrank_app.ui.parent
 
 import android.os.Bundle
 import android.view.LayoutInflater

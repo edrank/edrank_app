@@ -195,33 +195,66 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:paddingTop="8dp">
 
-                        <TextView
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="AIR : #314" />
+                            android:paddingTop="8dp">
+
+                            <TextView
+                                android:id="@+id/aiRank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="AIR : #314"
+                                android:textColor="@color/black" />
 
 
-                        <TextView
+                            <TextView
+                                android:id="@+id/stateRank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="State : #40"
+                                android:textColor="@color/black" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="State : #40" />
+                            android:paddingTop="8dp">
+
+                            <TextView
+                                android:id="@+id/regRank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Regional / City : #11"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/collegeRank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="College : #11"
+                                android:textColor="@color/black" />
 
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="College : #11" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -245,7 +278,7 @@
 
 
                 <Button
-                    android:id="@+id/stateBtn"
+                    android:id="@+id/regionalBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -265,17 +298,25 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress_bar"
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/black" />
+
+
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/topCollegeRv"
+                android:id="@+id/topTwentyRv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/imageCardView"
                 tools:itemCount="10"
                 tools:listitem="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
-
-            <include layout="@layout/item_top_colleges" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -372,7 +372,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:padding="4dp"
-                        android:text="Dr. etc etc etc"
+                        android:text="Dr. Karan Mehta"
                         android:textSize="14sp" />
 
                     <TextView
