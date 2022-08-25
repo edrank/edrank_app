@@ -60,8 +60,6 @@ class HomeStudentFragment : Fragment() {
 
         viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(), "", "NATIONAL", ""))
 
-//        binding.instituteName.text = tokenManager.getCollegeName()
-
         bindObservers()
 
         handleUi()
@@ -77,16 +75,26 @@ class HomeStudentFragment : Fragment() {
 
     private fun handleUi() {
 
-        binding.prevFeedback.setOnClickListener {
-            findNavController().navigate(R.id.action_homeStudentFragment_to_studentProfileFragment)
+        binding.teacherFeedback.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("type", "TEACHER")
+            findNavController().navigate(R.id.action_homeStudentFragment_to_collegeFeedbackForm, bundle)
         }
+
         binding.collegeFeedback.setOnClickListener {
-            findNavController().navigate(R.id.action_homeStudentFragment_to_collegeFeedbackForm)
+            val bundle = Bundle()
+            bundle.putString("type", "COLLEGE")
+            findNavController().navigate(R.id.action_homeStudentFragment_to_collegeFeedbackForm, bundle)
+        }
+
+        binding.myProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_homeStudentFragment_to_studentProfileFragment)
         }
 
         binding.grievanceCellBtn.setOnClickListener {
             findNavController().navigate(R.id.action_homeStudentFragment_to_grievanceCell)
         }
+
 
         binding.viewMoreTopCollege.setOnClickListener {
             val bundle = Bundle()
