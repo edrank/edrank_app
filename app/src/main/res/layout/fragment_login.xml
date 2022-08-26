@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Login to Edrank"
+            android:text="@string/login_to_edrank"
             android:textColor="@color/textgray"
             android:textSize="16sp" />
 
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="@color/black"
             android:textSize="12sp" />
 
@@ -45,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:background="@android:color/transparent"
-
             android:hint="abc@gmail.com"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
@@ -62,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Password"
+            android:text="@string/password"
             android:textColor="@color/black"
             android:textSize="12sp" />
 
@@ -72,7 +71,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:background="@android:color/transparent"
-
             android:hint="........"
             android:inputType="textPassword"
             android:textColor="@color/black"
@@ -89,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Login as"
+            android:text="@string/login_as"
             android:textColor="@color/black"
             android:textSize="12sp" />
 
@@ -99,6 +97,22 @@
             android:layout_height="wrap_content"
             style="@android:style/Widget.Material.Spinner.Underlined"
             app:backgroundTint="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Select Language/ अपनी भाषा चुनिए"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <Spinner
+            android:id="@+id/languageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            app:backgroundTint="@color/black"/>
+
 
         <TextView
             android:id="@+id/txt_error"
@@ -128,7 +142,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:textColor="#2196F3"
-            android:text="Forgot password?"
+            android:text="@string/forgot_password"
             android:textSize="14sp" />
 
         <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -140,20 +154,6 @@
             android:indeterminate="true"
             android:visibility="gone"
             app:SpinKit_Color="@color/black" />
-
-
-        <Button
-            android:id="@+id/hindiTranslateBtn"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/black"
-            android:text="हिंदी में लॉग इन करें"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
 
     </LinearLayout>
 

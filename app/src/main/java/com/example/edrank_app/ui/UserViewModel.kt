@@ -19,6 +19,15 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
     val userResponseLiveData: LiveData<NetworkResult<ChangePasswordResponse>>
         get() = userRepository.userResponseLiveData
 
+    val collegeLiveData: LiveData<NetworkResult<CollegeResponse>>
+        get() = userRepository.collegeLiveData
+
+    val grievanceLiveData: LiveData<NetworkResult<GrievanceCellResponse>>
+        get() = userRepository.grievanceLiveData
+
+    val fileUpload: LiveData<NetworkResult<FileUploadResponse>>
+        get() = userRepository.fileUpload
+
     val courseData: LiveData<NetworkResult<CourseResponse>>
         get() = userRepository.getCourse
 
@@ -33,6 +42,12 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
 
     val topNColleges: LiveData<NetworkResult<TopCollegesResponse>>
         get() = userRepository.topNColleges
+
+    fun getCollegeDetails(){
+        viewModelScope.launch {
+            userRepository.getCollege()
+        }
+    }
 
     fun getCollegeRank(collegeRankRequest: CollegeRankRequest) {
         viewModelScope.launch {
@@ -67,6 +82,18 @@ class UserViewModel @Inject constructor(private val userRepository: UserReposito
     fun getMyProfile() {
         viewModelScope.launch {
             userRepository.myProfile()
+        }
+    }
+
+    fun submitGrievance(grievanceCellRequest: GrievanceCellRequest) {
+        viewModelScope.launch {
+            userRepository.submitGrievance(grievanceCellRequest)
+        }
+    }
+
+    fun fileUpload(fileUploadRequest: FileUploadRequest) {
+        viewModelScope.launch {
+            userRepository.fileUpload(fileUploadRequest)
         }
     }
 

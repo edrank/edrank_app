@@ -13,6 +13,16 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
     private val _userResponseLiveData = MutableLiveData<NetworkResult<ChangePasswordResponse>>()
     val userResponseLiveData get() = _userResponseLiveData
 
+    private val _collegeLiveData = MutableLiveData<NetworkResult<CollegeResponse>>()
+    val collegeLiveData get() = _collegeLiveData
+
+    private val _grievanceLiveData = MutableLiveData<NetworkResult<GrievanceCellResponse>>()
+    val grievanceLiveData get() = _grievanceLiveData
+
+    private val _fileUpload = MutableLiveData<NetworkResult<FileUploadResponse>>()
+    val fileUpload get() = _fileUpload
+
+
     private val _getCourse = MutableLiveData<NetworkResult<CourseResponse>>()
     val getCourse get() = _getCourse
 
@@ -33,6 +43,48 @@ class UserRepository @Inject constructor(private val userAPI: UserAPI) {
         _userResponseLiveData.postValue(NetworkResult.Loading())
         val response = userAPI.changePassword(changePasswordRequest)
         handleResponse(response)
+    }
+
+    suspend fun getCollege() {
+        _collegeLiveData.postValue(NetworkResult.Loading())
+        val response = userAPI.getCollege()
+        if (response.isSuccessful && response.body() != null) {
+            _collegeLiveData.postValue(NetworkResult.Success(response.body()!!))
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _collegeLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
+            _collegeLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
+        }
+
+    }
+
+    suspend fun fileUpload(fileUploadRequest: FileUploadRequest) {
+        _fileUpload.postValue(NetworkResult.Loading())
+        val response = userAPI.fileUpload(fileUploadRequest)
+        if (response.isSuccessful && response.body() != null) {
+            _fileUpload.postValue(NetworkResult.Success(response.body()!!))
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _fileUpload.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
+            _fileUpload.postValue(NetworkResult.Error("Something Went Wrong"))
+        }
+
+    }
+
+    suspend fun submitGrievance(grievanceCellRequest: GrievanceCellRequest) {
+        _grievanceLiveData.postValue(NetworkResult.Loading())
+        val response = userAPI.submitGrievance(grievanceCellRequest)
+        if (response.isSuccessful && response.body() != null) {
+            _grievanceLiveData.postValue(NetworkResult.Success(response.body()!!))
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _grievanceLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
+            _grievanceLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
+        }
+
     }
 
     suspend fun getCourse(cId: String) {

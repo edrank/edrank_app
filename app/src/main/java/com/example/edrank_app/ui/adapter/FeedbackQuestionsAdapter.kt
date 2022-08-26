@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.ItemFeedbackQuestionsBinding
 import com.example.edrank_app.databinding.ItemTopCollegesBinding
-import com.example.edrank_app.models.FeedbackQuestions
-import com.example.edrank_app.models.PostFeedbackRequest
-import com.example.edrank_app.models.Question
-import com.example.edrank_app.models.TopCollege
+import com.example.edrank_app.models.*
 import com.example.edrank_app.utils.Constants
+import com.example.edrank_app.utils.TokenManager
 
 class FeedbackQuestionsAdapter() :
     ListAdapter<Question, FeedbackQuestionsAdapter.FeedbackQuestionsViewHolder>(ComparatorDiffUtil()) {
@@ -37,6 +35,10 @@ class FeedbackQuestionsAdapter() :
     inner class FeedbackQuestionsViewHolder(private val binding: ItemFeedbackQuestionsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        lateinit var tokenManager: TokenManager
+        var answerIdArray = mutableListOf<Mcq>()
+
+
         @SuppressLint("SetTextI18n")
         fun bind(response: Question) {
             Log.e(Constants.TAG, response.toString())
@@ -51,29 +53,36 @@ class FeedbackQuestionsAdapter() :
 
         private fun setOnCheckedChangeListener(questionId : Int) {
             binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+                tokenManager = TokenManager(binding.radioGroup.context)
+                var collegeId = tokenManager.getCollegeId()
+                var teacherId = tokenManager.getTeacherId()
+                var driveId  = tokenManager.getDriveId()
+
 
                 if(R.id.radio_button1 == checkedId){
-//                    PostFeedbackRequest(questionId)
+                        answerIdArray.add(Mcq( checkedId, questionId))
+
                 }
                 else if(R.id.radio_button2 == checkedId){
-
+                    answerIdArray.add(Mcq( checkedId, questionId))
                 }
                 else if(R.id.radio_button3 == checkedId){
+                    answerIdArray.add(Mcq( checkedId, questionId))
 
                 }
-                else if(R.id.radio_button4 == checkedId){
-
+                else if(R.id.radio_button4 == checkedId) {
+                    answerIdArray.add(Mcq( checkedId, questionId))
                 }
                 else if(R.id.radio_button5 == checkedId){
+                    answerIdArray.add(Mcq( checkedId, questionId))
 
                 }
                 else{
                     Toast.makeText(binding.radioGroup.context, "Please select an option!", Toast.LENGTH_SHORT).show()
-
                 }
+                Log.e("nvjsdhvju", answerIdArray.toString())
             }
         }
-
     }
 
 

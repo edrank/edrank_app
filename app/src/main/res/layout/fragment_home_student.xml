@@ -70,7 +70,7 @@
                         android:layout_marginHorizontal="15dp"
                         android:layout_marginBottom="10dp"
                         android:paddingHorizontal="5dp"
-                        android:text="Maharaja Surajmal Institute"
+                        android:text="xyz"
                         android:textColor="#02515A"
                         android:textSize="15sp" />
 
@@ -188,7 +188,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_ai"
+                    android:drawableTop="@drawable/ic_profile"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
@@ -264,7 +264,7 @@
                 android:layout_marginTop="7dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="View more"
+                android:text="@string/view_more"
                 android:textAllCaps="true"
                 android:textColor="#106714"
                 android:textSize="14sp"
@@ -281,112 +281,138 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/topTeacherRv"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                tools:itemCount="5"
+                tools:listitem="@layout/top_3_teacher_items" />
+
+
+            <TextView
+                android:id="@+id/viewMoreTopTeachers"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/view_more"
+                android:textAllCaps="true"
+                android:textColor="#106714"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold|italic" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_medal" />
 
-                <TextView
-                    android:id="@+id/rank1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="4dp"
-                    android:text="Dr. Kavita Pabreja"
-                    android:textSize="14sp" />
+<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:orientation="vertical">-->
 
-                <TextView
-                    android:id="@+id/collegeName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:padding="2dp"
-                    android:text="Maharaja Surajmal Institute"
-                    android:textSize="14sp" />
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:src="@drawable/ic_medal" />-->
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+<!--                <TextView-->
+<!--                    android:id="@+id/rank1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:padding="4dp"-->
+<!--                    android:text="Dr. Kavita Pabreja"-->
+<!--                    android:textSize="14sp" />-->
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
+<!--                <TextView-->
+<!--                    android:id="@+id/collegeName"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:padding="2dp"-->
+<!--                    android:text="Maharaja Surajmal Institute"-->
+<!--                    android:textSize="14sp" />-->
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_medal" />
+<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="40dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="2">-->
 
-                    <TextView
-                        android:id="@+id/rank2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="4dp"
-                        android:text="Dr. Neeetu Anand"
-                        android:textSize="14sp" />
+<!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/collegeName2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="2dp"
-                        android:text="Maharaja Surajmal Institute"
-                        android:textSize="14sp" />
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:src="@drawable/ic_medal" />-->
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
+<!--                    <TextView-->
+<!--                        android:id="@+id/rank2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:text="Dr. Neeetu Anand"-->
+<!--                        android:textSize="14sp" />-->
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+<!--                    <TextView-->
+<!--                        android:id="@+id/collegeName2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:padding="2dp"-->
+<!--                        android:text="Maharaja Surajmal Institute"-->
+<!--                        android:textSize="14sp" />-->
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_medal" />
+<!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
 
-                    <TextView
-                        android:id="@+id/rank3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="4dp"
-                        android:text="Dr. Karan Mehta"
-                        android:textSize="14sp" />
+<!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="vertical">-->
 
-                    <TextView
-                        android:id="@+id/collegeName3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:padding="2dp"
-                        android:text="Maharaja Surajmal Institute"
-                        android:textSize="14sp" />
+<!--                    <ImageView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:src="@drawable/ic_medal" />-->
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
+<!--                    <TextView-->
+<!--                        android:id="@+id/rank3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:text="Dr. Karan Mehta"-->
+<!--                        android:textSize="14sp" />-->
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+<!--                    <TextView-->
+<!--                        android:id="@+id/collegeName3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:padding="2dp"-->
+<!--                        android:text="Maharaja Surajmal Institute"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
 
         </LinearLayout>
     </LinearLayout>

@@ -97,7 +97,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Your progress"
+                            android:text="@string/your_progress"
                             android:textColor="#03535C"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -179,7 +179,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Your Rank"
+                            android:text="@string/your_rank"
                             android:textColor="@color/textgray"
                             android:textSize="12sp" />
 
@@ -208,7 +208,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="EdRank Top Teachers of your college"
+                android:text="@string/edrank_top_teachers_of_india"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -240,7 +240,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="View more"
+                android:text="@string/view_more"
                 android:textAllCaps="true"
                 android:textColor="#20264C"
                 android:textSize="13sp"
@@ -267,7 +267,7 @@
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="Reviews"
+                    android:text="@string/reviews"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray"
                     android:textSize="12sp" />
@@ -283,7 +283,7 @@
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="Leaderboard"
+                    android:text="@string/leaderboard"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray"
                     android:textSize="12sp" />
@@ -295,11 +295,11 @@
                     android:layout_margin="12dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/gray"
-                    android:drawableTop="@drawable/ic_ai"
+                    android:drawableTop="@drawable/ic_profile"
                     android:maxWidth="90dp"
                     android:maxHeight="90dp"
                     android:padding="5dp"
-                    android:text="My profile"
+                    android:text="@string/my_profile"
                     android:textAllCaps="false"
                     android:textColor="@color/textgray"
                     android:textSize="12sp" />
@@ -335,7 +335,7 @@
                         android:layout_marginVertical="10dp"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="THIS SEMESTER"
+                        android:text="@string/this_semester"
                         android:textColor="@color/textgray"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -356,7 +356,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="EdRank Top colleges of India"
+                android:text="@string/edrank_top_teachers_of_india"
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -375,13 +375,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/green"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="View more"
-                android:textColor="@color/textgray"
-                android:textSize="14sp"
-                android:textStyle="italic" />
+                android:text="@string/view_more"
+                android:textAllCaps="true"
+                android:textColor="#20264C"
+                android:textSize="13sp"
+                android:textStyle="italic|bold" />
+
 
 
         </LinearLayout>

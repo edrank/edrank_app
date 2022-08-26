@@ -49,6 +49,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         gettingSpinnerData()
+        gettingLangSpinnerData()
 
         binding.btnLogin.setOnClickListener {
             val validationResult = validateUserInput()
@@ -64,16 +65,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(com.example.edrank_app.R.id.action_loginFragment_to_forgotPasswordFragment)
         }
 
-        binding.hindiTranslateBtn.setOnClickListener {
-            val locale = Locale("hi")
-            Locale.setDefault(locale)
-            val config = Configuration()
-            config.locale = locale
-            context?.getResources()
-                ?.updateConfiguration(config, requireContext().getResources().getDisplayMetrics())
 
-
-        }
         bindObservers()
     }
 
@@ -98,6 +90,50 @@ class LoginFragment : Fragment() {
                 TODO("Not yet implemented")
             }
         }
+    }
+
+    private fun gettingLangSpinnerData() {
+        val tenants: Array<String> = arrayOf("English", "हिंदी")
+        val arrayAdapter =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, tenants)
+        binding.languageSpinner.adapter = arrayAdapter
+        binding.languageSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener,
+                AdapterView.OnItemClickListener {
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                    if (tenants[p2] == "हिंदी") {
+                        val locale = Locale("hi")
+                        Locale.setDefault(locale)
+                        val config = Configuration()
+                        config.locale = locale
+                        context?.getResources()
+                            ?.updateConfiguration(
+                                config,
+                                requireContext().getResources().getDisplayMetrics()
+                            )
+                    } else if (tenants[p2]=="English") {
+                        val locale = Locale("en")
+                        Locale.setDefault(locale)
+                        val config = Configuration()
+                        config.locale = locale
+                        context?.getResources()
+                            ?.updateConfiguration(
+                                config,
+                                requireContext().getResources().getDisplayMetrics()
+                            )
+                    }
+
+
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+                    Log.e("fkj", "Select something")
+                }
+
+                override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                    TODO("Not yet implemented")
+                }
+            }
     }
 
     private fun getLoginRequest(): LoginRequest {

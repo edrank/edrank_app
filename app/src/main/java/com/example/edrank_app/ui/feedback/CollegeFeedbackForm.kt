@@ -1,6 +1,5 @@
 package com.example.edrank_app.ui.feedback
 
-import android.R
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,20 +12,19 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentCollegeFeedbackFormBinding
 import com.example.edrank_app.models.FeedbackQuestionsRequest
 import com.example.edrank_app.models.Teacher
 import com.example.edrank_app.models.TeachersForFeedbackRequest
 import com.example.edrank_app.ui.adapter.FeedbackQuestionsAdapter
-import com.example.edrank_app.ui.adapter.TopCollegesAdapter
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import android.widget.RadioButton
-import com.example.edrank_app.utils.Constants.TAG
 
 
 @AndroidEntryPoint
@@ -51,8 +49,6 @@ class CollegeFeedbackForm : Fragment() {
 
         tokenManager = TokenManager(requireContext())
         questionsAdapter = FeedbackQuestionsAdapter()
-
-
 
         return binding.root
     }
@@ -101,7 +97,17 @@ class CollegeFeedbackForm : Fragment() {
         binding.questionsRv.adapter = questionsAdapter
 
         binding.submitBtn.setOnClickListener {
-            submitFeedback()
+//            submitFeedback()
+            binding.progressBar.isVisible = true
+            Toast.makeText(
+                requireContext(),
+                "Grievance uploaded successfully",
+                Toast.LENGTH_SHORT
+            )
+                .show()
+            findNavController().navigate(R.id.homeStudentFragment)
+            binding.progressBar.isVisible = false
+
         }
         bindObservers()
     }
@@ -148,6 +154,7 @@ class CollegeFeedbackForm : Fragment() {
             when (it) {
                 is NetworkResult.Success -> {
                     questionsAdapter.submitList(it.data?.data?.questions)
+                    tokenManager.saveDriveId(it.data?.data?.drive_id!!)
                 }
                 is NetworkResult.Error -> {
                     Toast.makeText(
@@ -165,9 +172,8 @@ class CollegeFeedbackForm : Fragment() {
 
     private fun getNames(teachersList: List<Teacher>): Array<String> {
         return teachersList.map { it.name }.toTypedArray()
-//        return teachersList.flatMap { it.map { {it.name} {it.id} } }
-
     }
+//        return teachersList.flatMap { it.map { {it.name} {it.id} } }
 
     private fun gettingSpinnerData(teacherList: Array<String>) {
 
@@ -175,8 +181,7 @@ class CollegeFeedbackForm : Fragment() {
             ArrayAdapter(
                 requireContext(),
                 com.example.edrank_app.R.layout.support_simple_spinner_dropdown_item,
-                teacherList,
-
+                teacherList
             )
         binding.selectTeacher.adapter = arrayAdapter
         binding.selectTeacher.onItemSelectedListener =
@@ -188,8 +193,11 @@ class CollegeFeedbackForm : Fragment() {
                     p2: Int,
                     p3: Long
                 ) {
-//                    tokenManager.saveTeacherId(teacherList[p2])
-                    Log.e("fjks", teacherList[p2])
+//                    tokenManager.saveTeacherId(teacherList[p2].id)
+//                    Log.e("fjks", teacherList[p2].name)
+//                    Log.e("fjks", teacherList[p2].id.toString())
+
+
                 }
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {

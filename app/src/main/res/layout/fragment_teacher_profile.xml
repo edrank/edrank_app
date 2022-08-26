@@ -123,7 +123,7 @@
                     android:layout_marginVertical="6dp"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Your Standings"
+                    android:text="@string/your_standings"
                     android:textColor="@color/textgray"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -190,7 +190,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="College Rank"
+                        android:text="@string/college_rank"
                         android:textColor="#3E1B7C"
                         android:textSize="14sp" />
 
@@ -225,7 +225,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="State Rank"
+                        android:text="@string/state_rank"
                         android:textColor="#1A631D"
                         android:textSize="14sp" />
 
@@ -259,7 +259,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="All India Rank"
+                        android:text="@string/all_india_rank"
                         android:textColor="#9A180F"
                         android:textSize="14sp" />
 
@@ -299,7 +299,7 @@
                     android:layout_marginVertical="10dp"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Your Progress"
+                    android:text="@string/your_progress"
                     android:textColor="@color/textgray"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -336,7 +336,7 @@
                     android:drawableStart="@drawable/ic_reset"
                     android:drawablePadding="15dp"
                     android:padding="5dp"
-                    android:text="Reset password"
+                    android:text="@string/reset_password"
                     android:textColor="@color/textgray"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -348,7 +348,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginVertical="5dp"
                     android:paddingVertical="5dp"
-                    android:hint="Current password"
+                    android:hint="@string/current_password"
                     android:textColorHint="@color/textgray"
                     android:textSize="14sp"
                     android:visibility="gone"/>
@@ -360,7 +360,7 @@
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginVertical="5dp"
                     android:paddingVertical="5dp"
-                    android:hint="New password"
+                    android:hint="@string/new_password"
                     android:textColorHint="@color/textgray"
                     android:textSize="14sp"
                     android:visibility="gone"/>
@@ -382,7 +382,7 @@
                     android:layout_height="wrap_content"
                     android:paddingVertical="5dp"
                     android:layout_gravity="center"
-                    android:text="Reset password"
+                    android:text="@string/reset_password"
                     android:layout_marginTop="5dp"
                     android:textColor="@color/white"
                     android:backgroundTint="#5C7FE7"
@@ -410,7 +410,7 @@
                     android:drawableStart="@drawable/ic_logout"
                     android:drawablePadding="15dp"
                     android:padding="5dp"
-                    android:text="Logout"
+                    android:text="@string/logout"
                     android:textColor="@color/textgray"
                     android:textSize="14sp"
                     android:textStyle="bold" />

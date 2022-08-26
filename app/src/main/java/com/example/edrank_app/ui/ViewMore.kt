@@ -56,13 +56,13 @@ class ViewMore : Fragment() {
         Log.e("bfehsjgjhvbjhgeb", type!!)
 
         if(type == "COLLEGE"){
-            viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", -1))
+            viewModel.getTopNColleges(TopCollegesRequest("", "NATIONAL", "", 20))
             binding.viewMoreCollegeRv.layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             binding.viewMoreCollegeRv.adapter = collegesAdapter
         }
         else if(type == "TEACHER"){
-            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "COLLEGE", "", 3))
+            viewModel.getTopNTeachers(TopTeachersRequest(cid!!.toInt(), "", "NATIONAL", "", 20))
             binding.viewMoreTeacherRv.layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             binding.viewMoreTeacherRv.adapter = teachersAdapter

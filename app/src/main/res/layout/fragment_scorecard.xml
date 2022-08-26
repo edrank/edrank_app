@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="12dp"
-                    android:text="Scoreboard"
+                    android:text="@string/scoreboard"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
@@ -135,7 +135,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:padding="4dp"
-                                android:text="Dr. etc etc etc"
+                                android:text="Dr. Poonam Pandey"
                                 android:textSize="14sp" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -274,7 +274,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:text="AIR"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
 
                 <Button
@@ -284,7 +284,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:text="State"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
 
                 <Button
@@ -294,7 +294,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:text="College"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

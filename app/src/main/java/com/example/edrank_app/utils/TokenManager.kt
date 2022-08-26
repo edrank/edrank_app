@@ -38,6 +38,16 @@ class TokenManager @Inject constructor(@ApplicationContext context: Context) {
         return prefs.getString(TENANT_TYPE, null)
     }
 
+    fun saveDriveId(tenant: Int) {
+        val editor = prefs.edit()
+        editor.putInt(TENANT_TYPE, tenant)
+        editor.apply()
+    }
+
+    fun getDriveId(): Int? {
+        return prefs.getInt(TENANT_TYPE, 1)
+    }
+
     fun saveCollegeId(cid: String) {
         val editor = prefs.edit()
         editor.putString(CID, cid)

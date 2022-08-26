@@ -1,11 +1,9 @@
 package com.example.edrank_app.api
 
 import com.example.edrank_app.models.*
+import okhttp3.MultipartBody
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface UserAPI {
 
@@ -26,4 +24,15 @@ interface UserAPI {
 
     @POST("/api/v1/get-my-colleges-rank")
     suspend fun collegeRank(@Body collegeRankRequest: CollegeRankRequest) : Response<CollegeRankResponse>
+
+    @GET("/api/v1/college")
+    suspend fun getCollege() : Response<CollegeResponse>
+
+    @POST("/api/v1/submit-gc")
+    suspend fun submitGrievance(@Body grievanceCellRequest: GrievanceCellRequest) : Response <GrievanceCellResponse>
+
+
+    @POST("/api/v1/file-upload")
+    suspend fun fileUpload(@Body fileUploadRequest: FileUploadRequest) : Response <FileUploadResponse>
+
 }

@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.R
 import com.example.edrank_app.databinding.FragmentHomeTeacherBinding
 import com.example.edrank_app.models.CollegeRankRequest
+import com.example.edrank_app.models.GraphSARequest
 import com.example.edrank_app.models.TopCollegesRequest
 import com.example.edrank_app.models.TopTeachersRequest
 import com.example.edrank_app.ui.UserViewModel
@@ -33,6 +34,7 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.properties.Delegates
 
 @AndroidEntryPoint
 class HomeTeacherFragment : Fragment() {
@@ -42,6 +44,7 @@ class HomeTeacherFragment : Fragment() {
     private lateinit var teachersAdapter: TopTeachersAdapter
     private lateinit var collegesAdapter: TopCollegesAdapter
     private val viewModel by activityViewModels<UserViewModel>()
+    private val teacherViewModel by activityViewModels<TeacherViewModel>()
     private lateinit var tokenManager: TokenManager
     lateinit var cid: String
 
@@ -64,7 +67,10 @@ class HomeTeacherFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        bindObservers()
+
 //        topTeachersRequest.cid = tokenManager!!.getCid()!!
+        viewModel.getCollegeDetails()
 
         viewModel.getTopNTeachers(TopTeachersRequest(cid.toInt(), "", "COLLEGE", "", 3))
         binding.topTeacherRv.layoutManager =
@@ -78,7 +84,11 @@ class HomeTeacherFragment : Fragment() {
 
         viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(), "", "", ""))
 
-        bindObservers()
+        Log.e("teacher id ", tokenManager.getTeacherId().toString())
+
+        teacherViewModel.sentimentalAnalysisData("teacher", GraphSARequest(tokenManager.getTeacherId()!!))
+
+        binding.teacherName.text = tokenManager.getUserName().toString()
 
         handleUi()
 
@@ -91,13 +101,13 @@ class HomeTeacherFragment : Fragment() {
     private fun handleUi() {
 
         //seekbar handling
-        binding.seekBar.progress = 87
+        binding.seekBar.progress = 70
         binding.seekbarValue.text = binding.seekBar.progress.toString()
         binding.seekBar.isEnabled = false           //to make it non-clickable
 
         //for 3 button menu
         binding.reviews.setOnClickListener {
-            findNavController().navigate(R.id.action_homeTeacherFragment_to_teacherReviewsFragment)
+            findNavController().navigate(R.id.reviewsFragment)
         }
 
         binding.scorecard.setOnClickListener {
@@ -123,6 +133,56 @@ class HomeTeacherFragment : Fragment() {
     }
 
     private fun bindObservers() {
+
+//        teacherViewModel.saGraphLiveData.observe(viewLifecycleOwner, Observer {
+//            binding.progressBar.isVisible = false
+//            when (it) {
+//                is NetworkResult.Success -> {
+//                    var negative = it.data!!.data.sa_graph.Negative
+//                    var positive = it.data.data.sa_graph.Positive
+//                    var neutral = it.data.data.sa_graph.Neutral
+//                    Log.e("pie chart", it.data.data.sa_graph.Neutral.toString())
+//                    Log.e("pie chart", positive.toString())
+//                    Log.e("pie chart", neutral.toString())
+//                    binding.seekBar.progress = positive.toInt()
+//                    loadPieChartData(positive, negative, neutral)
+//                }
+//                is NetworkResult.Error -> {
+//                    Toast.makeText(
+//                        requireContext(),
+//                        "Can't load graph. Error: " + it.data?.message.toString(),
+//                        Toast.LENGTH_SHORT
+//                    )
+//                        .show()
+//                }
+//                is NetworkResult.Loading -> {
+//                    binding.progressBar.isVisible = true
+//                }
+//            }
+//        })
+
+        viewModel.collegeLiveData.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                    binding.instituteName.text = it.data?.data?.college?.name
+                    binding.collegeName.text = it.data?.data?.college?.name
+
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(
+                        requireContext(),
+                        "Can't load college. Error: " + it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+                is NetworkResult.Loading -> {
+                    binding.progressBar.isVisible = true
+                }
+            }
+        })
+
         viewModel.collegeRank.observe(viewLifecycleOwner, Observer {
             binding.progressBar.isVisible = false
             when (it) {
@@ -183,6 +243,8 @@ class HomeTeacherFragment : Fragment() {
                 }
             }
         })
+
+
     }
 
 
@@ -208,6 +270,7 @@ class HomeTeacherFragment : Fragment() {
         entries.add(PieEntry(0.7f, "Positive"))
         entries.add(PieEntry(0.2f, "Neutral"))
         entries.add(PieEntry(0.1f, "Negative"))
+        Log.e("pie chart",entries.toString())
 
         val colors: ArrayList<Int> = ArrayList()
         for (color in ColorTemplate.MATERIAL_COLORS) {

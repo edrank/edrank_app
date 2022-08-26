@@ -25,12 +25,19 @@ class StudentProfileFragment : Fragment() {
     private val viewModel by activityViewModels<StudentProfileViewModel>()
     private val userViewModel by activityViewModels<UserViewModel>()
     private lateinit var tokenManager: TokenManager
+    private var type: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentStudentProfileBinding.inflate(inflater, container, false)
+        type = arguments?.getString("type")
+
+        if(type == "PARENT"){
+            binding.batchLayout.isVisible = false
+            binding.dobLayout.isVisible = false
+        }
 
         tokenManager = TokenManager(requireContext())
         return binding.root
