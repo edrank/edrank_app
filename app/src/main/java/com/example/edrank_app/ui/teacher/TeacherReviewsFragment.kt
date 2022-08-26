@@ -28,49 +28,49 @@ class TeacherReviewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupViewPager(binding.viewPager)
-
-        binding.bottomNav.setItemSelected(
-            R.id.reviews,
-            true
-        );
-        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            @SuppressLint("ResourceAsColor")
-            override fun onPageSelected(position: Int) {
-                when (position) {
-                    0 -> {
-                        binding.bottomNav.setItemSelected(R.id.reviews, true)
-                    }
-                    1 -> {
-                        binding.bottomNav.setItemSelected(R.id.questions, true)
-                    }
-                }
-                super.onPageSelected(position)
-            }
-        })
-
-        binding.bottomNav.setOnItemSelectedListener(object :
-            ChipNavigationBar.OnItemSelectedListener {
-            @SuppressLint("ResourceAsColor")
-            override fun onItemSelected(id: Int) {
-                when (id) {
-                    R.id.reviews -> {
-                        binding.viewPager.currentItem = 0
-                    }
-                    R.id.questions -> {
-                        binding.viewPager.currentItem = 1
-                    }
-                }
-            }
-        })
+//        setupViewPager(binding.viewPager)
+//
+//        binding.bottomNav.setItemSelected(
+//            R.id.reviews,
+//            true
+//        );
+//        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//            @SuppressLint("ResourceAsColor")
+//            override fun onPageSelected(position: Int) {
+//                when (position) {
+//                    0 -> {
+//                        binding.bottomNav.setItemSelected(R.id.reviews, true)
+//                    }
+//                    1 -> {
+//                        binding.bottomNav.setItemSelected(R.id.questions, true)
+//                    }
+//                }
+//                super.onPageSelected(position)
+//            }
+//        })
+//
+//        binding.bottomNav.setOnItemSelectedListener(object :
+//            ChipNavigationBar.OnItemSelectedListener {
+//            @SuppressLint("ResourceAsColor")
+//            override fun onItemSelected(id: Int) {
+//                when (id) {
+//                    R.id.reviews -> {
+//                        binding.viewPager.currentItem = 0
+//                    }
+//                    R.id.questions -> {
+//                        binding.viewPager.currentItem = 1
+//                    }
+//                }
+//            }
+//        })
     }
 
-    private fun setupViewPager(viewPager: ViewPager2?) {
-        val exViewPageAdapter = ViewPageAdapter(this)
-        ViewPageAdapter.addFragment(ReviewsFragment(), "Reviews")
-        ViewPageAdapter.addFragment(QuestionsFragment(), "Questions")
-        viewPager!!.adapter = exViewPageAdapter
-    }
+//    private fun setupViewPager(viewPager: ViewPager2?) {
+//        val exViewPageAdapter = ViewPageAdapter(this)
+//        ViewPageAdapter.addFragment(ReviewsFragment(), "Reviews")
+//        ViewPageAdapter.addFragment(QuestionsFragment(), "Questions")
+//        viewPager!!.adapter = exViewPageAdapter
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

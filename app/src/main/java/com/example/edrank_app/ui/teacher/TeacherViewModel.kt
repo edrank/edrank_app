@@ -3,6 +3,8 @@ package com.example.edrank_app.ui.teacher
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.edrank_app.models.GraphSARequest
+import com.example.edrank_app.models.GraphSAResponse
 import com.example.edrank_app.models.TeacherAllRanksResponse
 import com.example.edrank_app.models.TeacherFeedbackResponse
 import com.example.edrank_app.repositories.TeacherRepository
@@ -21,9 +23,19 @@ class TeacherViewModel @Inject constructor(private val teacherRepository: Teache
     val teacherMyALlRanksLiveData: LiveData<NetworkResult<TeacherAllRanksResponse>>
         get() = teacherRepository.teacherMyALlRanksLiveData
 
+    val saGraphLiveData: LiveData<NetworkResult<GraphSAResponse>>
+        get() = teacherRepository.saGraphLiveData
+
+
     fun getTeacherFeedbacks() {
         viewModelScope.launch {
             teacherRepository.teacherMyFeedbacks()
+        }
+    }
+
+    fun sentimentalAnalysisData(type: String, graphSARequest: GraphSARequest) {
+        viewModelScope.launch {
+            teacherRepository.sentimentalAnalysisData(type, graphSARequest)
         }
     }
 

@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="10dp"
-                    android:text="GRIEVANCE CELL"
+                    android:text="@string/grievance_cell"
                     android:textColor="#D7000000"
                     android:textSize="17sp" />
 
@@ -50,66 +50,46 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:paddingBottom="10dp"
-                android:text="Complaint About :"
-                android:textColor="#000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:background="@color/white"
-                android:paddingStart="10dp"
-                android:text="College / Institution"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="5dp"
-                android:background="@color/white"
-                android:paddingStart="10dp"
-                android:text="Teacher"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:paddingBottom="10dp"
-                android:text="What Issue you want to report?"
+                android:text="@string/complaint_about"
                 android:textColor="#000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/tenantSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/form_border_style"
-                android:spinnerMode="dropdown" />
+                android:layout_height="wrap_content"
+                style="@android:style/Widget.Material.Spinner.Underlined"
+                app:backgroundTint="@color/black"/>
 
-            <!--        Harrassment/Ragging/Misbehaviour/Fraud/.../Other-->
+<!--            <RadioButton-->
+<!--                android:id="@+id/college"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginVertical="5dp"-->
+<!--                android:background="@color/white"-->
+<!--                android:paddingStart="10dp"-->
+<!--                android:text="College"-->
+<!--                android:textSize="16sp" />-->
 
+<!--            <RadioButton-->
+<!--                android:id="@+id/teacher"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginVertical="5dp"-->
+<!--                android:background="@color/white"-->
+<!--                android:paddingStart="10dp"-->
+<!--                android:text="Teacher"-->
+<!--                android:textSize="16sp" />-->
 
         </LinearLayout>
 
-
         <EditText
+            android:id="@+id/other"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:hint="If 'Other' then what?"
+            android:hint="@string/if_other_then_what"
             android:textSize="14sp" />
 
         <LinearLayout
@@ -119,11 +99,12 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/is_cc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:paddingBottom="10dp"
-                android:text="Did you report this issue to Class Coordinator ?"
+                android:text="@string/did_you_report_this_issue_to_class_coordinator"
                 android:textColor="#000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -132,116 +113,129 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <RadioButton
+                <TextView
+                    android:id="@+id/yes"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:paddingStart="10dp"
-                    android:text="Yes"
-                    android:textSize="14sp" />
+                    android:padding="8dp"
+                    android:text="@string/yes"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_margin="5dp"/>
 
-                <RadioButton
+                <TextView
+                    android:id="@+id/no"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:paddingStart="10dp"
-                    android:text="No"
-                    android:textSize="14sp" />
+                    android:padding="5dp"
+                    android:text="@string/no"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_margin="5dp"/>
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <EditText
+                android:id="@+id/ccResponse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:hint="If 'Yes' then what action was taken?"
+                android:hint="@string/if_yes_then_what_action_was_taken"
                 android:textSize="14sp" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:paddingBottom="10dp"
-                android:text="Attach any Proof (if any)"
-                android:textColor="#000"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:text="@string/attach_any_proof_if_any"-->
+<!--                android:textColor="#000"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+<!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="8dp">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:cardCornerRadius="8dp">-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/gray"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_from_camera" />
+<!--                    <ImageView-->
+<!--                        android:id="@+id/selectImageBtn"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@color/gray"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/ic_from_camera" />-->
 
-                </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="8dp">
+<!--                </androidx.cardview.widget.CardView>-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/gray"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_add_photo" />
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:cardCornerRadius="8dp">-->
 
-                </androidx.cardview.widget.CardView>
+<!--                    <ImageView-->
+<!--                        android:id="@+id/getDocFromDevice"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@color/gray"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/ic_add_photo" />-->
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="8dp">
+<!--                </androidx.cardview.widget.CardView>-->
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/gray"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_baseline_attach_file_24" />
+<!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
 
-                </androidx.cardview.widget.CardView>
+<!--            <TextView-->
+<!--                android:id="@+id/confirmPost"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_margin="2dp"-->
+<!--                android:text="Upload file"-->
+<!--                android:textColor="#0988C1"-->
+<!--                android:textSize="15sp" />-->
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/selectedImage"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/gray"-->
+<!--                android:padding="10dp" />-->
+
+<!--        </LinearLayout>-->
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="NOTICE : You should not report any misinformation here, anyone found guilty will face serious consequences."
+            android:text="@string/notice_you_should_not_report_any_misinformation_here_anyone_found_guilty_will_face_serious_consequences"
             android:textColor="#D80808"
             android:textSize="15sp" />
 
@@ -263,12 +257,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:paddingBottom="10dp"
-                    android:text="Subject of your Application (max : 50 words)"
+                    android:text="@string/subject_of_your_application_max_50_words"
                     android:textColor="#000"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/subject"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Text"
@@ -296,21 +291,44 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:paddingBottom="10dp"
-                    android:text="Explain Issue (max : 300 words)"
+                    android:text="@string/explain_issue_max_300_words"
                     android:textColor="#000"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <EditText
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Text"
+                    android:hint="@string/text"
                     android:minHeight="200dp"
                     android:textSize="14sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/submitBtn"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/black"
+            android:text="Submit"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/progress_bar"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:SpinKit_Color="@color/black" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp"
+    android:layout_margin="20dp"
     app:cardCornerRadius="8dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -38,12 +38,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Give Feedback" />
+            android:text="@string/give_feedback" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Feedbacks will directly be analysed by the the higher officers. Any misinformation mus not be shared."
+            android:text="@string/your_feedbacks_will_directly_be_analysed_by_the_the_higher_officers_any_misinformation_mus_not_be_shared"
             android:textColor="#95000000"
             android:textSize="14sp" />
 

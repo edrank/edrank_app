@@ -20,6 +20,47 @@
     <string name="email">ईमेल</string>
     <string name="reset_password">पासवर्ड रीसेट</string>
     <string name="logout">बाहर</string>
+    <string name="grievance_cell">Gशिकायत प्रकोष्ठ</string>
+    <string name="complaint_about">शिकायत के बारे में :</string>
+    <string name="college_institution">कॉलेज / संस्थान</string>
+    <string name="what_issue_you_want_to_report">आप किस समस्या की रिपोर्ट करना चाहते हैं?</string>
+    <string name="if_other_then_what">अगर अन्य तो क्या?</string>
+    <string name="did_you_report_this_issue_to_class_coordinator">क्या आपने इस मुद्दे की रिपोर्ट कक्षा समन्वयक को दी थी?</string>
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    <string name="if_yes_then_what_action_was_taken">यदि हां, तो क्या कार्रवाई की गई?</string>
+    <string name="attach_any_proof_if_any">कोई सबूत संलग्न करें (यदि कोई हो)</string>
+    <string name="notice_you_should_not_report_any_misinformation_here_anyone_found_guilty_will_face_serious_consequences">सूचना: आपको यहां किसी भी गलत सूचना की सूचना नहीं देनी चाहिए, दोषी पाए जाने वाले किसी भी व्यक्ति को गंभीर परिणाम भुगतने होंगे।</string>
+    <string name="subject_of_your_application_max_50_words">आपके आवेदन का विषय (अधिकतम: 50 शब्द)</string>
+    <string name="explain_issue_max_300_words">समस्या की व्याख्या करें (अधिकतम: 300 शब्द)</string>
+    <string name="text">पाठ दर्ज करें</string>
+    <string name="hello_there_you_are">नमस्ते, आप हैं</string>
+    <string name="tap_to_check_profile">(प्रोफाइल चेक करने के लिए टैप करें)</string>
+    <string name="parent_gaurdian_of">माता-पिता / संरक्षक</string>
+    <string name="view_more">और देखें</string>
+    <string name="your_progress">आपकी प्रगति</string>
+    <string name="your_rank">आपकी श्रेणी</string>
+    <string name="reviews">समीक्षा</string>
+    <string name="leaderboard">लीडरबोर्ड</string>
+    <string name="this_semester">इस सेमेस्टर</string>
+    <string name="login_to_edrank">एड्रैंक में लॉगिन करें</string>
+    <string name="password">पासवर्ड</string>
+    <string name="login_as">लॉगिन प्रकार</string>
+    <string name="forgot_password">पासवर्ड भूल गए?</string>
+    <string name="reviews_given_to_you_by_students">छात्रों द्वारा आपको दी गई समीक्षाएं</string>
+    <string name="scoreboard">स्कोर बोर्ड</string>
+    <string name="your_standings">आपकी स्थिति</string>
+    <string name="college_rank">कॉलेज श्रेणी</string>
+    <string name="state_rank">राज्य श्रेणी</string>
+    <string name="all_india_rank">अखिल भारतीय श्रेणी</string>
+    <string name="current_password">वर्तमान पासवर्ड</string>
+    <string name="new_password">नया पासवर्ड</string>
+    <string name="questions">रेखांकन</string>
+    <string name="edrank_leaderboard">एड्रैंक लीडरबोर्ड</string>
+    <string name="give_feedback">
+प्रतिक्रिया दें</string>
+    <string name="your_feedbacks_will_directly_be_analysed_by_the_the_higher_officers_any_misinformation_mus_not_be_shared">
+आपकी प्रतिक्रिया का उच्च अधिकारियों द्वारा सीधे विश्लेषण किया जाएगा। कोई भी गलत सूचना साझा नहीं की जानी चाहिए।</string>
 
 
 </resources>

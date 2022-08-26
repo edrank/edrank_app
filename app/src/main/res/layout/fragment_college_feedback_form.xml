@@ -89,6 +89,7 @@
             android:text="@string/submit_feedback"
             android:textAllCaps="true"
             android:textColor="@color/white"
+            android:layout_marginBottom="30dp"
             android:textSize="16sp" />
 
 
