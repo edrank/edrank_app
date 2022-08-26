@@ -101,7 +101,7 @@ class CollegeFeedbackForm : Fragment() {
             binding.progressBar.isVisible = true
             Toast.makeText(
                 requireContext(),
-                "Grievance uploaded successfully",
+                "Uploaded successfully",
                 Toast.LENGTH_SHORT
             )
                 .show()

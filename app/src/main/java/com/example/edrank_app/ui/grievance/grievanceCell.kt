@@ -172,7 +172,7 @@ class grievanceCell : Fragment() {
                 is NetworkResult.Error -> {
                     Toast.makeText(
                         requireContext(),
-                        "Grievance uploaded successfully",
+                        "Uploaded successfully",
                         Toast.LENGTH_SHORT
                     )
                         .show()
