@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_credentialsFragment"
+            app:destination="@id/credentialsFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeStudentFragment"
@@ -134,4 +137,8 @@
         android:name="com.example.edrank_app.ViewMore"
         android:label="fragment_view_more"
         tools:layout="@layout/fragment_view_more" />
+    <fragment
+        android:id="@+id/credentialsFragment"
+        android:name="com.example.edrank_app.ui.CredentialsFragment"
+        android:label="CredentialsFragment" />
 </navigation>

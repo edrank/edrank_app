@@ -1,13 +1,9 @@
 package com.example.edrank_app
 
-import android.R
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import com.example.edrank_app.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

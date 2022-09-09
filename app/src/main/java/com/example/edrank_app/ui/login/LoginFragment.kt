@@ -61,8 +61,8 @@ class LoginFragment : Fragment() {
             }
         }
 
-        binding.btnForgotPassword.setOnClickListener {
-            findNavController().navigate(com.example.edrank_app.R.id.action_loginFragment_to_forgotPasswordFragment)
+        binding.credentials.setOnClickListener {
+            findNavController().navigate(com.example.edrank_app.R.id.action_loginFragment_to_credentialsFragment)
         }
 
 

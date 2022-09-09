@@ -4,7 +4,6 @@
     <string name="your_reviews_are">Your reviews are:</string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="txt_error_message" translatable="false">%1$S</string>
@@ -65,5 +64,6 @@
     <string name="give_feedback">Give Feedback</string>
     <string name="your_feedbacks_will_directly_be_analysed_by_the_the_higher_officers_any_misinformation_mus_not_be_shared">Your Feedbacks will directly be analysed by the the higher officers. Any misinformation mus not be shared.</string>
     <string name="select_one" translatable="false">Select one</string>
+    <string name="view_the_credentials_for_tenants">View the credentials for users</string>
 
 </resources>
