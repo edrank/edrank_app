@@ -46,7 +46,7 @@ class HomeParentFragment : Fragment() {
         _binding = FragmentHomeParentBinding.inflate(inflater, container, false)
 
         collegesAdapter = TopCollegesAdapter()
-        childrenAdapter = ChildrenAdapter()
+        childrenAdapter = ChildrenAdapter(::onChildClicked)
         teachersAdapter = TopTeachersAdapter()
         tokenManager = TokenManager(requireContext())
 
@@ -163,6 +163,12 @@ class HomeParentFragment : Fragment() {
 
     }
 
+    private fun onChildClicked(){
+
+        val bundle =  Bundle()
+        bundle.putString("type", "PARENT")
+        findNavController().navigate(R.id.action_homeParentFragment_to_collegeFeedbackForm, bundle)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

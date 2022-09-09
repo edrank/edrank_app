@@ -5,6 +5,6 @@ data class TopCollege(
     val city: String,
     val name: String,
     val rank: Int,
-    val score: Double,
+    val score: Float,
     val state: String
 )

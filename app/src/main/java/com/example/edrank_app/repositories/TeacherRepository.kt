@@ -3,10 +3,7 @@ package com.example.edrank_app.repositories
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.edrank_app.api.TeacherAPI
-import com.example.edrank_app.models.GraphSARequest
-import com.example.edrank_app.models.GraphSAResponse
-import com.example.edrank_app.models.TeacherAllRanksResponse
-import com.example.edrank_app.models.TeacherFeedbackResponse
+import com.example.edrank_app.models.*
 import com.example.edrank_app.utils.NetworkResult
 import org.json.JSONObject
 import javax.inject.Inject
@@ -49,6 +46,24 @@ class TeacherRepository @Inject constructor(private val teacherAPI: TeacherAPI) 
             _teacherMyALlRanksLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
         }
     }
+
+
+//    suspend fun teacherCollegeRank() {
+//        _collegeRankLiveData.postValue(NetworkResult.Loading())
+//
+//        val response = teacherAPI.getCollegeRank()
+//        if (response.isSuccessful && response.body() != null) {
+//            _collegeRankLiveData.postValue(NetworkResult.Success(response.body()!!))
+//
+//        } else if (response.errorBody() != null) {
+//            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+//            _collegeRankLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
+//
+//        } else {
+//            _collegeRankLiveData.postValue(NetworkResult.Error("Something Went Wrong"))
+//
+//        }
+//    }
 
     suspend fun sentimentalAnalysisData(type: String, graphSARequest: GraphSARequest) {
         _saGraphLiveData.postValue(NetworkResult.Loading())

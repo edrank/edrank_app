@@ -61,14 +61,15 @@ class CollegeFeedbackForm : Fragment() {
             binding.selectTeacher.isVisible = false
             binding.selectTeacherTv.isVisible = false
             binding.progressBar.isVisible = false
-//            binding.formTitle.text = "COLLEGE FEEDBACK FORM"
+            binding.formTitle.text = "COLLEGE FEEDBACK FORM"
 
             feedbackViewModel.getQuestions(
                 "SC",
                 FeedbackQuestionsRequest(tokenManager.getCollegeId()!!.toInt())
             )
         } else if (type == "TEACHER") {
-//            binding.formTitle.text = "TEACHER FEEDBACK FORM"
+            binding.formTitle.text = "TEACHER FEEDBACK FORM"
+            binding.thoughtsTv.text = "Your thoughts about the teacher"
 
             feedbackViewModel.getTeachers(
                 TeachersForFeedbackRequest(
@@ -84,7 +85,7 @@ class CollegeFeedbackForm : Fragment() {
             binding.selectTeacher.isVisible = false
             binding.selectTeacherTv.isVisible = false
             binding.progressBar.isVisible = false
-//            binding.formTitle.text = "COLLEGE FEEDBACK FORM"
+            binding.formTitle.text = "COLLEGE FEEDBACK FORM"
 
             feedbackViewModel.getQuestions(
                 "PC",

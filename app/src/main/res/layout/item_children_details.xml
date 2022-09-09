@@ -35,9 +35,11 @@
 
 
         <Button
+            android:id="@+id/giveFeedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textColor="@color/white"
             android:text="@string/give_feedback" />
 
         <TextView

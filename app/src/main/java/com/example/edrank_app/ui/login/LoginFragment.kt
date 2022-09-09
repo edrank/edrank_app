@@ -167,20 +167,22 @@ class LoginFragment : Fragment() {
                     when (tenant) {
                         "STUDENT" -> {
                             findNavController().navigate(R.id.action_loginFragment_to_homeStudentFragment)
-                            tokenManager.saveCollegeId(it.data!!.data.user.cid)
-                            tokenManager.saveUserName(it.data!!.data.user.name)
-                            tokenManager.saveCourseId(it.data!!.data.user.course_id.toString())
+                            tokenManager.saveCollegeId(it.data.data.user.cid)
+                            tokenManager.saveUserName(it.data.data.user.name)
+                            tokenManager.saveCourseId(it.data.data.user.course_id.toString())
 
                         }
                         "TEACHER" -> {
                             findNavController().navigate(R.id.action_loginFragment_to_homeTeacherFragment)
-                            tokenManager.saveCollegeId(it.data!!.data.user.cid)
-                            tokenManager.saveUserName(it.data!!.data.user.name)
-                            tokenManager.saveCourseId(it.data!!.data.user.course_id.toString())
+                            tokenManager.saveCollegeId(it.data.data.user.cid)
+                            tokenManager.saveUserName(it.data.data.user.name)
+                            tokenManager.saveCourseId(it.data.data.user.course_id.toString())
 
                         }
                         "PARENT" -> {
                             findNavController().navigate(R.id.action_loginFragment_to_homeParentFragment)
+                            tokenManager.saveUserName(it.data.data.user.name)
+
                         }
                         else -> {
                             Log.e("Login", "Something went wrong with the user type.")

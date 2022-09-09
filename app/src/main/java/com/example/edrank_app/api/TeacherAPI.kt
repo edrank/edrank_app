@@ -1,9 +1,6 @@
 package com.example.edrank_app.api
 
-import com.example.edrank_app.models.GraphSARequest
-import com.example.edrank_app.models.GraphSAResponse
-import com.example.edrank_app.models.TeacherAllRanksResponse
-import com.example.edrank_app.models.TeacherFeedbackResponse
+import com.example.edrank_app.models.*
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET

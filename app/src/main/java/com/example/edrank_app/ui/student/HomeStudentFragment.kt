@@ -1,5 +1,6 @@
 package com.example.edrank_app.ui.student
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -115,6 +116,7 @@ class HomeStudentFragment : Fragment() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bindObservers() {
         viewModel.collegeLiveData.observe(viewLifecycleOwner, Observer {
             binding.progressBar.isVisible = false
@@ -140,7 +142,7 @@ class HomeStudentFragment : Fragment() {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    binding.collegeRankTv.text = it.data?.data?.rank.toString()
+                    binding.collegeRankTv.text = "#"+ it.data?.data?.rank.toString()
                     Log.e("college rank", it.data?.data?.rank.toString())
                 }
                 is NetworkResult.Error -> {

@@ -1,5 +1,6 @@
 package com.example.edrank_app.ui.teacher
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -34,7 +35,6 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.properties.Delegates
 
 @AndroidEntryPoint
 class HomeTeacherFragment : Fragment() {
@@ -72,6 +72,8 @@ class HomeTeacherFragment : Fragment() {
 //        topTeachersRequest.cid = tokenManager!!.getCid()!!
         viewModel.getCollegeDetails()
 
+        teacherViewModel.getTeacherAllRanks("COLLEGE")
+
         viewModel.getTopNTeachers(TopTeachersRequest(cid.toInt(), "", "COLLEGE", "", 3))
         binding.topTeacherRv.layoutManager =
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
@@ -82,11 +84,9 @@ class HomeTeacherFragment : Fragment() {
             LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
         binding.topCollegeRv.adapter = collegesAdapter
 
-        viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(), "", "", ""))
+        viewModel.getCollegeRank(CollegeRankRequest(cid.toInt(), "", "NATIONAL", ""))
 
-        Log.e("teacher id ", tokenManager.getTeacherId().toString())
-
-        teacherViewModel.sentimentalAnalysisData("teacher", GraphSARequest(tokenManager.getTeacherId()!!))
+//        teacherViewModel.sentimentalAnalysisData("teacher", GraphSARequest(tokenManager.getTeacherId()!!))
 
         binding.teacherName.text = tokenManager.getUserName().toString()
 
@@ -132,7 +132,29 @@ class HomeTeacherFragment : Fragment() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bindObservers() {
+
+        teacherViewModel.teacherMyALlRanksLiveData.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = false
+            when (it) {
+                is NetworkResult.Success -> {
+                    binding.userRank.text = "#" +  it.data?.data?.rank?.toString()
+                    Log.e("score", it.data?.data?.rank.toString())
+                }
+                is NetworkResult.Error -> {
+                    Toast.makeText(
+                        requireContext(),
+                        it.data?.message.toString(),
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+                is NetworkResult.Loading -> {
+                    binding.progressBar.isVisible = true
+                }
+            }
+        })
 
 //        teacherViewModel.saGraphLiveData.observe(viewLifecycleOwner, Observer {
 //            binding.progressBar.isVisible = false
@@ -144,8 +166,8 @@ class HomeTeacherFragment : Fragment() {
 //                    Log.e("pie chart", it.data.data.sa_graph.Neutral.toString())
 //                    Log.e("pie chart", positive.toString())
 //                    Log.e("pie chart", neutral.toString())
-//                    binding.seekBar.progress = positive.toInt()
-//                    loadPieChartData(positive, negative, neutral)
+////                    binding.seekBar.progress = positive.toInt()
+////                    loadPieChartData(positive, negative, neutral)
 //                }
 //                is NetworkResult.Error -> {
 //                    Toast.makeText(
@@ -165,9 +187,9 @@ class HomeTeacherFragment : Fragment() {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    binding.instituteName.text = it.data?.data?.college?.name
-                    binding.collegeName.text = it.data?.data?.college?.name
-
+                    tokenManager.saveCollegeName(it.data?.data?.college?.name!!)
+                    binding.instituteName.text = it.data.data.college.name
+                    binding.collegeName.text = it.data.data.college.name
                 }
                 is NetworkResult.Error -> {
                     Toast.makeText(
@@ -187,7 +209,7 @@ class HomeTeacherFragment : Fragment() {
             binding.progressBar.isVisible = false
             when (it) {
                 is NetworkResult.Success -> {
-                    binding.collegeRank.text = it.data?.data?.rank.toString()
+                    binding.collegeRank.text = "#" + it.data?.data?.rank.toString()
                     Log.e("rank", it.data?.data?.rank.toString())
                 }
                 is NetworkResult.Error -> {
@@ -270,7 +292,7 @@ class HomeTeacherFragment : Fragment() {
         entries.add(PieEntry(0.7f, "Positive"))
         entries.add(PieEntry(0.2f, "Neutral"))
         entries.add(PieEntry(0.1f, "Negative"))
-        Log.e("pie chart",entries.toString())
+//        Log.e("pie chart",entries.toString())
 
         val colors: ArrayList<Int> = ArrayList()
         for (color in ColorTemplate.MATERIAL_COLORS) {

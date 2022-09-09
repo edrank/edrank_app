@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.edrank_app.databinding.ItemChildrenDetailsBinding
 import com.example.edrank_app.models.Children
 import com.example.edrank_app.utils.Constants
+import com.example.edrank_app.utils.TokenManager
 
-class ChildrenAdapter() : ListAdapter<Children, ChildrenAdapter.ChildrenViewHolder>(
+class ChildrenAdapter(private val onChildClicked: () -> Unit) : ListAdapter<Children, ChildrenAdapter.ChildrenViewHolder>(
     ComparatorDiffUtil()
 ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildrenViewHolder {
@@ -32,7 +33,9 @@ class ChildrenAdapter() : ListAdapter<Children, ChildrenAdapter.ChildrenViewHold
         fun bind(response: Children) {
             Log.e(Constants.TAG, response.toString())
             binding.childName.text = response.name
-//            binding.collegeName.text = response.cid.toString()
+            binding.giveFeedback.setOnClickListener {
+                onChildClicked()
+            }
 
         }
 

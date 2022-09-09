@@ -18,17 +18,6 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/progress_bar"
-        style="@style/SpinKitView.ThreeBounce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:SpinKit_Color="@color/black" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/viewMoreCollegeRv"
         android:layout_width="match_parent"
@@ -44,6 +33,17 @@
         android:layout_marginTop="6dp"
         tools:itemCount="5"
         tools:listitem="@layout/top_3_teacher_items" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress_bar"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/black" />
 
 
 </LinearLayout>

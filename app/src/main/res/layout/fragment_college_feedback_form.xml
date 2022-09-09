@@ -61,7 +61,7 @@
             android:paddingTop="10dp"
             android:paddingEnd="20dp"
             android:paddingBottom="10dp"
-            android:text="Your thoughts about the teacher"
+            android:text="Your thoughts about the college"
             android:textColor="#000"
             android:textSize="17sp"
             android:textStyle="bold" />

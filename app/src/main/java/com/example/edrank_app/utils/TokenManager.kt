@@ -65,7 +65,7 @@ class TokenManager @Inject constructor(@ApplicationContext context: Context) {
     }
 
     fun getCollegeName(): String? {
-        return prefs.getString(C_NAME, null)
+        return prefs.getString(COLLEGE_NAME, null)
     }
 
     fun saveUserName(userName: String) {

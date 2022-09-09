@@ -1,5 +1,6 @@
 package com.example.edrank_app.ui.student
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +18,8 @@ import com.example.edrank_app.ui.UserViewModel
 import com.example.edrank_app.utils.NetworkResult
 import com.example.edrank_app.utils.TokenManager
 import com.github.mikephil.charting.charts.PieChart
+import java.text.SimpleDateFormat
+import java.util.*
 
 class StudentProfileFragment : Fragment() {
     private var _binding: FragmentStudentProfileBinding? = null
@@ -94,6 +97,7 @@ class StudentProfileFragment : Fragment() {
         return viewModel.validateData(oldPassword, newPassword)
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun bindObservers() {
         viewModel.userResponseLiveData.observe(viewLifecycleOwner, Observer {
             binding.progressBar.isVisible = false

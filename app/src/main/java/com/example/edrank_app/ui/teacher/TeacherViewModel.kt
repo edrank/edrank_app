@@ -3,10 +3,7 @@ package com.example.edrank_app.ui.teacher
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.edrank_app.models.GraphSARequest
-import com.example.edrank_app.models.GraphSAResponse
-import com.example.edrank_app.models.TeacherAllRanksResponse
-import com.example.edrank_app.models.TeacherFeedbackResponse
+import com.example.edrank_app.models.*
 import com.example.edrank_app.repositories.TeacherRepository
 import com.example.edrank_app.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -45,5 +42,20 @@ class TeacherViewModel @Inject constructor(private val teacherRepository: Teache
             teacherRepository.teacherMyRanks(type)
         }
     }
+
+//    fun getStateRank() {
+//        viewModelScope.launch {
+//
+//            teacherRepository.teacherNationalRank()
+//        }
+//    }
+//
+//    fun getTeacherCollegeRank() {
+//        viewModelScope.launch {
+//
+//            teacherRepository.teacherCollegeRank()
+//        }
+//    }
+
 
 }

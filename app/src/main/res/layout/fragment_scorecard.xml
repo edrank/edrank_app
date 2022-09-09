@@ -135,7 +135,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:padding="4dp"
-                                android:text="Dr. Poonam Pandey"
+                                android:text="Dr. Preeti Jain"
                                 android:textSize="14sp" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -169,17 +169,19 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:id="@+id/username"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Kavita Pabreja"
+                            android:text="Username"
                             android:textColor="@color/textgray"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/collegeName"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -195,8 +197,7 @@
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="8dp">
+                        android:orientation="vertical">
 
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -211,7 +212,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="AIR : #314"
+                                android:text="AIR : #10"
                                 android:textColor="@color/black" />
 
 
@@ -222,7 +223,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="State : #40"
+                                android:text="State : #5"
                                 android:textColor="@color/black" />
 
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -239,7 +240,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="Regional / City : #11"
+                                android:text="Regional / City : #5"
                                 android:textColor="@color/black" />
 
                             <TextView
@@ -249,7 +250,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:padding="5dp"
-                                android:text="College : #11"
+                                android:text="College : #2"
                                 android:textColor="@color/black" />
 
 
@@ -273,7 +274,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:text="AIR"
+                    android:text="All india"
+                    android:textColor="@color/white"
                     android:textSize="12sp" />
 
 
@@ -284,6 +286,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:text="State"
+                    android:textColor="@color/white"
                     android:textSize="12sp" />
 
 
@@ -294,6 +297,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:text="College"
+                    android:textColor="@color/white"
                     android:textSize="12sp" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>

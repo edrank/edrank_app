@@ -1,7 +1,9 @@
 package com.example.edrank_app.ui.teacher
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +30,7 @@ class ScorecardFragment : Fragment() {
     private val teacherViewModel by activityViewModels<TeacherViewModel>()
     private lateinit var tokenManager: TokenManager
     lateinit var cid: String
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,22 +64,17 @@ class ScorecardFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-//        teacherViewModel.getTeacherAllRanks(
-//            "NATIONAL"
-//        )
-//        teacherViewModel.getTeacherAllRanks(
-//            "REGIONAL"
-//        )
-//        teacherViewModel.getTeacherAllRanks(
-//            "STATE"
-//        )
-//        teacherViewModel.getTeacherAllRanks(
-//            "COLLEGE"
-//        )
+        binding.username.text = tokenManager.getUserName()
+        binding.collegeName.text = tokenManager.getCollegeName()
+        Log.e("college", tokenManager.getCollegeName().toString())
+//
+//        teacherViewModel.getTeacherAllRanks("COLLEGE")
+//        teacherViewModel.getTeacherAllRanks("NATIONAL")
+//        teacherViewModel.getTeacherAllRanks("STATE")
 
         viewModel.getTopNTeachers(TopTeachersRequest(cid.toInt(), "", "NATIONAL", "", 20))
         binding.topTwentyRv.layoutManager =
@@ -114,8 +112,10 @@ class ScorecardFragment : Fragment() {
 
         bindObservers()
 
+
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bindObservers() {
 
         viewModel.topNTeachers.observe(viewLifecycleOwner, Observer {
@@ -142,27 +142,8 @@ class ScorecardFragment : Fragment() {
 //            binding.progressBar.isVisible = false
 //            when (it) {
 //                is NetworkResult.Success -> {
-//                    binding.aiRank.text = it.data?.data?.rank.toString()
-//                }
-//                is NetworkResult.Error -> {
-//                    Toast.makeText(
-//                        requireContext(),
-//                        it.data?.message.toString(),
-//                        Toast.LENGTH_SHORT
-//                    )
-//                        .show()
-//                }
-//                is NetworkResult.Loading -> {
-//                    binding.progressBar.isVisible = true
-//                }
-//            }
-//        })
-
-//        teacherViewModel.teacherMyALlRanksLiveData.observe(viewLifecycleOwner, Observer {
-//            binding.progressBar.isVisible = false
-//            when (it) {
-//                is NetworkResult.Success -> {
-//                    binding.stateRank.text = it.data?.data?.rank.toString()
+//                    binding.aiRank.text = "AIR : #" + it.data?.data?.rank.toString()
+//                    Log.e("score", it.data?.data?.rank.toString())
 //                }
 //                is NetworkResult.Error -> {
 //                    Toast.makeText(
@@ -182,7 +163,9 @@ class ScorecardFragment : Fragment() {
 //            binding.progressBar.isVisible = false
 //            when (it) {
 //                is NetworkResult.Success -> {
-//                    binding.regRank.text = it.data?.data?.rank.toString()
+//                    binding.stateRank.text = "State : #" + it.data?.data?.rank.toString()
+//                    binding.regRank.text = "State : #"  + it.data?.data?.rank.toString()
+//                    Log.e("score", it.data?.data?.rank.toString())
 //                }
 //                is NetworkResult.Error -> {
 //                    Toast.makeText(
@@ -198,11 +181,14 @@ class ScorecardFragment : Fragment() {
 //            }
 //        })
 //
+//
 //        teacherViewModel.teacherMyALlRanksLiveData.observe(viewLifecycleOwner, Observer {
 //            binding.progressBar.isVisible = false
 //            when (it) {
 //                is NetworkResult.Success -> {
-//                    binding.collegeRank.text = it.data?.data?.rank.toString()
+//                    binding.collegeRank.text = "College : #" + it.data?.data?.rank.toString()
+//                    Log.e("score", it.data?.data?.rank.toString())
+//
 //                }
 //                is NetworkResult.Error -> {
 //                    Toast.makeText(
