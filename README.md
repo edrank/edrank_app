@@ -1,9 +1,9 @@
-#**EDRANK**💯🚀
+# **EDRANK**💯🚀 <br>
 ##**--Smart India Hackathon 2022 Winning Project--**
 
 A cross-platform feedback system for higher education institutes where students as well as their parents can provide their feedback regarding the teaching-learning process practised in the HEI.
 
-###**Key Features:**
+### **Key Features:**
 - Available both on web and android.
 - Easy to use interface with bilingual support.
 - Detailed Analytics for teachers and colleges in the form of charts and graphs
@@ -12,7 +12,7 @@ A cross-platform feedback system for higher education institutes where students 
 - College/City/State wise as well as National level leader board for teachers and colleges
 - Sentiment Analysis aided scoring mechanism for text-based feed backs
 
-###**Tech Stack**
+### **Tech Stack**
 - Golang for REST APIs
 - Kotlin for Android Application
 - ReactJs for Website
@@ -22,7 +22,7 @@ A cross-platform feedback system for higher education institutes where students 
 - AWS for deployment
 
 
-##**Android Skills Applied**
+## **Android Skills Applied**
 - Used MVVM Architecture⭐
 - Kotlin and XML used the project🤖
 - Hilt used for Dependecy Injection💉
