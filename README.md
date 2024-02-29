@@ -1,7 +1,8 @@
 # **EDRANK**💯🚀 <br>
-##**--Smart India Hackathon 2022 Winning Project--**
+## **---Smart India Hackathon 2022 Winning Project---** 🌟🤩
 
 A cross-platform feedback system for higher education institutes where students as well as their parents can provide their feedback regarding the teaching-learning process practised in the HEI.
+It is a solution to improve the existing feedback system in higher education while fulfilling UGC requirements. Application also honors best teachers and institutes at the state and regional levels
 
 ### **Key Features:**
 - Available both on web and android.
